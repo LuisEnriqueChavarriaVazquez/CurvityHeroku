@@ -1,0 +1,65 @@
+body{
+    background-color: #eceff1 ;
+    font-size: 10px;
+    font-family: Roboto,Arial, Helvetica, sans-serif;
+}
+
+.contankPop{
+    padding: 0px 10px 10px 10px;
+}
+
+.boxSubjects{
+    width: 100%;
+    padding: 0px 20px 20px 20px;
+}
+
+.boxSubjectsBrowser{
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.boxSubjectsInicio{
+    width: 100%;
+    height: 810px;
+    padding: 100px 30px 20px 30px;
+}
+
+.boxSubjectsInicioExtended{
+    width: 100%;
+    padding: 100px 30px 20px 30px;
+}
+
+.boxSubjectsErase{
+    width: 100%;
+    padding: 100px 20px 20px 20px;
+}
+
+.titles{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.centerElements{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.centerElementsLeft{
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.backgroundInicioAspirante{
+    height:85.22vh !important;
+    background-image: url('../pictures/explorer.png');
+    background-position: bottom;   
+    background-repeat: no-repeat;     
+    background-size:100%
+}
+
+.noLinkStyle{
+    color: black;
+}
+

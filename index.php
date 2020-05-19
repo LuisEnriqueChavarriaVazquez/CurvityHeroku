@@ -1,12 +1,27 @@
+<?php
+include_once 'includes/empresa.php';
+include_once 'includes/emp_session.php';
+?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarEmpresa.php' ?>
 
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarInicial.php' ?>
+<!--Cuerpo de las secciones-->
+<div class="boxSubjects blue-grey lighten-5">
+    <p class="titles">Operaciones empresa.</p>
+    <h1>Bienvenido <?php echo $emp->getEmp();  ?></h1>
 
-<div class="boxSubjectsInicio light-blue darken-4 centerElements">
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cards/cardSignUp.php' ?>
+    <a href="gestionSedes.php">
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
+        Gestionar sedes.
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
+    </a>
 
-    <a href="login.php" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">¿Ya tiene una cuenta?</a>
+    <a href="editarPerfilEmpresa.php">
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
+        Modificar datos del perfil.
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
+    </a>
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

@@ -23,7 +23,7 @@ class Emp extends DB{
         
         foreach ($query as $currentEmp) {
             $this->nombre = $currentEmp['Nombre'];
-            $this->username = $currentEmp['Email'];
+            $this->username = $currentEmp['DireccionWeb'];
         }
     }
 

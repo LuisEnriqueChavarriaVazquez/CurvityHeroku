@@ -29,6 +29,7 @@ class Emp extends DB{
 
     public function getEmp(){
         return $this->nombre;
+        return $this->username;
     }
 }
 

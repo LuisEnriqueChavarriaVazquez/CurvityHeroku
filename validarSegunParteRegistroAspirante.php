@@ -92,9 +92,9 @@
       
    if($contadorEleConfimados==6){
       $servername = "localhost";
-      $username = "root";
-      $password = "ramv1357";
-      $dbname = "Curvity";
+      $username = "u253306330_curvity";
+      $password = "curvity";
+      $dbname = "u253306330_curvity";
 
       $conn = new mysqli($servername, $username, $password, $dbname);
       // Check connection

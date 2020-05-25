@@ -9,9 +9,9 @@ class DB{
 
     public function __construct(){
         $this->host     = 'localhost';
-        $this->db       = 'curvity';
-        $this->user     = 'root';
-        $this->password = "";
+        $this->db       = 'u253306330_curvity';
+        $this->user     = 'u253306330_curvity';
+        $this->password = "curvity";
         $this->charset  = 'utf8mb4';
     }
 

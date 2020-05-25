@@ -1,4 +1,6 @@
 <?php 
+  require("claseDB.php");
+  
   class Aspirante {
       
     public $nombre;

@@ -1,6 +1,6 @@
-drop database if exists Curvity;
-create database if not exists Curvity;
-use Curvity;
+
+create database if not exists u253306330_curvity;
+use u253306330_curvity;
 create table if not exists Aspirante 
 (IDAspirante varchar (30) primary key,Nombre varchar(30),Contra varchar(30),ApellidoPat varchar(30),
 ApellidoMat varchar(30),SueldoDeseado varchar(30),Direccion varchar(30),Escuela varchar(30),NivelAcademico varchar(30),CorreoElec varchar(30),ResumenExpPrevLab text,
@@ -42,7 +42,7 @@ ResumenExpPrevLab,ResumenHab,numeroIdiomas,detallesIdiomas,FacebookAspirante,Sky
  values 
  ("1","Rick","12345","Machorro","Vences","123.45","Norte 25","Amauta","Superior","rick@gmail.com","Conserge",
  "Amigable",1,"Ingles","Rick 1","Rick 2","Rick 3");
-select * from aspirante;
+select * from Aspirante;
 insert into Empresa 
 (Nombre,RazonSocial,Contra,Direccion,Tipo,Telefono,DireccionWeb,
 FacebookEmpresa,SkypeEmpresa,TwitterEmpresa)

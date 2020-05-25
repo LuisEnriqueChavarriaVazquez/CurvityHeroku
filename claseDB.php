@@ -1,9 +1,9 @@
 <?php
 class objetoConexionBaseDatos {
     public $nombreServer="localhost";
-    public $nombreUsuario="root";
-    public $passwordDB="ramv1357";
-    public $nombreDB="Curvity";
+    public $nombreUsuario="u253306330_curvity";
+    public $passwordDB="curvity";
+    public $nombreDB="u253306330_curvity";
     public $conector=null;
      
     public function __construct(){

@@ -15,14 +15,14 @@
        public $twitterEmpresa;
        public $objetoDB;
 
-       public function __construct($nombreEntrada, $emailEmpresa,$passwordEntrada,$razonSocialEntrada,$direccionEntrada,$tipoEntrada,$telefonoEntrada,$direccionWebEntrada){
+       public function __construct($nombreEntrada, $emailEm,$passwordEntrada,$razonSocialEntrada,$direccionEntrada,$tipoEntrada,$telefonoEntrada,$direccionWebEntrada){
             $this->nombre=$nombreEntrada;
             $this->password=$passwordEntrada;
             $this->razonSocial=$razonSocialEntrada;
             $this->direccion=$direccionEntrada;
             $this->tipo=$tipoEntrada;
             $this->telefono=$telefonoEntrada;
-            $this->direccionWeb=$emailEmpresa;
+            $this->direccionWeb=$emailEm;
             $this->objetoDB=new  objetoConexionBaseDatos();
             
        }

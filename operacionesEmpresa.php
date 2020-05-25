@@ -8,7 +8,7 @@ include_once 'includes/emp_session.php';
 
 <!--Cuerpo de las secciones-->
 <div class="boxSubjects blue-grey lighten-5">
-    <p class="titles">Operaciones empresa <?php echo $emp->getEmp(); ?><.</p>
+    <p class="titles">Operaciones empresa <?php echo $emp->getEmp(); ?></p>
 
     <a href="gestionSedes.php">
         <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>

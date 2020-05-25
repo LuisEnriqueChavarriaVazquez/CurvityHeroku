@@ -7,7 +7,7 @@ class Emp extends DB{
 
 
     public function empExists($user, $pass){
-        $query = $this->connect()->prepare('SELECT * FROM Empresa WHERE Email = :user AND Contra = :pass');
+        $query = $this->connect()->prepare('SELECT * FROM Empresa WHERE DireccionWeb = :user AND Contra = :pass');
         $query->execute(['user' => $user, 'pass' => $pass]);
 
         if($query->rowCount()){

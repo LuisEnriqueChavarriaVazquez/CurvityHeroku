@@ -18,7 +18,7 @@ class Emp extends DB{
     }
 
     public function setEmp($user){
-        $query = $this->connect()->prepare('SELECT * FROM Empresa WHERE Email = :user');
+        $query = $this->connect()->prepare('SELECT * FROM Empresa WHERE DireccionWeb = :user');
         $query->execute(['user' => $user]);
         
         foreach ($query as $currentEmp) {

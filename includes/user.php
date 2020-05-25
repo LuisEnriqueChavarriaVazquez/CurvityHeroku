@@ -7,7 +7,7 @@ class User extends DB{
 
 
     public function userExists($user, $pass){
-        $query = $this->connect()->prepare('SELECT * FROM aspirante WHERE CorreoElec = :user AND Contra = :pass');
+        $query = $this->connect()->prepare('SELECT * FROM Aspirante WHERE CorreoElec = :user AND Contra = :pass');
         $query->execute(['user' => $user, 'pass' => $pass]);
 
         if($query->rowCount()){
@@ -18,7 +18,7 @@ class User extends DB{
     }
 
     public function setUser($user){
-        $query = $this->connect()->prepare('SELECT * FROM aspirante WHERE CorreoElec = :user');
+        $query = $this->connect()->prepare('SELECT * FROM Aspirante WHERE CorreoElec = :user');
         $query->execute(['user' => $user]);
         
         foreach ($query as $currentUser) {

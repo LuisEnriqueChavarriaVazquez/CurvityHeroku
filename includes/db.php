@@ -12,7 +12,7 @@ class DB{
         $this->db       = 'u253306330_curvity';
         $this->user     = 'u253306330_curvity';
         $this->password = "curvity";
-        $this->charset  = 'utf8';
+        $this->charset  = 'utf8mb4';
     }
 
     function connect(){

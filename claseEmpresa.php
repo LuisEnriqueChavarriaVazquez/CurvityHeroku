@@ -7,6 +7,7 @@
        public $razonSocial;
        public $direccion;
        public $tipo;
+       public $emailEmpresa;
        public $telefono;
        public $direccionWeb;
        public $facebookEmpresa;
@@ -14,14 +15,14 @@
        public $twitterEmpresa;
        public $objetoDB;
 
-       public function __construct($nombreEntrada,$passwordEntrada,$razonSocialEntrada,$direccionEntrada,$tipoEntrada,$telefonoEntrada,$direccionWebEntrada){
+       public function __construct($nombreEntrada, $emailEmpresa,$passwordEntrada,$razonSocialEntrada,$direccionEntrada,$tipoEntrada,$telefonoEntrada,$direccionWebEntrada){
             $this->nombre=$nombreEntrada;
             $this->password=$passwordEntrada;
             $this->razonSocial=$razonSocialEntrada;
             $this->direccion=$direccionEntrada;
             $this->tipo=$tipoEntrada;
             $this->telefono=$telefonoEntrada;
-            $this->direccionWeb=$direccionEntrada;
+            $this->direccionWeb=$emailEmpresa;
             $this->objetoDB=new  objetoConexionBaseDatos();
             
        }

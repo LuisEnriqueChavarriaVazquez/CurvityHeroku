@@ -53,6 +53,10 @@ body{
 
 .backgroundInicioAspirante{
     height:85.22vh !important;
+    background-image: url('../pictures/explorer.png');
+    background-position: bottom;   
+    background-repeat: no-repeat;     
+    background-size:100%
 }
 
 .noLinkStyle{

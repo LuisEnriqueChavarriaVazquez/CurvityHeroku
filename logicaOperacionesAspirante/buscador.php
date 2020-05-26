@@ -31,7 +31,7 @@ if ($resultado = $conn->query($query)) {
 
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
-            <div class='col s6 m6 borderCardInicio'>
+            <div class='col s6 m6 borderCardInicio cardEmpleoNueva'>
       <a href='operacionesAspirante.php'>
         <div class='card borderCardInicio waves-effect'>
         <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
@@ -45,7 +45,7 @@ if ($resultado = $conn->query($query)) {
         }
         $salida .= "</div>";
     } else {
-        $salida .= "NO HAY DATOS :(";
+        $salida .= "<div style='width:100%'><h5>Sin resultados</h5></div>";
     }
 }
 

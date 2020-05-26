@@ -144,9 +144,21 @@ $(document).ready(function () {
         var valor = $(this).val();
         if (valor != "") {
             buscar_datos(valor);
+            detectarCards();
         } else {
             buscar_datos();
+            detectarCards();
         }
     });
+
+    function detectarCards(){
+        var cardsEmpresas = document.getElementsByClassName('cardEmpleoNueva');
+        var containerEmpleos = document.getElementById('fullEmpleosContainer');
+        if(cardsEmpresas.length == 0){
+            containerEmpleos.classlist.add('backgroundInicioAspirante');
+        }else{
+            containerEmpleos.classlist.remove('backgroundInicioAspirante');
+        }
+    }
 
 });

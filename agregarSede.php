@@ -10,7 +10,8 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> <!--llamado al archivo validador-->
+        
+        <form class="col s12" method="post" action=""> <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text" >
@@ -26,12 +27,7 @@ gestionSedes.php
                     <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede" name="tel_sede" type="tel" class="validate white-text">
                     <label for="tel_sede">N&uacute;mero de tel&eacute;fono 1.</label>
                 </div>
-
-                <div class="input-field col s12">
-                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede_dos" name="tel_sede_dos" type="tel" class="validate white-text">
-                    <label for="tel_sede_dos">(Opcional) N&uacute;mero de tel&eacute;fono 2.</label>
-                </div>
-
+                
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre del reclutador." id="nombre_reclutador" name="nombre_reclutador" type="text" class="truncate validate white-text" >
                     <label for="nombre_reclutador">Nombre del reclutador.</label>

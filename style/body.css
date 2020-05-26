@@ -63,3 +63,39 @@ body{
     color: black;
 }
 
+.errors{
+    padding: 5px;
+    font-size: 10px;
+    color: rgb(190, 0, 0);
+    background-color: rgba(255, 255, 255, 0.932);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 900;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success{
+    padding: 5px;
+    font-size: 10px;
+    color: rgb(0, 124, 41);
+    background-color: rgba(255, 255, 255, 0.932);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 900;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errors_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+

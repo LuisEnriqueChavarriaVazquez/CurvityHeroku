@@ -1,11 +1,12 @@
 <?php
 
 
+$conexion = mysqli_connect("localhost", "u253306330_curvity", "curvity", "u253306330_curvity"); 
+
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
     $direccion_sede = $_POST["direccion_sede"];
     $tel_sede = $_POST["tel_sede"];
-    $tel_sede_dos = $_POST["tel_sede_dos"];
     $nombre_reclutador = $_POST["nombre_reclutador"];
     $email_reclutador = $_POST["email_reclutador"];
     $password_reclutador = $_POST["password_reclutador"];
@@ -47,43 +48,58 @@ if (isset($_POST['submit'])) {
     }
 
     if (!validacionNormal($nombre_sede)) {
-        array_push($errores,"Nombre invalido");
+        array_push($errores,"Nombre de sede inválido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($direccion_sede)) {
-        array_push($errores,"Direccion invalida");
+        array_push($errores,"Direccion inválida");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionTel($tel_sede)) {
-        array_push($errores,"Tel 1 invalido");
+        array_push($errores,"Tel 1 inválido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($nombre_reclutador)) {
-        array_push($errores,"Nombre invalido");
+        array_push($errores,"Nombre inválido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionMail($email_reclutador)) {
-        array_push($errores,"Email invalido");
+        array_push($errores,"Email inválido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($password_reclutador)) {
-        array_push($errores,"Password invalido");
+        array_push($errores,"Password inválido");
     } else {
         $contadorEleConfimados++;
     }
 
-    foreach ($errores as $val) {
-        echo  "<p class='white-text'>".$val."</p>";
+    if($contadorEleConfimados == 6){
+
+        $consulta = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) 
+        VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+
+        $resultadoConex = mysqli_query($conexion,$consulta);
+
+        if($resultadoConex){
+            echo  "<div class=´errors_box´><p class='success'>"."Sede creada"."</p></div>";
+        }else{
+            echo  "<div class=´errors_box´><p class='errors'>"."Upps! ocurrío un error."."</p></div>";
+        }
+
+    }else{
+        foreach ($errores as $val) {
+            echo  "<div class=´errors_box´><p class='errors'>".$val."</p></div>";
+        }
     }
 
 }

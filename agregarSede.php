@@ -7,49 +7,18 @@ gestionSedes.php
 <!--Declraciones para agregar la sede-->
 <?php
    
- if(!isset($_SESSION)){
-    session_start();
+ if(!isset($_POST['submit'])){
+    $nombre_sede = $_POST["nombre_sede"];
+    $direccion_sede = $_POST["direccion_sede"];
+    $tel_sede = $_POST["tel_sede"];
+    $tel_sede_dos = $_POST["tel_sede_dos"];
+    $nombre_reclutador = $_POST["nombre_reclutador"];
+    $email_reclutador = $_POST["email_reclutador"];
+    $password_reclutador = $_POST["password_reclutador"];
+    $facebook_sede = $_POST["facebook_sede"];
+    $skype_sede = $_POST["skype_sede"];
+    $twitter_sede = $_POST["twitter_sede"];
  }
-
-  if(!isset($nombre_sede)){
-    $nombre_sede="";
-  }
-
-  if(!isset($direccion_sede)){
-    $direccion_sede="";
-  }
-
-  if(!isset($tel_sede)){
-    $tel_sede="";
-  }
-
-  if(!isset($tel_sede_dos)){
-    $tel_sede_dos="";
-  }
-
-  if(!isset($nombre_reclutador)){
-    $nombre_reclutador="";
-  }
-
-  if(!isset($email_reclutador)){
-    $email_reclutador="";
-  }
-
-  if(!isset($password_reclutador)){
-    $password_reclutador="";
-  }
-
-  if(!isset($facebook_sede)){
-    $facebook_sede="";
-  }
-
-  if(!isset($skype_sede)){
-    $skype_sede="";
-  }
-
-  if(!isset($twitter_sede)){
-    $twitter_sede="";
-  }
 
 ?>
 
@@ -58,115 +27,102 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="logicaOperacionesEmpresa/validarFormAgregarSede.php"> <!--llamado al archivo validador-->
+        <form class="col s12" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($nombre_sede)
-                    ?>" >
+                    <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text" >
                     <label for="nombre_sede">Nombre de la sede.</label>
                     <?php
-                       if(isset($nombre_error_sede)){
-                       echo  "<p class='white-text'>".$nombre_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
 
                 <div class="input-field col s12">
-                    <textarea placeholder="Escriba la dirección" id="direccion_sede" name="direccion_sede" class="materialize-textarea white-text" data-length="200"
-                    value="<?php 
-                     echo  htmlspecialchars ($direccion_sede)
-                    ?>" ></textarea>
+                    <textarea placeholder="Escriba la dirección" id="direccion_sede" name="direccion_sede" class="materialize-textarea white-text" data-length="200" ></textarea>
                     <label for="direccion_sede">Direccion de la sede.</label>
                     <?php
-                       if(isset($direccion_error_sede)){
-                       echo  "<p class='white-text'>".$direccion_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede" name="tel_sede" type="tel" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($tel_sede)
-                    ?>">
+                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede" name="tel_sede" type="tel" class="validate white-text">
                     <label for="tel_sede">N&uacute;mero de tel&eacute;fono 1.</label>
                     <?php
-                       if(isset($tel_error_sede)){
-                       echo  "<p class='white-text'>".$tel_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede_dos" name="tel_sede_dos" type="tel" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($tel_sede_dos)
-                    ?>" >
+                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede_dos" name="tel_sede_dos" type="tel" class="validate white-text">
                     <label for="tel_sede_dos">(Opcional) N&uacute;mero de tel&eacute;fono 2.</label>
                     <?php
-                       if(isset($tel_error_sede)){
-                       echo  "<p class='white-text'>".$tel_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba el nombre del reclutador." id="nombre_reclutador" name="nombre_reclutador" type="text" class="truncate validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($nombre_reclutador)
-                    ?>" >
+                    <input placeholder="Escriba el nombre del reclutador." id="nombre_reclutador" name="nombre_reclutador" type="text" class="truncate validate white-text" >
                     <label for="nombre_reclutador">Nombre del reclutador.</label>
                     <?php
-                       if(isset($nombre_reclutador_error_sede)){
-                       echo  "<p class='white-text'>".$nombre_reclutador_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Escriba el email del reclutador." id="email_reclutador" name="email_reclutador" type="email" class="validate white-text truncate"
-                    value="<?php 
-                     echo  htmlspecialchars ($email_reclutador)
-                    ?>" >
+                    <input placeholder="Escriba el email del reclutador." id="email_reclutador" name="email_reclutador" type="email" class="validate white-text truncate" >
                     <label for="email_reclutador">Email.</label>
                     <?php
-                       if(isset($mail_error_sede)){
-                       echo  "<p class='white-text'>".$mail_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Asigne password de reclutador designado." id="password_reclutador" name="password_reclutador" type="password" class="validate white-text truncate"
-                    value="<?php 
-                     echo  htmlspecialchars ($password_reclutador)
-                    ?>" >
+                    <input placeholder="Asigne password de reclutador designado." id="password_reclutador" name="password_reclutador" type="password" class="validate white-text truncate" >
                     <label for="password_reclutador">Passoword del reclutador.</label>
                     <?php
-                       if(isset($password_error_sede)){
-                       echo  "<p class='white-text'>".$password_error_sede."</p>";
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
                       } ?>
                 </div>
 
 
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="facebook_sede" name="facebook_sede" type="text" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($facebook_sede)
-                    ?>" >
+                    <input placeholder="Escriba la red social" id="facebook_sede" name="facebook_sede" type="text" class="validate white-text" >
                     <label for="facebook_aspirante">(Opcional) Facebook.</label>
+                    <?php
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
+                      } ?>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="skype_sede" name="skype_sede" type="text" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($skype_sede)
-                    ?>" >
+                    <input placeholder="Escriba la red social" id="skype_sede" name="skype_sede" type="text" class="validate white-text" >
                     <label for="skype_aspirante">(Opcional) Skype.</label>
+                    <?php
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
+                      } ?>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="twitter_sede" name="twitter_sede" type="text" class="validate white-text"
-                    value="<?php 
-                     echo  htmlspecialchars ($twitter_sede)
-                    ?>" >
+                    <input placeholder="Escriba la red social" id="twitter_sede" name="twitter_sede" type="text" class="validate white-text" >
                     <label for="twitter_aspirante">(Opcional) Twitter.</label>
+                    <?php
+                       if(isset($Nombre_error)){
+                       echo  "<p class='white-text'>".$Nombre_error."</p>";
+                      } ?>
                 </div>
             </div>
-            <a><button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
+            <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
+        
+            <?php 
+                include("logicaOperacionesEmpresa/validarFormAgregarSede.php");
+            ?>
+        
         </form>
     </div>
 </div>

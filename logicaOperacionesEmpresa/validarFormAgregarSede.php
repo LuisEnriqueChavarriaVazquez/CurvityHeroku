@@ -1,18 +1,5 @@
 <?php
-
-//Guardarmos en variables los datos recibidos del form
-if (isset($_POST['nombre_sede'])) {
-    $nombre_sede = $_POST["nombre_sede"];
-    $direccion_sede = $_POST["direccion_sede"];
-    $tel_sede = $_POST["tel_sede"];
-    $tel_sede_dos = $_POST["tel_sede_dos"];
-    $nombre_reclutador = $_POST["nombre_reclutador"];
-    $email_reclutador = $_POST["email_reclutador"];
-    $password_reclutador = $_POST["password_reclutador"];
-    $facebook_sede = $_POST["facebook_sede"];
-    $skype_sede = $_POST["skype_sede"];
-    $twitter_sede = $_POST["twitter_sede"];
-    $contadorEleConfimados = 0;
+if (isset($_POST['submit'])) {
 
     function validacionNormal($StringEntrada)
     {
@@ -86,7 +73,26 @@ if (isset($_POST['nombre_sede'])) {
     } else {
         $contadorEleConfimados++;
     }
+}
+//Guardarmos en variables los datos recibidos del form
+/*if (isset($_POST['nombre_sede'])) {
+    $nombre_sede = $_POST["nombre_sede"];
+    $direccion_sede = $_POST["direccion_sede"];
+    $tel_sede = $_POST["tel_sede"];
+    $tel_sede_dos = $_POST["tel_sede_dos"];
+    $nombre_reclutador = $_POST["nombre_reclutador"];
+    $email_reclutador = $_POST["email_reclutador"];
+    $password_reclutador = $_POST["password_reclutador"];
+    $facebook_sede = $_POST["facebook_sede"];
+    $skype_sede = $_POST["skype_sede"];
+    $twitter_sede = $_POST["twitter_sede"];
+    $contadorEleConfimados = 0;
 
+    
+
+    
+
+    
     /*if ($contadorEleConfimados == 7) {
         $_SESSION["nombre_sede"] = $nombre_sede;
         $_SESSION["direccion_sede"] = $direccion_sede;
@@ -109,4 +115,3 @@ if (isset($_POST['nombre_sede'])) {
     } else {
         include("agregarSede.php");
     }*/
-}

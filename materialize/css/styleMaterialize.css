@@ -6155,7 +6155,7 @@ textarea.materialize-textarea {
 }
 
 input[type=search]:not(.browser-default){
-  height: 58px !important;
+  height: 58px;
 }
 
 

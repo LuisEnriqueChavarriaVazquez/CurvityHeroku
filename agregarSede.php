@@ -145,21 +145,21 @@ gestionSedes.php
 
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="facebook_sede" id="facebook_sede" type="text" class="validate white-text"
+                    <input placeholder="Escriba la red social" id="facebook_sede" name="facebook_sede" type="text" class="validate white-text"
                     value="<?php 
                      echo  htmlspecialchars ($facebook_sede)
                     ?>" >
                     <label for="facebook_aspirante">(Opcional) Facebook.</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="skype_sede" id="skype_sede" type="text" class="validate white-text"
+                    <input placeholder="Escriba la red social" id="skype_sede" name="skype_sede" type="text" class="validate white-text"
                     value="<?php 
                      echo  htmlspecialchars ($skype_sede)
                     ?>" >
                     <label for="skype_aspirante">(Opcional) Skype.</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Escriba la red social" id="twitter_sede" id="twitter_sede" type="text" class="validate white-text"
+                    <input placeholder="Escriba la red social" id="twitter_sede" name="twitter_sede" type="text" class="validate white-text"
                     value="<?php 
                      echo  htmlspecialchars ($twitter_sede)
                     ?>" >

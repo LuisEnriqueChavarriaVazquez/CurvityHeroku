@@ -7,10 +7,22 @@ include_once 'includes/user_session.php';
 
 <section class="principal">
 
-  <div class="formulario">
+  <!--<div class="formulario">
     <label for="caja_busqueda">Buscar</label>
-    <input type="text" name="caja_busqueda" id="caja_busqueda"></input>
-  </div>
+    <input type="search" name="caja_busqueda" id="caja_busqueda"></input>
+  </div>-->
+
+  <div class="nav-content">
+        <div class="nav-wrapper">
+            <form>
+                <div class="input-field">
+                    <input id="search" class="input-search" id="caja_busqueda" name="caja_busqueda" type="search" required autocomplete="off">
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                </div>
+                <div style="display: flex; align-items:center; justify-content:center"><button class="btn white blue-text" name="submit">Buscar</button></div>
+            </form>
+        </div>
+    </div>
 
 </section>
 </nav>
@@ -20,7 +32,7 @@ include_once 'includes/user_session.php';
 <div class="boxSubjectsBrowser full-height backgroundInicioAspirante blue-grey lighten-5">
 
   <div id="datos" class="row">
-    
+
   </div>
 
   <div class="row">

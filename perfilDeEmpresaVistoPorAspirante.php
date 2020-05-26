@@ -82,9 +82,7 @@ index_asp.php
 
 <!--Estoy usando AJAX para que tengamos acceso a la base de datos-->
 <script>
-$(function(){
-    desplieguePerfilEmpresa();
-});
+
 
 function desplieguePerfilEmpresa(){
     $.ajax({
@@ -102,6 +100,7 @@ function desplieguePerfilEmpresa(){
     });
 }
 
+desplieguePerfilEmpresa();
 </script>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

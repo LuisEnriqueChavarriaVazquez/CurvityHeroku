@@ -5,29 +5,12 @@ gestionSedes.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 
 <!--Declraciones para agregar la sede-->
-<?php
-   
- if(!isset($_POST['submit'])){
-    $nombre_sede = $_POST["nombre_sede"];
-    $direccion_sede = $_POST["direccion_sede"];
-    $tel_sede = $_POST["tel_sede"];
-    $tel_sede_dos = $_POST["tel_sede_dos"];
-    $nombre_reclutador = $_POST["nombre_reclutador"];
-    $email_reclutador = $_POST["email_reclutador"];
-    $password_reclutador = $_POST["password_reclutador"];
-    $facebook_sede = $_POST["facebook_sede"];
-    $skype_sede = $_POST["skype_sede"];
-    $twitter_sede = $_POST["twitter_sede"];
- }
-
-?>
-
 <div class="boxSubjectsInicioExtended light-blue darken-4 centerElements">
     <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> <!--llamado al archivo validador-->
+        <form class="col s12" method="post" action="logicaOperacionesEmpresa/validarAgregarSede.php"> <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text" >
@@ -118,10 +101,6 @@ gestionSedes.php
                 </div>
             </div>
             <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
-        
-            <?php 
-                include("logicaOperacionesEmpresa/validarFormAgregarSede.php");
-            ?>
         
         </form>
     </div>

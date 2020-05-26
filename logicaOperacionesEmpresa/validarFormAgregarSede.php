@@ -1,5 +1,17 @@
 <?php
+
+
 if (isset($_POST['submit'])) {
+    $nombre_sede = $_POST["nombre_sede"];
+    $direccion_sede = $_POST["direccion_sede"];
+    $tel_sede = $_POST["tel_sede"];
+    $tel_sede_dos = $_POST["tel_sede_dos"];
+    $nombre_reclutador = $_POST["nombre_reclutador"];
+    $email_reclutador = $_POST["email_reclutador"];
+    $password_reclutador = $_POST["password_reclutador"];
+    $facebook_sede = $_POST["facebook_sede"];
+    $skype_sede = $_POST["skype_sede"];
+    $twitter_sede = $_POST["twitter_sede"];
 
     function validacionNormal($StringEntrada)
     {

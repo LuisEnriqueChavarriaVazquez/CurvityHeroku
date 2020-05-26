@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 $salida = "";
 
-$query = "SELECT * FROM Empresa WHERE Nombre NOT LIKE '' ORDER By IDEmpresa LIMIT 50";
+$query = "SELECT * FROM Empresa WHERE Name NOT LIKE '' ORDER By IDEmpresa LIMIT 10";
 
 if (isset($_POST['consulta'])) {
     $q = $conn->real_escape_string($_POST['consulta']);

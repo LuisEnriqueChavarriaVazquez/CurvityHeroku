@@ -154,7 +154,7 @@ $(document).ready(function () {
     function detectarCards(){
         var cardsEmpresas = document.getElementsByClassName('cardEmpleoNueva');
         var containerEmpleos = document.getElementById('fullEmpleosContainer');
-        if(cardsEmpresas.length == 0){
+        if($('#caja_busqueda').length == 0){
             containerEmpleos.classlist.add('backgroundInicioAspirante');
         }else{
             containerEmpleos.classlist.remove('backgroundInicioAspirante');

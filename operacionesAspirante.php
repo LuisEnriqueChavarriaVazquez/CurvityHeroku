@@ -16,11 +16,10 @@ include_once 'includes/user_session.php';
         <div class="nav-wrapper">
             <form>
                 <div class="input-field">
-                    <input id="search" class="input-search" id="caja_busqueda" name="caja_busqueda" type="search" required autocomplete="off">
+                    <input id="search caja_busqueda" class="input-search" name="caja_busqueda" type="search" autocomplete="off">
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 </div>
-                <div style="display: flex; align-items:center; justify-content:center"><button class="btn white blue-text" name="submit">Buscar</button></div>
-            </form>
+              </form>
         </div>
     </div>
 

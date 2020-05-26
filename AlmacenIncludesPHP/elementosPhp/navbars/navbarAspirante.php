@@ -32,7 +32,7 @@ include_once 'includes/user.php';
                     <input id="search" class="input-search" name="busca" type="search" required autocomplete="off">
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 </div>
-                <button class="btn">Buscar</button>
+                <div style="display: flex; align-items:center; justify-content:center"><button class="btn white blue-text" name="submit">Buscar</button></div>
             </form>
         </div>
     </div>

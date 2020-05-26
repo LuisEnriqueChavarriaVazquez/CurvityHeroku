@@ -19,7 +19,6 @@ index_emp.php
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre de la empresa." id="nombre_empresa" type="text" class="validate white-text">
                     <label for="nombre_empresa">Nombre empresa.</label>
-                    <?php echo $emp->getEmp();?>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Escriba la razon social de la empresa." id="first_name" type="text" class="validate white-text">

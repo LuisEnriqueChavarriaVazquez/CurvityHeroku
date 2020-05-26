@@ -85,20 +85,16 @@ if (isset($_POST['submit'])) {
     }
 
     if($contadorEleConfimados == 6){
-        
-        if($conexion->connect_error){
+        echo  "<div class=´errors_box´><p class='success'>"."Oferta creada creada"."</p></div>";
+        /*if($conexion->connect_error){
             die("Conexion fallida" . $conexion->connect_error);
         }
-
         $sql = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
-
         if($conexion->query($sql) === true){
-
             echo  "<div class=´errors_box´><p class='success'>"."Sede creada"."</p></div>";
         }else{
-
             echo  "<div class=´errors_box´><p class='errors'>"."Error de conexion"."</p></div>";
-        }
+        }*/
 
     }else{
         foreach ($errores as $val) {

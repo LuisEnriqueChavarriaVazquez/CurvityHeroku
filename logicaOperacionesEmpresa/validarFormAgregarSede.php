@@ -1,6 +1,7 @@
 
 <?php
 
+
 //include '../includes/db.php';
 
 //No se cargan aun los datos de las sedes
@@ -9,6 +10,7 @@ $servername = "localhost";
 $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
+
 
 /*session_start();
     if (isset($_SESSION['username'])) {
@@ -109,7 +111,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES (7,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
-        if ($conn->query($query) == true) {
+        if ($conn->query($query) === true) {
             echo  "<div class=´errors_box´><p class='success'>" . "Sede creada" . "</p></div>";
         } else {
             echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";

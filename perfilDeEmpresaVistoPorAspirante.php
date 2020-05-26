@@ -64,7 +64,6 @@ operacionesAspirante.php
         <div>
             <p class="titleOfertaFinal truncate">Telefonos.</p>
             <p class="descripcionOfertaFinal">55XXXXXX</p>
-            <p class="descripcionOfertaFinal">55XXXXXX</p>
         </div>
 
         <div>
@@ -74,5 +73,7 @@ operacionesAspirante.php
     </div>
 
 </div>
+
+<?php include("logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php"); ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

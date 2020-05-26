@@ -11,6 +11,7 @@ if(isset($_SESSION['user'])){
 }else if(isset($_POST['username_emp']) && isset($_POST['password_emp'])){
     $empForm = $_POST['username_emp'];
     $passForm = $_POST['password_emp'];
+    $idEmpresa;
 
     if($emp->empExists($empForm, $passForm, $idEmpresa)){
         $empSession->setCurrentEmp($empForm,$idEmpresa);

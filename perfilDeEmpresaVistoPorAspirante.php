@@ -74,6 +74,8 @@ index_asp.php
         </div>
 
         <div id="prueba">
+
+            prueba de texto
         </div>
     </div>
 
@@ -96,7 +98,7 @@ function desplieguePerfilEmpresa(){
             var js = JSON.parse(res);
             var tabla;
             for(var i = 0; i < js.length; i++){
-                tabla += '<div class="red black-text">' + js[i].Nombre + '</div>'
+                tabla += '<div>' + js[i].Nombre + '</div>'
             }
 
             $('#prueba').html(tabla);

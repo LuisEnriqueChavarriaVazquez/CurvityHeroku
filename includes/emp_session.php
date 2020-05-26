@@ -5,19 +5,13 @@ class EmpSession{
         session_start();
     }
 
-    public function setCurrentEmp($user,$idEmpresa){
+    public function setCurrentEmp($user){
         $_SESSION['user'] = $user;
-        $_SESSION['idEmpresa'] = $idEmpresa;
     }
 
     public function getCurrentEmp(){
         return $_SESSION['user'];
     }
-
-    public function getCurrentEmpID(){
-        return $_SESSION['idEmpresa'];
-    }
-
 
     public function closeSession(){
         session_unset();

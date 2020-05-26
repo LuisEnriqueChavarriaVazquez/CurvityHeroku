@@ -1,4 +1,7 @@
+
 <?php
+
+//No se cargan aun los datos de las sedes
 $conexion = new mysqli("localhost", "u253306330_curvity", "curvity", "u253306330_curvity"); 
 
 if (isset($_POST['submit'])) {
@@ -84,15 +87,17 @@ if (isset($_POST['submit'])) {
     if($contadorEleConfimados == 6){
         
         if($conexion->connect_error){
-            die("Conexion malita" . $conexion->connect_error);
+            die("Conexion fallida" . $conexion->connect_error);
         }
 
         $sql = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
         if($conexion->query($sql) === true){
+
             echo  "<div class=´errors_box´><p class='success'>"."Sede creada"."</p></div>";
         }else{
-            echo  "<div class=´errors_box´><p class='errors'>".$nombre_reclutador."</p></div>";
+
+            echo  "<div class=´errors_box´><p class='errors'>"."Error de conexion"."</p></div>";
         }
 
     }else{
@@ -104,45 +109,3 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
-<!--
-//Guardarmos en variables los datos recibidos del form
-/*if (isset($_POST['nombre_sede'])) {
-    $nombre_sede = $_POST["nombre_sede"];
-    $direccion_sede = $_POST["direccion_sede"];
-    $tel_sede = $_POST["tel_sede"];
-    $tel_sede_dos = $_POST["tel_sede_dos"];
-    $nombre_reclutador = $_POST["nombre_reclutador"];
-    $email_reclutador = $_POST["email_reclutador"];
-    $password_reclutador = $_POST["password_reclutador"];
-    $facebook_sede = $_POST["facebook_sede"];
-    $skype_sede = $_POST["skype_sede"];
-    $twitter_sede = $_POST["twitter_sede"];
-    $contadorEleConfimados = 0;
-
-    
-
-    
-
-    
-    /*if ($contadorEleConfimados == 7) {
-        $_SESSION["nombre_sede"] = $nombre_sede;
-        $_SESSION["direccion_sede"] = $direccion_sede;
-        $_SESSION["tel_sede"] = $tel_sede;
-        $_SESSION["tel_sede_dos"] = $tel_sede_dos;
-        $_SESSION["nombre_reclutador"] = $nombre_reclutador;
-        $_SESSION["email_reclutador"] = $email_reclutador;
-        $_SESSION["password_reclutador"] = $password_reclutador;
-
-        if (validacionNormal($facebook_sede)) {
-            $_SESSION["facebook_sede"] = $facebook_sede;
-        }
-        if (validacionNormal($skype_sede)) {
-            $_SESSION["skype_sede"] = $skype_sede;
-        }
-        if (validacionNormal($twitter_sede)) {
-            $_SESSION["twitter_sede"] = $twitter_sede;
-        }
-        include("gestionSedes.php");
-    } else {
-        include("agregarSede.php");
-    }*/-->

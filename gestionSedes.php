@@ -16,9 +16,9 @@ index_emp.php
     Borrar sede.
     <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?></a>
 
-    <a href="actualizarSede.php"><?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php'; ?>
+    <!--<a href="actualizarSede.php"><?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php'; ?>
     Actualizar sede.
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?></a>
+    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?></a>-->
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

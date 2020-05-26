@@ -1,4 +1,8 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
+<?php 
+include_once 'includes/empresa.php';
+include_once 'includes/emp_session.php';
+?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
 index_emp.php
@@ -13,7 +17,7 @@ index_emp.php
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Escriba el nombre de la empresa." id="nombre_empresa" type="text" class="validate white-text">
+                    <input placeholder="Escriba el nombre de la empresa." value="<?php $emp->getEmp(); ?>" id="nombre_empresa" type="text" class="validate white-text">
                     <label for="nombre_empresa">Nombre empresa.</label>
                 </div>
                 <div class="input-field col s12">

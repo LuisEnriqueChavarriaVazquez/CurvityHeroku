@@ -110,11 +110,16 @@ body{
 }
 
 #caja_busqueda{
-    width: 80%;
-    height: 35px !important;
+    width: 85%;
+    height: 30px !important;
     background-color: white;
     border-radius: 5px;
     padding: 5px;
     padding-left: 20px;
+    transition: all .3s;
+}
+
+#caja_busqueda:hover{
+    background-color: rgb(202, 202, 202);
 }
 

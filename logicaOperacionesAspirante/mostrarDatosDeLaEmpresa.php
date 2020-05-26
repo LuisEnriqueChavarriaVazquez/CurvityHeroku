@@ -15,6 +15,7 @@ $query = "SELECT * FROM Empresa ORDER By IDEmpresa";
 
 if ($resultado = $conn->query($query)) {
     while ($fila = $resultado->fetch_assoc()) {
+
         printf ("%s (%s)\n", $fila["Nombre"], $fila["IDEmpresa"]);
     }
     $resultado->free();

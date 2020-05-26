@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 $salida = "";
 
-$query = "SELECT * FROM Empresa WHERE Name NOT LIKE '' ORDER By IDEmpresa LIMIT 10";
+$query = "SELECT * FROM Empresa WHERE Nombre NOT LIKE '' ORDER By IDEmpresa LIMIT 10";
 
 if (isset($_POST['consulta'])) {
     $q = $conn->real_escape_string($_POST['consulta']);
@@ -31,8 +31,8 @@ if ($resultado = $conn->query($query)) {
 
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
-            <div class='col s6 m6 borderCardInicio cardEmpleoNueva' name='". $fila['IDEmpresa'] ."'>
-      <a href='perfilDeEmpresaVistoPorAspirante.php'>
+            <div class='col s6 m6 borderCardInicio cardEmpleoNueva'>
+      <a href='operacionesAspirante.php'>
         <div class='card borderCardInicio waves-effect'>
         <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
           <div class='card-content'>
@@ -41,8 +41,6 @@ if ($resultado = $conn->query($query)) {
         </div>
       </a>
     </div>
-    
-    $GLOBALS
     				";
         }
         $salida .= "</div>";

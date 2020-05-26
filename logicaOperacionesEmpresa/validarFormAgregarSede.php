@@ -1,7 +1,5 @@
 <?php
-
-
-$conexion = mysqli_connect("localhost", "u253306330_curvity", "curvity", "u253306330_curvity"); 
+$conexion = new mysqli("localhost", "u253306330_curvity", "curvity", "u253306330_curvity"); 
 
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
@@ -84,16 +82,17 @@ if (isset($_POST['submit'])) {
     }
 
     if($contadorEleConfimados == 6){
+        
+        if($conexion->connect_error){
+            die("Conexion malita" . $conexion->connect_error);
+        }
 
-        $consulta = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) 
-        VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        $sql = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
-        $resultadoConex = mysqli_query($conexion,$consulta);
-
-        if($resultadoConex){
+        if($conexion->query($sql) === true){
             echo  "<div class=´errors_box´><p class='success'>"."Sede creada"."</p></div>";
         }else{
-            echo  "<div class=´errors_box´><p class='errors'>"."Upps! ocurrío un error."."</p></div>";
+            echo  "<div class=´errors_box´><p class='errors'>".$nombre_reclutador."</p></div>";
         }
 
     }else{

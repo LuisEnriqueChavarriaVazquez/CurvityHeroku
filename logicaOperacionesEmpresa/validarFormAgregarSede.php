@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
     $facebook_sede = $_POST["facebook_sede"];
     $skype_sede = $_POST["skype_sede"];
     $twitter_sede = $_POST["twitter_sede"];
+    $contadorEleConfimados = 0;
 
     function validacionNormal($StringEntrada)
     {

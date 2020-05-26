@@ -31,7 +31,7 @@ if ($resultado = $conn->query($query)) {
 
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
-            <div class='col s6 m6 borderCardInicio cardEmpleoNueva' id='". $fila['IDEmpresa'] ."'>
+            <div class='col s6 m6 borderCardInicio cardEmpleoNueva' name='". $fila['IDEmpresa'] ."'>
       <a href='perfilDeEmpresaVistoPorAspirante.php'>
         <div class='card borderCardInicio waves-effect'>
         <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
@@ -41,6 +41,8 @@ if ($resultado = $conn->query($query)) {
         </div>
       </a>
     </div>
+    
+    $GLOBALS
     				";
         }
         $salida .= "</div>";

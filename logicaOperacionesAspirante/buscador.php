@@ -4,6 +4,7 @@ $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
@@ -32,7 +33,8 @@ if ($resultado = $conn->query($query)) {
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
             <div class='col s6 m6 borderCardInicio cardEmpleoNueva'>
-      <a href='operacionesAspirante.php'>
+            <form method='GET' action='operacionesAspirante.php'>
+      <a href='perfilDEmpresaVistoPorAspirante.php' name='submit' value='".$fila['IDEmpresa']."'>
         <div class='card borderCardInicio waves-effect'>
         <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
           <div class='card-content'>
@@ -40,6 +42,7 @@ if ($resultado = $conn->query($query)) {
           </div>
         </div>
       </a>
+      <form>
     </div>
     				";
         }

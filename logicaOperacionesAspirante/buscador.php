@@ -32,7 +32,7 @@ if ($resultado = $conn->query($query)) {
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
             <div class='col s6 m6 borderCardInicio cardEmpleoNueva'>
-      <a href='perfilDEmpresaVistoPorAspirante.php'>
+      <a href='perfilDeEmpresaVistoPorAspirante.php'>
         <div class='card borderCardInicio waves-effect'>
         <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
           <div class='card-content'>

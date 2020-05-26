@@ -10,7 +10,7 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="logicaOperacionesEmpresa/validarFormAgregarSede.php"> <!--llamado al archivo validador-->
+        <form class="col s12" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text" >
@@ -61,6 +61,11 @@ gestionSedes.php
                 </div>
             </div>
             <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
+        
+            <?php 
+                include("logicaOperacionesEmpresa/validarFormAgregarSede.php");
+            ?>
+        
         </form>
     </div>
 </div>

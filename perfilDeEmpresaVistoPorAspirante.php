@@ -84,14 +84,16 @@ index_asp.php
 
 <!--Estoy usando AJAX para que tengamos acceso a la base de datos-->
 <script>
-
+(function(){
+    desplieguePerfilEmpresa();
+});
 
 function desplieguePerfilEmpresa(){
     $.ajax({
         url: 'logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php',
         type: 'POST',
         success: function(res){
-            var js = JSON.parseJSON(res);
+            var js = JSON.parse(res);
             var tabla;
             for(var i = 0; i < js.length; i++){
                 tabla += '<div class="red black-text">' + js[i].Nombre + '</div>'
@@ -102,7 +104,6 @@ function desplieguePerfilEmpresa(){
     });
 }
 
-desplieguePerfilEmpresa();
 </script>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

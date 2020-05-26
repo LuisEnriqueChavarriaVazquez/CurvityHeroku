@@ -91,7 +91,7 @@ function desplieguePerfilEmpresa(){
         url: 'logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php',
         type: 'POST',
         success: function(res){
-            var js = JSON.$.parseJSON('res');
+            var js = JSON.$.parseJSON(res);
             var tabla;
             for(var i = 0; i < js.length; i++){
                 tabla += '<div class="red black-text">' + js[i].Nombre + '</div>'

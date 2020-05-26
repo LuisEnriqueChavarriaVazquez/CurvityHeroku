@@ -87,6 +87,9 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 }
+
+?>
+<!--
 //Guardarmos en variables los datos recibidos del form
 /*if (isset($_POST['nombre_sede'])) {
     $nombre_sede = $_POST["nombre_sede"];
@@ -127,4 +130,4 @@ if (isset($_POST['submit'])) {
         include("gestionSedes.php");
     } else {
         include("agregarSede.php");
-    }*/
+    }*/-->

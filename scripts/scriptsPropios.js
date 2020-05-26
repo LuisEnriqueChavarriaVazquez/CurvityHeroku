@@ -109,6 +109,7 @@ $(document).ready(function () {
     $(acepto[13]).click(function () { $("#idAcepto" + 13).addClass("buttonHide"); $("#idRechazo" + 13).addClass("buttonHide"); $("#idRehacer" + 13).removeClass("buttonHide"); }); $(rechaza[13]).click(function () { $("#idAcepto" + 13).addClass("buttonHide"); $("#idRechazo" + 13).addClass("buttonHide"); $("#idRehacer" + 13).removeClass("buttonHide"); }); $(rehacer[13]).click(function () { $("#idAcepto" + 13).removeClass("buttonHide"); $("#idRechazo" + 13).removeClass("buttonHide"); $("#idRehacer" + 13).addClass("buttonHide"); });
     $(acepto[14]).click(function () { $("#idAcepto" + 14).addClass("buttonHide"); $("#idRechazo" + 14).addClass("buttonHide"); $("#idRehacer" + 14).removeClass("buttonHide"); }); $(rechaza[14]).click(function () { $("#idAcepto" + 14).addClass("buttonHide"); $("#idRechazo" + 14).addClass("buttonHide"); $("#idRehacer" + 14).removeClass("buttonHide"); }); $(rehacer[14]).click(function () { $("#idAcepto" + 14).removeClass("buttonHide"); $("#idRechazo" + 14).removeClass("buttonHide"); $("#idRehacer" + 14).addClass("buttonHide"); });
     $(acepto[15]).click(function () { $("#idAcepto" + 15).addClass("buttonHide"); $("#idRechazo" + 15).addClass("buttonHide"); $("#idRehacer" + 15).removeClass("buttonHide"); }); $(rechaza[15]).click(function () { $("#idAcepto" + 15).addClass("buttonHide"); $("#idRechazo" + 15).addClass("buttonHide"); $("#idRehacer" + 15).removeClass("buttonHide"); }); $(rehacer[15]).click(function () { $("#idAcepto" + 15).removeClass("buttonHide"); $("#idRechazo" + 15).removeClass("buttonHide"); $("#idRehacer" + 15).addClass("buttonHide"); });
+    $(acepto[16]).click(function () { $("#idAcepto" + 16).addClass("buttonHide"); $("#idRechazo" + 16).addClass("buttonHide"); $("#idRehacer" + 16).removeClass("buttonHide"); }); $(rechaza[16]).click(function () { $("#idAcepto" + 16).addClass("buttonHide"); $("#idRechazo" + 16).addClass("buttonHide"); $("#idRehacer" + 16).removeClass("buttonHide"); }); $(rehacer[16]).click(function () { $("#idAcepto" + 16).removeClass("buttonHide"); $("#idRechazo" + 16).removeClass("buttonHide"); $("#idRehacer" + 16).addClass("buttonHide"); });
 
 
     $(function () {
@@ -144,10 +145,8 @@ $(document).ready(function () {
         var valor = $(this).val();
         if (valor != "") {
             buscar_datos(valor);
-            detectarCards();
         } else {
             buscar_datos();
-            detectarCards();
         }
     });
 

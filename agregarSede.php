@@ -10,7 +10,7 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="logicaOperacionesEmpresa/validarAgregarSede.php"> <!--llamado al archivo validador-->
+        <form class="col s12" method="post" action="logicaOperacionesEmpresa/validarFormAgregarSede.php"> <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text" >

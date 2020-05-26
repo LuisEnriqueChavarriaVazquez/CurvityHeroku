@@ -8,7 +8,7 @@ include_once 'includes/user_session.php';
 <div class="nav-content">
   <div class="nav-wrapper">
     <div class="formularioB light-blue darken-4">
-      <label for="caja_busqueda">Buscar</label>
+      <label for="caja_busqueda"></label>
       <input type="search" name="caja_busqueda" id="caja_busqueda"></input>
     </div>
   </div>

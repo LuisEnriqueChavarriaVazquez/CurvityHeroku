@@ -5,40 +5,22 @@ include_once 'includes/user_session.php';
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarAspirante.php' ?>
 
-<div class="content-search positionTable">
-  <div class="content-table">
-    <table id="table-style" class="z-depth-2 search-table">
-      <thead>
-        <tr class="title-table">
-          <td class="title-table"></td>
-        </tr>
-      </thead>
+<section class="principal">
 
-      <tbody>
-        <tr>
-          <td><a href="operacionesAspirante.php">Mesera</a></td>
-        </tr>
-        <tr>
-          <td><a href="operacionesAspirante.php">Ingeniero en sistemas</a></td>
-        </tr>
-        <tr>
-          <td><a href="operacionesAspirante.php">Abogado</a></td>
-        </tr>
-        <tr>
-          <td><a href="operacionesAspirante.php">Mesera</a></td>
-        </tr>
-        <tr>
-          <td><a href="operacionesAspirante.php">Actor</a></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="formulario">
+    <label for="caja_busqueda">Buscar</label>
+    <input type="text" name="caja_busqueda" id="caja_busqueda"></input>
   </div>
-</div>
+
+</section>
 </nav>
 
 <!--Cuerpo de las secciones-->
 <br><br><br><br><br><br><br><br>
 <div class="boxSubjectsBrowser full-height backgroundInicioAspirante blue-grey lighten-5">
+
+  <div id="datos"></div>
+
   <div class="row">
     <div class="col s6 m6 borderCardInicio">
       <a href="operacionesAspirante.php">

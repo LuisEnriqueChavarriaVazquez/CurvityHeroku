@@ -25,16 +25,6 @@ include_once 'includes/user.php';
         <a href="#" data-target="slide-out" class="sidenav-trigger" ><i class="material-icons">menu</i></a>
         <p class="textNavbar">Pagina principal.</p>
     </div>
-    <div class="nav-content">
-        <div class="nav-wrapper">
-            <form>
-                <div class="input-field">
-                    <input id="search" class="input-search" name="busca" type="search" required autocomplete="off">
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                </div>
-                <div style="display: flex; align-items:center; justify-content:center"><button class="btn white blue-text" name="submit">Buscar</button></div>
-            </form>
-        </div>
-    </div>
+    
 
 

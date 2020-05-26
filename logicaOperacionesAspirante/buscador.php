@@ -1,32 +1,53 @@
 <?php
-$servername = "localhost";
-$username = "u253306330_curvity";
-$password = "curvity";
-$dbname = "u253306330_curvity";
+	$servername = "localhost";
+    $username = "u253306330_curvity";
+  	$password = "curvity";
+  	$dbname = "u253306330_curvity";
 
+	$conn = new mysqli($servername, $username, $password, $dbname);
+      if($conn->connect_error){
+        die("Conexión fallida: ".$conn->connect_error);
+      }
 
-if (isset($_POST['submit'])) {
-    $busca = $_POST["busca"];
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    if($busca != ""){
-        $sql = "SELECT Nombre FROM Empresa WHERE Nombre like '%".$busca."%'";
-        $result = $conn->query($sql);
-    }
+    $salida = "";
 
-    if ($result = $conn->query($sql)) {
+    $query = "SELECT * FROM Empresa,FotoLogo WHERE Name NOT LIKE '' ORDER By Id_no LIMIT 5";
 
-        /* fetch associative array */
-        while ($row = $result->fetch_assoc()) {
-            printf ("%s (%s)\n", $row["Nombre"]);
-        }
-    
-        /* free result set */
-        $result->close();
+    if (isset($_POST['consulta'])) {
+    	$q = $conn->real_escape_string($_POST['consulta']);
+    	$query = "SELECT * FROM Empresa WHERE Nombre LIKE '%$q%'";
     }
 
-}
+    $resultado = $conn->query($query);
+
+    if ($resultado->num_rows>0) {
+    	$salida.="<table border=1 class='tabla_datos'>
+    			<thead>
+    				<tr id='titulo'>
+    					<td>Nombre</td>
+    				</tr>
+
+    			</thead>
+    			
+
+    	<tbody>";
+
+    	while ($fila = $resultado->fetch_assoc()) {
+    		$salida.="<tr>
+    					<td>".$fila['Nombre']."</td>
+    				</tr>";
+
+    	}
+    	$salida.="</tbody></table>";
+    }else{
+    	$salida.="NO HAY DATOS :(";
+    }
+
+
+    echo $salida;
+
+    $conn->close();
+
+
+
+?>

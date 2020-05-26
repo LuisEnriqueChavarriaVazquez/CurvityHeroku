@@ -13,12 +13,6 @@ $salida = "";
 
 $query = "SELECT * FROM Empresa ORDER By IDEmpresa";
 
-if($resultado = $conn->query($query)){
-    while($fila = $resultado->fetch_row()){
-        printf("%s (%s)\n", $fila[0], $fila[1]);
-    }
-}
-
 if ($resultado = $conn->query($query)) {
     while ($fila = $resultado->fetch_assoc()) {
         printf ("%s (%s)\n", $fila["Nombre"], $fila["IDEmpresa"]);
@@ -26,4 +20,4 @@ if ($resultado = $conn->query($query)) {
     $resultado->free();
 }
 
-$resultado->close();
+$conn->close();

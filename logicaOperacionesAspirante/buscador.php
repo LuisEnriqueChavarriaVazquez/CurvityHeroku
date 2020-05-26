@@ -34,7 +34,8 @@
 
     	while ($fila = $resultado->fetch_assoc()) {
     		$salida.="<tr>
-    					<td>".$fila['Nombre']."</td>
+                        <td>".$fila['Nombre']."</td>
+                        <td>".$fila['FotoLogo']."</td>
     				</tr>";
 
     	}

@@ -12,8 +12,8 @@ if(isset($_SESSION['user'])){
     $empForm = $_POST['username_emp'];
     $passForm = $_POST['password_emp'];
 
-    if($emp->empExists($empForm, $passForm)){
-        $empSession->setCurrentEmp($empForm);
+    if($emp->empExists($empForm, $passForm, $idEmpresa)){
+        $empSession->setCurrentEmp($empForm,$idEmpresa);
         $emp->setEmp($empForm);
 
         include_once 'operacionesEmpresa.php';

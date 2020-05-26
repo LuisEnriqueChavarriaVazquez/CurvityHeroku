@@ -70,10 +70,38 @@ index_asp.php
             <p class="titleOfertaFinal truncate">Email.</p>
             <p class="descripcionOfertaFinal">empresa@gmail.com</p>
         </div>
+
+        <div id="prueba">
+        </div>
     </div>
 
 </div>
 
 <?php include("logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php"); ?>
+
+
+<!--Estoy usando AJAX para que tengamos acceso a la base de datos-->
+<script>
+$(function(){
+    desplieguePerfilEmpresa();
+});
+
+function desplieguePerfilEmpresa(){
+    $.ajax({
+        url: 'datos.php',
+        type: 'POST',
+        success: function(res){
+            var js = JSON.$.parseJSON('json');
+            var tabla;
+            for(var i = 0; i < js.length; i++){
+                tabla += '<div class="red black-text">' + js[i].Nombre + '</div>'
+            }
+
+            $('#prueba').html(tabla);
+        }
+    });
+}
+
+</script>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

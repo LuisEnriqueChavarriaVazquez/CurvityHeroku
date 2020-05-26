@@ -20,7 +20,7 @@
 
     $resultado = $conn->query($query);
 
-    if (1==1) {
+    if ($resultado->num_rows>0) {
     	$salida.="<table border=1 class='tabla_datos'>
     			<thead>
     				<tr id='titulo'>

@@ -166,9 +166,9 @@ gestionSedes.php
                     <label for="twitter_aspirante">(Opcional) Twitter.</label>
                 </div>
             </div>
+            <a><button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
         </form>
     </div>
-    <a><button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

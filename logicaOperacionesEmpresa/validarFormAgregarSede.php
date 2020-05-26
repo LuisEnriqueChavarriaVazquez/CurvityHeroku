@@ -2,7 +2,7 @@
 
 if(!isset($_SESSION)){
     session_start();
- } 
+} 
 
 //Guardarmos en variables los datos recibidos del form
 
@@ -79,7 +79,7 @@ if (!validacionNormal($nombre_reclutador)) {
     $contadorEleConfimados++;
 }
 
-if (!validacionNormal($mailAs)) {
+if (!validacionMail($mailAs)) {
     $mail_error_sede = "Correo invalido";
 } else {
     $contadorEleConfimados++;

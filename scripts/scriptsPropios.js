@@ -126,7 +126,7 @@ $(document).ready(function () {
 
     function buscar_datos(consulta) {
         $.ajax({
-            url: 'buscar.php',
+            url: 'logicaOperacionesAspirante/buscador.php',
             type: 'POST',
             dataType: 'html',
             data: { consulta: consulta },

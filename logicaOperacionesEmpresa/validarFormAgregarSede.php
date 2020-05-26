@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     $skype_sede = $_POST["skype_sede"];
     $twitter_sede = $_POST["twitter_sede"];
     $contadorEleConfimados = 0;
+    $errores = array();
 
     function validacionNormal($StringEntrada)
     {
@@ -46,45 +47,43 @@ if (isset($_POST['submit'])) {
     }
 
     if (!validacionNormal($nombre_sede)) {
-        $nombre_error_sede = "Nombre invalido";
+        array_push($errores,"Nombre invalido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($direccion_sede)) {
-        $direccion_error_sede = "La direccion es invalida";
+        array_push($errores,"Direccion invalida");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionTel($tel_sede)) {
-        $tel_error_sede = "Tel&eacute;fono invalido";
-    } else {
-        $contadorEleConfimados++;
-    }
-
-    if (!validacionTel($tel_sede_dos)) {
-        $tel_error_sede = "Tel&eacute;fono invalido";
+        array_push($errores,"Tel 1 invalido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($nombre_reclutador)) {
-        $nombre_reclutador_error_sede = "Nombre invalido";
+        array_push($errores,"Nombre invalido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionMail($email_reclutador)) {
-        $mail_error_sede = "Correo invalido";
+        array_push($errores,"Email invalido");
     } else {
         $contadorEleConfimados++;
     }
 
     if (!validacionNormal($password_reclutador)) {
-        $password_error_sede = "Password invalida";
+        array_push($errores,"Password invalido");
     } else {
         $contadorEleConfimados++;
+    }
+
+    foreach ($errores as $val) {
+        echo  "<p class='white-text'>".$val."</p>";
     }
 
 }

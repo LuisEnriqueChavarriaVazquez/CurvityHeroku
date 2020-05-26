@@ -91,6 +91,8 @@ include_once 'includes/user_session.php';
   </div>
 </div>
 
+<?php include("logicaOperacionesAspirante/buscador.php"); ?>
+
 <?php include 'AlmacenIncludesPHP/elementosPhp/floatingButtons/botonHearing.php' ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

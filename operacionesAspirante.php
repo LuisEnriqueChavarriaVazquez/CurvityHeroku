@@ -5,25 +5,14 @@ include_once 'includes/user_session.php';
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarAspirante.php' ?>
 
-<section class="principal">
-
-  <!--<div class="formulario">
-    <label for="caja_busqueda">Buscar</label>
-    <input type="search" name="caja_busqueda" id="caja_busqueda"></input>
-  </div>-->
-
-  <div class="nav-content">
-        <div class="nav-wrapper">
-            <form>
-                <div class="input-field">
-                    <input id="search caja_busqueda" class="input-search" name="caja_busqueda" type="search" autocomplete="off">
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                </div>
-              </form>
-        </div>
+<div class="nav-content">
+  <div class="nav-wrapper">
+    <div class="formularioB light-blue darken-4">
+      <label for="caja_busqueda">Buscar</label>
+      <input type="search" name="caja_busqueda" id="caja_busqueda"></input>
     </div>
-
-</section>
+  </div>
+</div>
 </nav>
 
 <!--Cuerpo de las secciones-->

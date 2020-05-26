@@ -20,7 +20,7 @@ if (isset($_POST['consulta'])) {
 
 $resultado = $conn->query($query);
 
-if ($result = $conn->query($sql)) {
+if ($resultado = $conn->query($query)) {
     if ($resultado->num_rows > 0) {
         $salida .= "<div>
         

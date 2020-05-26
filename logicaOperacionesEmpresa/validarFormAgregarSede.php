@@ -1,8 +1,25 @@
 
 <?php
 
+//include '../includes/db.php';
+
 //No se cargan aun los datos de las sedes
-$conexion = new mysqli("localhost", "u253306330_curvity", "curvity", "u253306330_curvity"); 
+//Se establece la conexión a la base de datos.
+$mysql_usuario = "u253306330_curvity";
+$mysql_password = "curvity";
+$mysql_host = "localhost";
+$mysql_database = "u253306330_curvity";
+
+/*session_start();
+    if (isset($_SESSION['username'])) {
+        //asignar a variable
+        $usernameSesion = $_SESSION['username'];
+        //asegurar que no tenga "", <, > o &
+        $username = htmlspecialchars($usernameSesion);       
+
+        //usarla donde quieras
+        echo "<p>¡Hola $username!</p>";*/
+
 
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
@@ -16,7 +33,7 @@ if (isset($_POST['submit'])) {
     $twitter_sede = $_POST["twitter_sede"];
     $contadorEleConfimados = 0;
     $errores = array();
-
+    
     function validacionNormal($StringEntrada)
     {
         if (empty($StringEntrada) || trim($StringEntrada) == "") {
@@ -25,7 +42,7 @@ if (isset($_POST['submit'])) {
             return True;
         }
     }
-
+    
     function validacionMail($StringEntrada)
     {
         if (empty($StringEntrada) || trim($StringEntrada) == "") {
@@ -36,7 +53,7 @@ if (isset($_POST['submit'])) {
             return True;
         }
     }
-
+    
     function validacionTel($StringEntrada)
     {
         if (empty($StringEntrada) || trim($StringEntrada) == "") {
@@ -47,61 +64,63 @@ if (isset($_POST['submit'])) {
             return True;
         }
     }
-
+    
     if (!validacionNormal($nombre_sede)) {
         array_push($errores,"Nombre de sede inválido");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if (!validacionNormal($direccion_sede)) {
         array_push($errores,"Direccion inválida");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if (!validacionTel($tel_sede)) {
         array_push($errores,"Tel 1 inválido");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if (!validacionNormal($nombre_reclutador)) {
         array_push($errores,"Nombre inválido");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if (!validacionMail($email_reclutador)) {
         array_push($errores,"Email inválido");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if (!validacionNormal($password_reclutador)) {
         array_push($errores,"Password inválido");
     } else {
         $contadorEleConfimados++;
     }
-
+    
     if($contadorEleConfimados == 6){
-        echo  "<div class=´errors_box´><p class='success'>"."Oferta creada creada"."</p></div>";
-        /*if($conexion->connect_error){
+        $conexion = new mysqli($mysql_host, $mysql_usuario, $mysql_password, $mysql_database); 
+
+        if($conexion->connect_error){
             die("Conexion fallida" . $conexion->connect_error);
         }
-        $sql = "INSERT INTO Sede(Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES ('$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        
+        $sql = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES (6,'$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        
         if($conexion->query($sql) === true){
             echo  "<div class=´errors_box´><p class='success'>"."Sede creada"."</p></div>";
         }else{
             echo  "<div class=´errors_box´><p class='errors'>"."Error de conexion"."</p></div>";
-        }*/
-
+        }
     }else{
         foreach ($errores as $val) {
             echo  "<div class=´errors_box´><p class='errors'>".$val."</p></div>";
         }
     }
-
+    
 }
 
 ?>

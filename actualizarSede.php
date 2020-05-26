@@ -28,11 +28,6 @@ gestionSedes.php
                 </div>
 
                 <div class="input-field col s12">
-                    <input placeholder="Escriba su n&uacute;mero tel&eacute;fono." id="tel_sede_dos" type="tel" class="validate white-text">
-                    <label for="tel_sede_dos">(Opcional) N&uacute;mero de tel&eacute;fono 2.</label>
-                </div>
-
-                <div class="input-field col s12">
                     <input placeholder="Escriba el nombre del reclutador." id="nombre_reclutador" type="text" class="truncate validate white-text">
                     <label for="nombre_reclutador">Nombre del reclutador.</label>
                 </div>

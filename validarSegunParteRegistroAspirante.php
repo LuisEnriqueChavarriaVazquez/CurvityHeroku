@@ -84,7 +84,7 @@
       }
 
        if(!validacionSueldo($sueldoAsp)){
-          $sueldo_error="De un suledo real";
+          $sueldo_error="De un sueldo real";
        }else{
          $contadorEleConfimados++;
        }   

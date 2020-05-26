@@ -32,17 +32,17 @@ if (isset($_POST['submit'])) {
             return True;
         }
     }
-
-    function validacionTel($StringEntrada)
-    {
-        if (empty($StringEntrada) || trim($StringEntrada) == "") {
-            return False;
-        } elseif (!preg_match("/^[0-9]+$/", $StringEntrada)) {
-            return False;
-        } else {
-            return True;
+  
+  
+     function validacionSueldo ($StringEntrada){
+        if(empty($StringEntrada) || trim($StringEntrada)== ""){
+           return False;
+        }elseif(!preg_match("/^[0-9]+(.([0-9]+))?$/",$StringEntrada)){
+           return False;
+        }else{
+           return True;
         }
-    }
+     }
 
     if (!validacionNormal($nombre_puesto)) {
         array_push($errores_oferta,"Nombre de puesto inválido");
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    if (!validacionTel($pago_puesto)) {
+    if (!validacionSueldo($pago_puesto)) {
         array_push($errores_oferta,"Número de pago inválido");
     } else {
         $contadorEleConfimados++;

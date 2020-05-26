@@ -4,6 +4,8 @@
 index_asp.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInferior.php' ?>
 
+<script src="scripts/jq.js"></script>
+
 
 <!--Aqui tenemos el header con la imagen de la empresa (esa la tenemos que jalar de la base de datos)-->
 <div class="containerPicture">
@@ -86,7 +88,7 @@ index_asp.php
 
 function desplieguePerfilEmpresa(){
     $.ajax({
-        url: 'datos.php',
+        url: 'logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php',
         type: 'POST',
         success: function(res){
             var js = JSON.$.parseJSON('json');

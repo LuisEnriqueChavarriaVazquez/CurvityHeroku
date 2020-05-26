@@ -109,7 +109,7 @@ if (isset($_POST['submit'])) {
 
         $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutado,FacebookSed,SkypeSed,TwitterSed) VALUES (6,'$nombre_sede', '$tel_sede', $direccion_sede,'$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
-        if ($conexion->query($query) === true) {
+        if ($conn->query($query) == true) {
             echo  "<div class=´errors_box´><p class='success'>" . "Sede creada" . "</p></div>";
         } else {
             echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";

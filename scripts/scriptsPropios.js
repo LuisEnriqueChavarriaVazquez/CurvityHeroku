@@ -11,7 +11,9 @@ $(document).ready(function () {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
+        document.getElementById("myBar").style.width = scrolled + "%"; 
+        //No lo modifiques aunque te marque error en consola, 
+        //lo que ocurre es que es el scroll de los forms pero se reflejo en algunos navs
     }
 
     //Carousel Swipe

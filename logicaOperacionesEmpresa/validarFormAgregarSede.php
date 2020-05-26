@@ -75,13 +75,13 @@ if (isset($_POST['nombre_sede'])) {
         $contadorEleConfimados++;
     }
 
-    if (!validacionMail($mailAs)) {
+    if (!validacionMail($email_reclutador)) {
         $mail_error_sede = "Correo invalido";
     } else {
         $contadorEleConfimados++;
     }
 
-    if (!validacionNormal($passwordAs)) {
+    if (!validacionNormal($password_reclutador)) {
         $password_error_sede = "Password invalida";
     } else {
         $contadorEleConfimados++;

@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION)){
+    session_start();
+ } 
+
 //Guardarmos en variables los datos recibidos del form
 
 $nombre_sede = $_POST["nombre_sede"];

@@ -7,7 +7,7 @@ $dbname = "u253306330_curvity";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 $selct = mysqli_query($conn, "select * from Empresa");
-while ($dat = mysqli_fetch_assoc($select)){
+while ($dat = mysqli_fetch_assoc($selct)){
     $arr[] = $dat;
 }
 

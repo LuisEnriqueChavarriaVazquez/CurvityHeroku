@@ -87,7 +87,6 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    echo  "<p class='white-text'>".$Nombre_error."</p>";
 }
 
 ?>

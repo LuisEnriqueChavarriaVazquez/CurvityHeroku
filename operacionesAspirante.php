@@ -19,7 +19,9 @@ include_once 'includes/user_session.php';
 <br><br><br><br><br><br><br><br>
 <div class="boxSubjectsBrowser full-height backgroundInicioAspirante blue-grey lighten-5">
 
-  <div id="datos"></div>
+  <div id="datos" class="row">
+    
+  </div>
 
   <div class="row">
     <div class="col s6 m6 borderCardInicio">

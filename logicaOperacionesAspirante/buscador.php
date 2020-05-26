@@ -21,25 +21,29 @@
     $resultado = $conn->query($query);
 
     if ($resultado->num_rows>0) {
-    	$salida.="<table border=1 class='tabla_datos'>
-    			<thead>
-    				<tr id='titulo'>
-    					<td>Nombre</td>
-    				</tr>
+        $salida.="<div>
+        
+        
 
-    			</thead>
-    			
 
-    	<tbody>";
+        ";
 
     	while ($fila = $resultado->fetch_assoc()) {
-    		$salida.="<tr>
-                        <td>".$fila['Nombre']."</td>
-                        <td>"."<img src='data:image/jpeg; base64,".base64_encode($fila['FotoLogo'])."' width='400' height='400'>"."</td>
-    				</tr>";
+    		$salida.="
+            <div class='col s6 m6 borderCardInicio'>
+      <a href='operacionesAspirante.php'>
+        <div class='card borderCardInicio waves-effect'>
+        <div class='card-image'>"."<img class='card-image' src='data:image/jpeg; base64,".base64_encode($fila['FotoLogo'])."' width='400' height='400'>"."</div>
+          <div class='card-content'>
+            <p class='flow-text noLinkStyle'>".$fila['Nombre']."</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    				";
 
     	}
-    	$salida.="</tbody></table>";
+    	$salida.="</div>";
     }else{
     	$salida.="NO HAY DATOS :(";
     }
@@ -48,7 +52,3 @@
     echo $salida;
 
     $conn->close();
-
-
-
-?>

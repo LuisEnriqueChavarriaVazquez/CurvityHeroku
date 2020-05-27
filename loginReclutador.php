@@ -7,7 +7,7 @@ login.php
 
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">
     <div class="sizeCardInicio backgroundCardInicio centerElements borderCardInicio z-depth-3">
-        <form class="col s12" method="POST" action="loginReclutrador.php">
+        <form class="col s12" method="POST" action="loginReclutador.php">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">email</i>

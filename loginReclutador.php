@@ -20,7 +20,9 @@ login.php
                     <label for="password" class="white-text">Password.</label>
                 </div>
             </div>
-            <?php include 'validacionLogInReclutador.php' ?>
+            <?php
+             include("validacionLogInReclutador.php");
+            ?>
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
            
         </form>

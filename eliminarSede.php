@@ -10,26 +10,30 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Borrar sedes.</p>
     </div>
 
-
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardSuperior.php' ?>
-    Sede norte
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardInferior.php' ?>
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardSuperior.php' ?>
-    Sede sur
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardInferior.php' ?>
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardSuperior.php' ?>
-    Oficinas centrales norte
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardInferior.php' ?>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">
-        <p class="white-text textCardInicioSamll centerElements">Validación seguridadss.</p>
-    </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
         <form class="col s12" method="post" action="eliminarSede.php">
+
+            <p>
+                <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Nombre de la sede</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Nombre de la sede</span>
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Nombre de la sede</span>
+                </label>
+            </p>
+
             <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">

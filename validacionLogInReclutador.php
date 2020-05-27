@@ -20,5 +20,5 @@ if (isset($_POST['submit'])) {
 
 
 }*/
-
+echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";
 ?>

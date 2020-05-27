@@ -123,11 +123,12 @@ if (isset($_POST['submit'])) {
         
         $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_sede_empresa' AND Nombre = '$nombre_empresa_sede'";
         $result = mysqli_query($conn,$queryIdEmpresa);
+        $idDinamica;
         while ($row = $result->fetch_assoc()) {
-            echo $row['IDEmpresa']."<br>";
+            $idDinamica = $row['IDEmpresa'];
         }
 
-        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES (7,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES ('$idDinamica','$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
         if ($conn->query($query) === true) {
             echo  "<div class=´errors_box´><p class='success'>" . "Sede creada" . "</p></div>";

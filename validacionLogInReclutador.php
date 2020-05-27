@@ -3,6 +3,7 @@ require('claseDB.php');
 
 if (isset($_POST['submit'])) {
      $correoEntrada=$_POST["entradaReclutador"];
+     $contraEntrada=$_POST["passwordReclutador"];
      $objetoConexion=new objetoConexionBaseDatos();
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion-> comprobarExistenciaElementoAtibuto("Empresa","CorreoElecReclutador",$correoEntrada)==TRUE){

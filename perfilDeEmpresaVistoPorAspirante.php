@@ -73,9 +73,9 @@ index_asp.php
             <p class="descripcionOfertaFinal">empresa@gmail.com</p>
         </div>
 
-        <div id="prueba">
+        <div id="provandoJson">
 
-            prueba de texto
+            provandoJson de texto
         </div>
     </div>
 
@@ -96,12 +96,13 @@ function desplieguePerfilEmpresa(){
         type: 'POST',
         success: function(res){
             var js = JSON.parse(res);
-            var tabla;
+            var texto;
             for(var i = 0; i < js.length; i++){
-                tabla += '<div>' + js[i].Nombre + '</div>'
+                texto += '<p>' + js[i].Nombre + '</p>';
             }
 
-            $('#prueba').html(tabla);
+            contenedor = document.getElementById('provandoJson');
+            contenedor.innerHTML = texto;
         }
     });
 }

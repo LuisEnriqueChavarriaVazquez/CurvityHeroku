@@ -4,9 +4,9 @@ $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect('localhost', 'u253306330_curvity', 'curvity', 'u253306330_curvity');
 
-$selct = mysqli_query($conn, "select * from Empresa");
+$selct = mysqli_query($conn,"select * from Empresa");
 while ($dat = mysqli_fetch_assoc($selct)){
     $arr[] = $dat;
 }

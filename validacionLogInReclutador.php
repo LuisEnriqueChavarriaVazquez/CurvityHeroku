@@ -4,7 +4,7 @@ require('claseDB.php');
 if (isset($_POST['submit'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $contraEntrada=$_POST["passwordReclutador"];
-     echo  "<div class=´errors_box´><p class='errors'>" . "Correo no  coincide" . "</p></div>";
+     echo  "<p class='errors'>" . "Correo no  coincide" . "</p>";
      $objetoConexion=new objetoConexionBaseDatos();
 
     /* if($objetoConexion-> comprobarConexion()==TRUE){

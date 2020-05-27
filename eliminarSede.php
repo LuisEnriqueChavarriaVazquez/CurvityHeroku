@@ -21,7 +21,10 @@ gestionSedes.php
     Oficinas centrales norte
     <?php include 'AlmacenIncludesPHP/elementosPhp/cardsEraseElements/eraseCardInferior.php' ?>
 
-    
+    <br>
+    <br>
+    <br>
+
     <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
@@ -38,6 +41,12 @@ gestionSedes.php
                     <label for="contrasena_sede_empresa">Confirme contraseña de EMPRESA.</label>
                 </div>
             </div>
+
+            <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar sede.</button></a>
+
+            <?php
+            include("logicaOperacionesEmpresa/validarFormEliminarSede.php");
+            ?>
         </form>
 
     </div>

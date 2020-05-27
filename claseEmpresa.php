@@ -122,8 +122,14 @@
          $sqlScriptParam= $sqlScriptParam.") ";
          $sqScriptVal= $sqScriptVal.") ";
          $sqlScript=$sqlScriptParam.$sqScriptVal;
-       if( $this->objetoDB->conector->query($sqlScript) === TRUE){
-            return true;
+
+
+       if($this->objetoDB->comprobarConexion()==TRUE ){
+            if($this->objetoDB->conector->query($sqlScript) === TRUE){
+                return true;
+            }else{
+               return false;
+            }
          }else{
           return false;
          }

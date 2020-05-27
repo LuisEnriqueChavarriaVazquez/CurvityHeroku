@@ -22,7 +22,10 @@ login.php
             </div>
            
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
-            <?php
+           <?php
+             echo  "<div class=´errors_box´><p class='errors'>" . "Correo no  coincide" . "</p></div>";
+           ?>
+           <?php
              include("validacionLogInReclutador.php");
             ?>
         </form>

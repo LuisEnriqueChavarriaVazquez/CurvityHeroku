@@ -26,6 +26,7 @@ $dbname = "u253306330_curvity";
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
     $contrasena_sede_empresa = $_POST["contrasena_sede_empresa"];
+    $nombre_empresa_sede = $_POST["nombre_empresa_sede"];
     $direccion_sede = $_POST["direccion_sede"];
     $tel_sede = $_POST["tel_sede"];
     $nombre_reclutador = $_POST["nombre_reclutador"];
@@ -120,7 +121,7 @@ if (isset($_POST['submit'])) {
             die("Conexión fallida: " . $conn->connect_error);
         }
         
-        $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_sede_empresa'";
+        $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_sede_empresa' AND Nombre = '$nombre_empresa_sede'";
         $result = mysqli_query($conn,$queryIdEmpresa);
         while ($row = $result->fetch_assoc()) {
             echo $row['IDEmpresa']."<br>";

@@ -14,10 +14,16 @@ gestionSedes.php
         <form class="col s12" method="post" action="agregarSede.php">
             <!--llamado al archivo validador-->
             <div class="row">
+                <p class="white-text">Validación de seguridad</p>
+                <div class="input-field col s12">
+                    <input placeholder="Confirme nombre de la empres." id="nombre_empresa_sede" name="nombre_empresa_sede" type="text" class="validate white-text">
+                    <label for="nombre_empresa_sede">Nombre de la sede.</label>
+                </div>
                 <div class="input-field col s12">
                     <input placeholder="Confirme el nombre de su empresa." id="contrasena_sede_empresa" name="contrasena_sede_empresa" type="password" class="validate white-text">
                     <label for="contrasena_sede_empresa">Confirme contraseña de EMPRESA.</label>
                 </div>
+
 
                 <div class="input-field col s12">
                     <input placeholder="Escriba el nombre." id="nombre_sede" name="nombre_sede" type="text" class="validate white-text">

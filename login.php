@@ -1,8 +1,7 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
 
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarInicial.php' ?>
 
 <div class="boxSubjectsInicioBigger light-blue darken-4 centerElements">
    <?php include 'AlmacenIncludesPHP/elementosPhp/cards/cardLogIn.php' ?>
@@ -11,3 +10,7 @@
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>
+
+
+
+

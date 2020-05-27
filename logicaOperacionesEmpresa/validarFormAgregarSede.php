@@ -25,6 +25,7 @@ $dbname = "u253306330_curvity";
 
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
+    $nombre_sede_empresa = $_POST["nombre_sede_empresa"];
     $direccion_sede = $_POST["direccion_sede"];
     $tel_sede = $_POST["tel_sede"];
     $nombre_reclutador = $_POST["nombre_reclutador"];
@@ -73,6 +74,12 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
+    if (!validacionNormal($nombre_sede_empresa)) {
+        array_push($errores, "Nombre de empresa inválido");
+    } else {
+        $contadorEleConfimados++;
+    }
+
     if (!validacionNormal($direccion_sede)) {
         array_push($errores, "Direccion inválida");
     } else {
@@ -103,18 +110,20 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    if ($contadorEleConfimados == 6) {
+    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Nombre = '%$nombre_sede_empresa%'";
+
+    if ($contadorEleConfimados == 7) {
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES (7,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES ('$queryIdEmpresa,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
         if ($conn->query($query) === true) {
             echo  "<div class=´errors_box´><p class='success'>" . "Sede creada" . "</p></div>";
         } else {
-            echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";
+            echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion, nombre empresa no coincide" . "</p></div>";
         }
     } else {
         foreach ($errores as $val) {

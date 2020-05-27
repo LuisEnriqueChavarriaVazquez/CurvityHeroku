@@ -14,7 +14,7 @@ login.php
                     <input id="email" name="username_emp" type="email" class="validate white-text">
                     <label for="email" class="white-text">Email.</label>
                     <?php
-                      if($estadoNombre!="Normal"){
+                      if(isset($estadoNombre)){
                         echo  "<p class='white-text'>".$estadoNombre."</p>";
                       }
                     ?>

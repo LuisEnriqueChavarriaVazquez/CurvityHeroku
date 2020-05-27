@@ -84,6 +84,10 @@ class objetoConexionBaseDatos {
          return false;
       }
    }
+   
+   public function comprobarExistenciaElementoAtibuto(){
+      
+   }
     
 }
 ?>

@@ -13,11 +13,6 @@ login.php
                     <i class="material-icons prefix white-text">email</i>
                     <input id="email" name="username_emp" type="email" class="validate white-text">
                     <label for="email" class="white-text">Email.</label>
-                    <?php
-                      if(isset($estadoCorreo)){
-                        echo  "<p class='white-text'>".$estadoCorreo."</p>";
-                      }
-                    ?>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>
@@ -26,9 +21,11 @@ login.php
                 </div>
             </div>
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
+            <?php
+            include("validacionLogInReclutador.php");
+            ?>
         </form>
     </div>
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>
-<?php include 'validacionLogInReclutador.php' ?>

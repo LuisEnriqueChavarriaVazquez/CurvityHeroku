@@ -9,10 +9,11 @@ if (isset($_POST['submit'])) {
          if($objetoConexion-> comprobarExistenciaElementoAtibuto("Empresa","CorreoElecReclutador",$correoEntrada)==TRUE){
              
          }else{
-          
+          $estadoCorreo="Correo Invalido";
          }
      }else{
-          echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";
+          $estadoCorreo="Error de conexion";
+          $estadoContra="Error de conexion";
           
      }
 

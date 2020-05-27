@@ -4,6 +4,7 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
 login.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
+<?php include 'validacionLogInReclutador.php' ?>
 
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">
     <div class="sizeCardInicio backgroundCardInicio centerElements borderCardInicio z-depth-3">
@@ -13,6 +14,11 @@ login.php
                     <i class="material-icons prefix white-text">email</i>
                     <input id="email" name="username_emp" type="email" class="validate white-text">
                     <label for="email" class="white-text">Email.</label>
+                    <?php
+                      if($estadoNombre!="Normal"){
+                        echo  "<p class='white-text'>".$dirArchivoEmpresa_error."</p>";
+                      }
+                    ?>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>

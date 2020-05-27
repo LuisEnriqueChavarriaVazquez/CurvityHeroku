@@ -5,8 +5,8 @@ if (isset($_POST['submit'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $objetoConexion=new objetoConexionBaseDatos();
      if($objetoConexion-> comprobarConexion()==TRUE){
-         if($objetoConexion-> comprobarExistenciaElementoAtibuto("Emprea","CorreoElecReclutador",$correoEntrada)==TRUE){
-          echo  "<div class=´errors_box´><p class='errors'>" . "Correo no  coincide" . "</p></div>";
+         if($objetoConexion-> comprobarExistenciaElementoAtibuto("Empresa","CorreoElecReclutador",$correoEntrada)==TRUE){
+          echo  "<div class=´errors_box´><p class='errors'>" . $val . "</p></div>";
          }else{
           echo  "<div class=´errors_box´><p class='errors'>" . "Correo no  coincide" . "</p></div>";
          }

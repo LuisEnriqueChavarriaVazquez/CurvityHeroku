@@ -6,16 +6,17 @@ class objetoConexionBaseDatos {
     public $nombreDB="u253306330_curvity";
     public $conector=null;
      
-    public function __construct(){
+    /*public function __construct(){
          try{
             $this->conector = new mysqli($this->nombreServer,$this->nombreUsuario,$this->passwordDB,$this->nombreDB);
             return true;
          }catch(Exception $e){
             return false;
          }
-    }
+    }*/
 
     public function comprobarConexion(){
+      $this->conector = new mysqli($this->nombreServer,$this->nombreUsuario,$this->passwordDB,$this->nombreDB);
         $conexionResutado=false;
         if($this->conector->connect_error) {
          $conexionResutado=false;

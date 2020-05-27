@@ -85,8 +85,14 @@ class objetoConexionBaseDatos {
       }
    }
    
-   public function comprobarExistenciaElementoAtibuto(){
-      
+   public function comprobarExistenciaElementoAtibuto($NombreTabla,$NombreAtributo,$NombreElemento){
+      $sqlSentence="select * from ".$NombreTabla. " where ".$NombreAtributo."=".$NombreElemento;
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+         return true;
+      }else{
+         return false;
+      }
    }
     
 }

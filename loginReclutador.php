@@ -17,10 +17,10 @@ login.php
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>
                     <input id="password" name="password_emp" type="password" class="validate white-text">
-                    <label for="password" class="white-text">Password.</label>
+                    <label for="password" class="white-text">Comida.</label>
                 </div>
             </div>
-            <?php include 'validacionLogInReclutador.php' ?>
+        
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
            
         </form>

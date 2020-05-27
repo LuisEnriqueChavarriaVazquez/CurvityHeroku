@@ -15,7 +15,7 @@ login.php
                     <label for="email" class="white-text">Email.</label>
                     <?php
                       if($estadoNombre!="Normal"){
-                        echo  "<p class='white-text'>".$dirArchivoEmpresa_error."</p>";
+                        echo  "<p class='white-text'>".$estadoNombre."</p>";
                       }
                     ?>
                 </div>

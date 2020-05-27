@@ -1,6 +1,6 @@
 <?php
-     estadoNombre="Norma";
-     estadoContra="Normal";
+     $estadoNombre="Norma";
+     $estadoContra="Normal";
      
 
 ?>

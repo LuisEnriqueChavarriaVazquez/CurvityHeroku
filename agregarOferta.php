@@ -32,6 +32,15 @@ gestionOfertas.php
                     <textarea placeholder="Escriba las prestaciones" id="prestaciones_puesto" name="prestaciones_puesto" class="materialize-textarea white-text" data-length="200"></textarea>
                     <label for="prestaciones_puesto">Prestaciones ofertadas de la empresa.</label>
                 </div>
+                <!--Cosas para confirmacion de datos-->
+                <div class="input-field col s12">
+                    <input placeholder="Escriba el email de la empresa." id="email_empresa_puesto" name="email_empresa_puesto" type="email" class="truncate validate white-text">
+                    <label for="email_empresa_puesto">Email de la empresa.</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Escriba el email de usted." id="email_reclutador_puesto" name="email_reclutador_puesto" type="email" class="truncate validate white-text">
+                    <label for="email_reclutador_puesto">Email del reclutador.</label>
+                </div>
             </div>
             <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Agregar oferta.</button></a>
 

@@ -1,10 +1,7 @@
 </div>
 <div class="sizeIconErase textCardEraseIcon waves-effect waves-light">
-    <p>
         <label>
-            <input type="checkbox" class="filled-in" checked="checked" />
-            <span>Filled in</span>
+            <input type="checkbox" class="filled-in red darken-3" checked="checked" />
         </label>
-    </p>
 </div>
 </div>

@@ -25,7 +25,7 @@ $dbname = "u253306330_curvity";
 
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];
-    $nombre_sede_empresa = $_POST["nombre_sede_empresa"];
+    $contrasena_sede_empresa = $_POST["contrasena_sede_empresa"];
     $direccion_sede = $_POST["direccion_sede"];
     $tel_sede = $_POST["tel_sede"];
     $nombre_reclutador = $_POST["nombre_reclutador"];
@@ -74,8 +74,8 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    if (!validacionNormal($nombre_sede_empresa)) {
-        array_push($errores, "Nombre de empresa inválido");
+    if (!validacionNormal($contrasena_sede_empresa)) {
+        array_push($errores, "Password de empresa inválido");
     } else {
         $contadorEleConfimados++;
     }
@@ -110,7 +110,11 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Nombre = '%$nombre_sede_empresa%'";
+    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '%$contrasena_sede_empresa%'";
+    $result = mysqli_query($conn,$queryIdEmpresa);
+
+    //$consulta_pre_has = "SELECT MAX(Prod_Pres) as pre_has FROM productos";  
+
 
     if ($contadorEleConfimados == 7) {
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -118,7 +122,7 @@ if (isset($_POST['submit'])) {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES ('$queryIdEmpresa,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
+        $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES ('$result,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
         if ($conn->query($query) === true) {
             echo  "<div class=´errors_box´><p class='success'>" . "Sede creada" . "</p></div>";

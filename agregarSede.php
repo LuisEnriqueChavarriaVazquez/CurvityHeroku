@@ -15,8 +15,8 @@ gestionSedes.php
             <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Confirme el nombre de su empresa." id="nombre_sede_empresa" name="nombre_sede_empresa" type="text" class="validate white-text">
-                    <label for="nombre_sede_empresa">Confirme el nombre de la empresa.</label>
+                    <input placeholder="Confirme el nombre de su empresa." id="contrasena_sede_empresa" name="contrasena_sede_empresa" type="password" class="validate white-text">
+                    <label for="contrasena_sede_empresa">Confirme contraseña de EMPRESA.</label>
                 </div>
 
                 <div class="input-field col s12">

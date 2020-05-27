@@ -6916,8 +6916,8 @@ textarea.materialize-textarea {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #a8e3ff;
-  border-bottom: 2px solid #a8e3ff;
+  border-right: 2px solid #6e0f02;
+  border-bottom: 2px solid #6e0f02;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
   -webkit-backface-visibility: hidden;
@@ -6939,7 +6939,7 @@ textarea.materialize-textarea {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #a8e3ff;
+  border-right: 2px solid #6e0f02;
   border-bottom: none;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -7009,8 +7009,8 @@ textarea.materialize-textarea {
   top: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #a8e3ff;
-  background-color: #a8e3ff;
+  border: 2px solid #6e0f02;
+  background-color: #6e0f02;
   z-index: 0;
 }
 
@@ -7022,8 +7022,8 @@ textarea.materialize-textarea {
 
 [type="checkbox"].filled-in.tabbed:checked:focus + span:not(.lever):after {
   border-radius: 2px;
-  background-color: #a8e3ff;
-  border-color: #a8e3ff;
+  background-color: #6e0f02;
+  border-color: #6e0f02;
 }
 
 [type="checkbox"].filled-in:disabled:not(:checked) + span:not(.lever):before {

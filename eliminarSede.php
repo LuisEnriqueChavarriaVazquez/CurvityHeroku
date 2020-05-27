@@ -12,28 +12,6 @@ gestionSedes.php
 
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
         <form class="col s12" method="post" action="eliminarSede.php">
-
-            <p>
-                <label>
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Nombre de la sede</span>
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Nombre de la sede</span>
-                </label>
-            </p>
-
-            <p>
-                <label>
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                    <span>Nombre de la sede</span>
-                </label>
-            </p>
-
             <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
@@ -46,11 +24,15 @@ gestionSedes.php
                 </div>
             </div>
 
-            <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmar datos Empresa.</button></a>
+            <a><button type="submit" name="submit" class="waves-effect btn borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmar datos de empresa.</button></a>
 
+        </form>
+
+        <form class="col s12" method="get" action="eliminarSede.php">
             <?php
             include("logicaOperacionesEmpresa/validarFormEliminarSede.php");
             ?>
+            <a><button type="submit" name="borrarSede" class="waves-effect btn borderButton sizeButton textButton red darken-3 white-text text-darken-4">Eliminar.</button></a>
         </form>
 
     </div>

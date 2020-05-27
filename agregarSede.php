@@ -19,7 +19,7 @@ gestionSedes.php
                     <label for="nombre_empresa_sede">Nombre de la sede.</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Confirme el nombre de su empresa." id="contrasena_sede_empresa" name="contrasena_sede_empresa" type="password" class="validate white-text">
+                    <input placeholder="Confirme el password de su empresa." id="contrasena_sede_empresa" name="contrasena_sede_empresa" type="password" class="validate white-text">
                     <label for="contrasena_sede_empresa">Confirme contraseña de EMPRESA.</label>
                 </div>
 

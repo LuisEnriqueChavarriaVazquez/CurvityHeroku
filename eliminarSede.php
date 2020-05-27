@@ -26,7 +26,7 @@ gestionSedes.php
     <br>
 
     <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">
-        <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
+        <p class="white-text textCardInicioSamll centerElements">Validación seguridadss.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
         <form class="col s12" method="post" action="eliminarSede.php">
@@ -42,7 +42,7 @@ gestionSedes.php
                 </div>
             </div>
 
-            <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmar datos sede.</button></a>
+            <a><button type="submit" name="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmar datos Empresa.</button></a>
 
             <?php
             include("logicaOperacionesEmpresa/validarFormEliminarSede.php");

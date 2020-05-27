@@ -4,7 +4,6 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
 login.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
-<?php include 'validacionLogInReclutador.php' ?>
 
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">
     <div class="sizeCardInicio backgroundCardInicio centerElements borderCardInicio z-depth-3">
@@ -32,3 +31,4 @@ login.php
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>
+<?php include 'validacionLogInReclutador' ?>

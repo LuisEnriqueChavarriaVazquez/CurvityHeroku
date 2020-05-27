@@ -1,6 +1,6 @@
 <?php
 require('claseDB.php');
-if (isset($_POST)) {
+if (isset($_POST['Submit'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $contraEntrada=$_POST["passwordReclutador"];
      echo  "<p class='errors'>" . "Correo no  coincide" . "</p>";

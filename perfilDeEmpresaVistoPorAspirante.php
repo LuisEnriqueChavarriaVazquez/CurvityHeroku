@@ -86,27 +86,17 @@ index_asp.php
 
 <!--Estoy usando AJAX para que tengamos acceso a la base de datos-->
 <script>
-(function(){
-    desplieguePerfilEmpresa();
-});
-
-function desplieguePerfilEmpresa(){
-    $.ajax({
-        url: 'logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php',
-        type: 'POST',
-        success: function(res){
-            var js = JSON.parse(res);
-            var texto;
-            for(var i = 0; i < js.length; i++){
-                texto += '<p>' + js[i].Nombre + '</p>';
+    $(document).ready(function() {
+        $.ajax({ //create an ajax request to display.php
+            type: "GET",
+            url: "display.php",
+            dataType: "html", //expect html to be returned                
+            success: function(response) {
+                $("#responsecontainer").html(response);
+                //alert(response);
             }
-
-            contenedor = document.getElementById('provandoJson');
-            contenedor.innerHTML = texto;
-        }
+        });
     });
-}
-
 </script>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

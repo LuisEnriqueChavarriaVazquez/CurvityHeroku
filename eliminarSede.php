@@ -29,7 +29,7 @@ gestionSedes.php
         <p class="white-text textCardInicioSamll centerElements">Agregar sede.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="agregarSede.php">
+        <form class="col s12" method="post" action="eliminarSede.php">
             <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">

@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -10,18 +9,6 @@ $servername = "localhost";
 $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
-
-
-/*session_start();
-    if (isset($_SESSION['username'])) {
-        //asignar a variable
-        $usernameSesion = $_SESSION['username'];
-        //asegurar que no tenga "", <, > o &
-        $username = htmlspecialchars($usernameSesion);       
-
-        //usarla donde quieras
-        echo "<p>¡Hola $username!</p>";*/
-
 
 if (isset($_POST['submit'])) {
     $nombre_sede = $_POST["nombre_sede"];

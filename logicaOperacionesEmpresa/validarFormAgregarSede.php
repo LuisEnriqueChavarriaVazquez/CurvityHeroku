@@ -110,18 +110,18 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '%$contrasena_sede_empresa%'";
-    $result = mysqli_query($conn,$queryIdEmpresa);
-
+    
     //$consulta_pre_has = "SELECT MAX(Prod_Pres) as pre_has FROM productos";  
-
-
+    
+    
     if ($contadorEleConfimados == 7) {
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
         }
-
+        
+        $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '%$contrasena_sede_empresa%'";
+        $result = mysqli_query($conn,$queryIdEmpresa);
         $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES ('$result,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 
         if ($conn->query($query) === true) {

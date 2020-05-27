@@ -122,8 +122,9 @@ if (isset($_POST['submit'])) {
         
         $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '%$contrasena_sede_empresa%'";
         $result = mysqli_query($conn,$queryIdEmpresa);
-        echo $result;
-        echo gettype($result);
+        while ($row = $result->fetch_assoc()) {
+            echo $row['IDEmpresa']."<br>";
+        }
 
         $query = "INSERT INTO Sede(IDEmpresa, Nombre, Telefono, Direccion, NombreReclutador, CorreoElecReclutador,ContraReclutador,FacebookSede,SkypeSede,TwitterSede) VALUES (7,'$nombre_sede', '$tel_sede', '$direccion_sede','$nombre_reclutador','$email_reclutador','$password_reclutador', '$facebook_sede','$skype_sede','$twitter_sede')";
 

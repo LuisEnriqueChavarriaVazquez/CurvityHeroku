@@ -5,14 +5,14 @@ $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
 $contrasena_eliminar_empresa;
-$nombre_empresa_eliminar;
+$email_empresa_eliminar;
 $sedeEliminar;
 
 
 
 if (isset($_POST['submit'])) {
     $contrasena_eliminar_empresa = $_POST["contrasena_eliminar_empresa"];
-    $nombre_empresa_eliminar = $_POST["nombre_empresa_eliminar"];
+    $email_empresa_eliminar = $_POST["email_empresa_eliminar"];
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         die("Conexión fallida: " . $conn->connect_error);
     }
     
-    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_eliminar_empresa' AND Nombre = '$nombre_empresa_eliminar'";
+    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_eliminar_empresa' AND DireccionWeb = '$email_empresa_eliminar'";
     $result = mysqli_query($conn, $queryIdEmpresa);
     $idDinamicaEmpresaPrincipal;
     while ($row = $result->fetch_assoc()) {

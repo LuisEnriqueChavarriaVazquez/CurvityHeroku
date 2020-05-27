@@ -15,11 +15,11 @@ gestionSedes.php
             <!--llamado al archivo validador-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input placeholder="Confirme nombre de la empres." id="nombre_empresa_eliminar" name="nombre_empresa_eliminar" type="text" class="validate white-text">
-                    <label for="nombre_empresa_eliminar">Nombre de la sede.</label>
+                    <input placeholder="Confirme email de la empres." id="email_empresa_eliminar" name="email_empresa_eliminar" type="email" class="validate white-text">
+                    <label for="email_empresa_eliminar">Email de la empresa.</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Confirme el nombre de su empresa." id="contrasena_eliminar_empresa" name="contrasena_eliminar_empresa" type="password" class="validate white-text">
+                    <input placeholder="Confirme la contraseña de su empresa." id="contrasena_eliminar_empresa" name="contrasena_eliminar_empresa" type="password" class="validate white-text">
                     <label for="contrasena_eliminar_empresa">Confirme contraseña de EMPRESA.</label>
                 </div>
             </div>

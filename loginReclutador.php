@@ -31,4 +31,4 @@ login.php
 </div>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>
-<?php include 'validacionLogInReclutador' ?>
+<?php include 'validacionLogInReclutador.php' ?>

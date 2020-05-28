@@ -32,7 +32,7 @@ if ($resultado = $conn->query($query)) {
         while ($fila = $resultado->fetch_assoc()) {
             $salida .= "
             <form method='GET' action='perfilDeEmpresaVistoPorAspirante.php'>
-            <div class='col s6 m6 borderCardInicio cardEmpleoNueva waves-effect ' id='".$fila['IDEmpresa']."'>
+            <div class='col s12 m6 borderCardInicio cardEmpleoNueva waves-effect ' id='".$fila['IDEmpresa']."'>
               <a name='submit' 
               href='./perfilDeEmpresaVistoPorAspirante.php?Nombre=".$fila['Nombre'].
               "&RazonSocial=".$fila['RazonSocial'].
@@ -55,7 +55,9 @@ if ($resultado = $conn->query($query)) {
         }
         $salida .= "</div>";
     } else {
-        $salida .= "<div style='width:100%'><h5>Sin resultados</h5></div>";
+        $salida .= "<div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
+        <div><h3 style='font-weight:900;'>Sin resultados</h3></div> <br><br> 
+        <div style='padding: 40px;'><img src='pictures/explorer.png' width='100%'></div></div>";
     }
 }
 

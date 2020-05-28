@@ -19,7 +19,7 @@
                     <label for="password" class="white-text">Password.</label>
                 </div>
             </div>
-            <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
+            <input type="submit" name="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
            <?php
              include("validacionLogInReclutador.php");
             ?>

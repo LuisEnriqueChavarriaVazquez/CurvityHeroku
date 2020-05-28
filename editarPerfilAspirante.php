@@ -3,9 +3,9 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 include 'includes/Conexion.php';
 
+$userSession = new UserSession();
+$user = new User();
 
-
-    $user->setUser($userSession->getCurrentUser());
     $dato=$user->getCorreo();
     $c=new conectar();
     $conexion=$c->conexion();
@@ -36,7 +36,6 @@ include 'includes/Conexion.php';
                     'FotoPerfil'=>$ver[17]
                 );
 
-    return $datos;
     include_once 'editarPerfilAspirante.php';
 ?>
 <?php

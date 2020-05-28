@@ -15,7 +15,7 @@ login.php
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>
-                    <input id="password" type="password_Asp" name="password_Asp" id="password_Asp" class="validate white-text">
+                    <input id="password" type="password" name="password_Asp" id="password_Asp" class="validate white-text">
                     <label for="password" class="white-text">Password.</label>
                 </div>
             </div>

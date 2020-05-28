@@ -86,8 +86,7 @@ class objetoConexionBaseDatos {
    }
    
    public function comprobarExistenciaElementoAtibuto($NombreTabla,$NombreAtributo,$NombreElemento){
-      //$sqlSentence="select * from ".$NombreTabla." where ".$NombreAtributo."=".$NombreElemento;
-      $sqlSentence="select * from ".$NombreTabla;
+      $sqlSentence="select * from ".$NombreTabla." where ".$NombreAtributo."='".$NombreElemento."'";
       $result = $this->conector->query($sqlSentence);
       if ($result->num_rows > 0) {
          return true;

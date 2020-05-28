@@ -29,7 +29,6 @@ class User extends DB{
 
     public function getNombre(){
         return $this->nombre;
-        return $this->username;
     }
     public function getCorreo(){
         return $this->username;

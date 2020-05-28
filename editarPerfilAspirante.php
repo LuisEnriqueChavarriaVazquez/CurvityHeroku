@@ -5,8 +5,9 @@ include 'includes/Conexion.php';
 
 $userSession = new UserSession();
 $user = new User();
-
-if(isset($_SESSION['user'])){
+$user->setUser($userSession->getCurrentUser());
+$dato=$user->getCorreo();
+/*if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
     $dato=$user->getCorreo();
    /* $c=new conectar();
@@ -38,11 +39,11 @@ if(isset($_SESSION['user'])){
                     'FotoPerfil'=>$ver[17]
                 );
 
-    return $datos;*/
+    return $datos;
     include_once 'editarPerfilAspirante.php';
 }else{
     include_once 'loginAspirante.php';
-}
+}*/
 ?>
 <body onload="asignar()">
 <?php  include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>

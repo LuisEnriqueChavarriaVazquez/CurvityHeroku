@@ -6,7 +6,7 @@ login.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">
     <div class="sizeCardInicio backgroundCardInicio centerElements borderCardInicio z-depth-3">
-        <form class="col s12" method="POST">
+        <form class="col s12" method="POST" action="loginAspirante.php">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">email</i>
@@ -20,6 +20,9 @@ login.php
                 </div>
             </div>
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
+            <?php
+             include("validacionLogInEmpresa.php");
+            ?>
         </form>
     </div>
 </div>

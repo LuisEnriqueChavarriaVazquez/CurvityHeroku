@@ -3,35 +3,45 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 include 'includes/Conexion.php';
 
-    $dato=$user->getCorreo();
+    $userSession = new UserSession();
+    $user = new User();
+    if(isset($_SESSION['user'])){
+        $user->setUser($userSession->getCurrentUser());
+        $dato=$user->getCorreo();
+        $c=new conectar();
+        $conexion=$c->conexion();
+        
+        $sql="SELECT *from aspirante where CorreoElec='$dato'";
+        $result=mysqli_query($conexion,$sql);
     
-    $sql="SELECT *from Aspirante where CorreoElec='$dato'";
-    $result=mysqli_query($conexion,$sql);
-
-    $ver=mysqli_fetch_row($result);
-
-    $datos=array(
-                    'IDAspirante'=>$ver[0],
-                    'Nombre'=>$ver[1],
-                    'Contra'=>$ver[2],
-                    'ApellidoPat'=> $ver[3],
-                    'ApellidoMat'=>$ver[4],
-                    'SueldoDeseado'=>$ver[5],
-                    'Direccion'=>$ver[6],
-                    'Escuela'=>$ver[7],
-                    'NivelAcademico'=>$ver[8],
-                    'CorreoElec'=>$ver[9],
-                    'ResumenExpPrevLab'=>$ver[10],
-                    'ResumenHab'=>$ver[11],
-                    'numeroIdiomas'=>$ver[12],
-                    'detallesIdiomas'=>$ver[13],
-                    'FacebookAspirante'=>$ver[14],
-                    'SkypeAspirante'=>$ver[15],
-                    'TwitterAspirante'=>$ver[16],
-                    'FotoPerfil'=>$ver[17]
-                );
+        $ver=mysqli_fetch_row($result);
+    
+        $datos=array(
+                        'IDAspirante'=>$ver[0],
+                        'Nombre'=>$ver[1],
+                        'Contra'=>$ver[2],
+                        'ApellidoPat'=> $ver[3],
+                        'ApellidoMat'=>$ver[4],
+                        'SueldoDeseado'=>$ver[5],
+                        'Direccion'=>$ver[6],
+                        'Escuela'=>$ver[7],
+                        'NivelAcademico'=>$ver[8],
+                        'CorreoElec'=>$ver[9],
+                        'ResumenExpPrevLab'=>$ver[10],
+                        'ResumenHab'=>$ver[11],
+                        'numeroIdiomas'=>$ver[12],
+                        'detallesIdiomas'=>$ver[13],
+                        'FacebookAspirante'=>$ver[14],
+                        'SkypeAspirante'=>$ver[15],
+                        'TwitterAspirante'=>$ver[16],
+                        'FotoPerfil'=>$ver[17]
+                    );
 
     include_once 'editarPerfilAspirante.php';
+                }
+    else{
+        include_once 'index_asp.php';
+    }
 ?>
 <?php
     

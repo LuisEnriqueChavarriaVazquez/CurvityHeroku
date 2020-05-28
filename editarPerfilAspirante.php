@@ -12,7 +12,7 @@ if(isset($_SESSION['user'])){
     $c=new conectar();
     $conexion=$c->conexion();
     
-    $sql="SELECT *from aspirante where CorreoElec='$dato'";
+    $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
 
     /*$ver=mysqli_fetch_row($result);

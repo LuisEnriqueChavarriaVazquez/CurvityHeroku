@@ -1,6 +1,6 @@
 <?php
 require('claseDB.php');
-if (isset($_POST['submit'])) {
+if (isset($_POST['entradaReclutador'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $contraEntrada=$_POST["passwordReclutador"];
      $objetoConexion=new objetoConexionBaseDatos();

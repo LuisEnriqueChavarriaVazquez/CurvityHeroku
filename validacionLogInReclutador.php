@@ -1,10 +1,10 @@
 <?php
 require('claseDB.php');
 echo  "<p class='errors'>" . "Correo no  coincide" . "</p>";
-if (isset($_POST['Submit'])) {
+if (isset($_POST['entradaReclutador'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $contraEntrada=$_POST["passwordReclutador"];
-    /* $objetoConexion=new objetoConexionBaseDatos();
+     $objetoConexion=new objetoConexionBaseDatos();
 
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion-> comprobarExistenciaElementoAtibuto("Empresa","CorreoElecReclutador",$correoEntrada)==TRUE){
@@ -15,7 +15,7 @@ if (isset($_POST['Submit'])) {
      }else{
           echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion" . "</p></div>";
           
-     }*/
+     }
 
 
 }

@@ -5,26 +5,92 @@ include_once 'includes/user_session.php';
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarAspirante.php' ?>
 
-<div class="nav-content">
-  <div class="nav-wrapper">
-    <div class="formularioB light-blue darken-4">
-      <label for="caja_busqueda"></label>
-      <input type="search" name="caja_busqueda" id="caja_busqueda"></input>
-    </div>
+<div class="content-search positionTable">
+  <div class="content-table">
+    <table id="table-style" class="z-depth-2 search-table">
+      <thead>
+        <tr class="title-table">
+          <td class="title-table"></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><a href="operacionesAspirante.php">Mesera</a></td>
+        </tr>
+        <tr>
+          <td><a href="operacionesAspirante.php">Ingeniero en sistemas</a></td>
+        </tr>
+        <tr>
+          <td><a href="operacionesAspirante.php">Abogado</a></td>
+        </tr>
+        <tr>
+          <td><a href="operacionesAspirante.php">Mesera</a></td>
+        </tr>
+        <tr>
+          <td><a href="operacionesAspirante.php">Actor</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 </nav>
 
 <!--Cuerpo de las secciones-->
 <br><br><br><br><br><br><br><br>
-<div class="boxSubjectsBrowser full-height blue-grey lighten-5" id="fullEmpleosContainer">
-
-  <div id="datos" class="row">
-
+<h1>Bienvenido <?php echo $user->getNombre();  ?></h1>
+<div class="boxSubjectsBrowser full-height backgroundInicioAspirante blue-grey lighten-5">
+  <div class="row">
+    <div class="col s6 m6 borderCardInicio">
+      <a href="operacionesAspirante.php">
+        <div class="card borderCardInicio waves-effect">
+          <div class="card-image">
+            <img class="roundPictures" src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <div class="card-content">
+            <p class="flow-text noLinkStyle">Empresa</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col s6 m6 borderCardInicio">
+      <a href="operacionesAspirante.php">
+        <div class="card borderCardInicio waves-effect">
+          <div class="card-image">
+            <img class="roundPictures" src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <div class="card-content">
+            <p class="flow-text noLinkStyle">Empresa</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col s6 m6 borderCardInicio">
+      <a href="operacionesAspirante.php">
+        <div class="card borderCardInicio waves-effect">
+          <div class="card-image">
+            <img class="roundPictures" src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <div class="card-content">
+            <p class="flow-text noLinkStyle">Empresa</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col s6 m6 borderCardInicio">
+      <a href="operacionesAspirante.php">
+        <div class="card borderCardInicio waves-effect">
+          <div class="card-image">
+            <img class="roundPictures" src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+          </div>
+          <div class="card-content">
+            <p class="flow-text noLinkStyle">Empresa</p>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
-
-<?php include("logicaOperacionesAspirante/buscador.php"); ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/floatingButtons/botonHearing.php' ?>
 

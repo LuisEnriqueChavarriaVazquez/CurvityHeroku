@@ -1,6 +1,12 @@
 <?php
 include_once 'includes/user.php';
 include_once 'includes/user_session.php';
+$userSession = new UserSession();
+$user = new User();
+
+if(isset($_SESSION['user'])){
+    $user->setUser($userSession->getCurrentUser());
+}
 ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarAspirante.php' ?>
@@ -17,7 +23,7 @@ include_once 'includes/user_session.php';
 
 <!--Cuerpo de las secciones-->
 <br><br><br><br><br><br><br><br>
-<h1>Bienvenido <?php echo $user->getCorreo();  ?></h1>
+<h2><?php $user->getNombre() ?></h2>
 <div class="boxSubjectsBrowser full-height blue-grey lighten-5" id="fullEmpleosContainer">
 
   <div id="datos" class="row">

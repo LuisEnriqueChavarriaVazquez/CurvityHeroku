@@ -9,7 +9,7 @@ $user = new User();
 if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
     $dato=$user->getCorreo();
-    $c=new conectar();
+   /* $c=new conectar();
     $conexion=$c->conexion();
     
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";

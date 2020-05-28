@@ -7,7 +7,7 @@ if (isset($_POST['username_Asp'])) {
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion->comprobarExistenciaElementoAtibuto("Aspirante","CorreoElec",$correoEntrada)==TRUE){
             if($objetoConexion->comprobarExistenciaElementoAtibuto("Aspirante","Contra",$contraEntrada)==TRUE){
-               header("Location:index_asp.php");
+               header("Location:operacionesAspirante.php");
                exit;
               
             }else{

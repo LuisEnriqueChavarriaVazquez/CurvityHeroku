@@ -7,7 +7,7 @@ if (isset($_POST['entradaReclutador'])) {
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","CorreoElecReclutador",$correoEntrada)==TRUE){
             if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","ContraReclutador",$contraEntrada)==TRUE){
-                    include("opearacionesReclutador.php");
+                    include("operacionesReclutador.php");
             }else{
                echo  "<div class=´errors_box´><p class='errors'>" . "Contraseña no coincide ". "</p></div>";
             }

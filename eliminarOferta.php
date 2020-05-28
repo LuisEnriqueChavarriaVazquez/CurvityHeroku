@@ -25,7 +25,7 @@ gestionOfertas.php
                 </div>
             </div>
 
-            <a><button type="submit" name="submit" class="waves-effect btn borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmar datos de seguridad.</button></a>
+            <a><button type="submit" name="submit" class="waves-effect btn borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Confirmación seguridad.</button></a>
 
         </form>
 

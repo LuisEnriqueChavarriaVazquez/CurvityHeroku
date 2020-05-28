@@ -391,18 +391,15 @@ index_asp.php
 </div>
 <script>
         function asignar(){
-        <?php while($ver=mysqli_fetch_row($result)): ?>
         var nombre = document.getElementById("nombre_aspirante");
         var app =document.getElementById("apellido_paterno");
         var apm=document.getElementById("apellido_materno");
         var correo=document.getElementById("mail");
 
-        //alert(<?php echo $dato;  ?>);
         nombre.value ="hola jajaj";
         /*app.value=$ver[2];
         apm.value=$ver[3];
         correo.value=$ver[4];*/
-        <?php endwhile; ?>
         }  
 </script>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

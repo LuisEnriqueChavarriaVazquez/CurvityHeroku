@@ -1,7 +1,5 @@
 
 .containerPicture{
-    --heightDeafault: 200px;
-    height: var(--heightDeafault);
     width: 100%;
 }
 

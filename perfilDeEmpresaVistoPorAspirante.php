@@ -30,13 +30,32 @@ if (
 } else {
     print "FATAL ERROR";
 }
+
+$servername = "localhost";
+$username = "u253306330_curvity";
+$password = "curvity";
+$dbname = "u253306330_curvity";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
 ?>
 
 
 <!--Aqui tenemos el header con la imagen de la empresa (esa la tenemos que jalar de la base de datos)-->
-<section class="containerPicture" id="logo-container">
-    <?php print"<img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($fotoLogo) . "'>"?> >
+
+<section class='containerPicture' id='logo-container'>
+   <?php 
+    $queryFoto = "SELECT FotoLogo FROM Empresa WHERE IDEmpresa = '$IDEmpresa'"; 
+    $resultFoto = mysqli_query($conn,$queryFoto);
+    while($folaFoto = $resultFoto->fetch_assoc()) {
+        print "<img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($folaFoto['FotoLogo']) . "'>";      
+    }
+   ?>
 </section>
+
 <div id="nav-container-top"></div>
 <div class="stickyTitleContainer" id="nav-container">
     <div class="nombreEmpresaPerfil z-depth-2" id="containerPicture">

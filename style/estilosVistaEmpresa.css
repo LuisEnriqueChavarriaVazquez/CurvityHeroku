@@ -33,11 +33,11 @@
 
 /**/
 
-#nav-container-top {height: 1px;}
+#nav-container-top {height: .1px;}
 
 #nav-container {
     height: 30px;
-    background-color: rgb(255, 1, 1);
+    background-color: rgb(214, 214, 214);
 	position: sticky;
     top: 0;
     z-index: 1000;

@@ -34,7 +34,16 @@ if ($resultado = $conn->query($query)) {
             <form method='GET' action='perfilDeEmpresaVistoPorAspirante.php'>
             <div class='col s6 m6 borderCardInicio cardEmpleoNueva waves-effect ' id='".$fila['IDEmpresa']."'>
               <a name='submit' 
-              href='./perfilDeEmpresaVistoPorAspirante.php?Nombre=".$fila['Nombre']."&RazonSocial=".$fila['RazonSocial']."'>
+              href='./perfilDeEmpresaVistoPorAspirante.php?Nombre=".$fila['Nombre'].
+              "&RazonSocial=".$fila['RazonSocial'].
+              "&Direccion=".$fila['Direccion'].
+              "&Tipo=".$fila['Tipo'].
+              "&Telefono=".$fila['Telefono'].
+              "&DireccionWeb=".$fila['DireccionWeb'].
+              "&FacebookEmpresa=".$fila['FacebookEmpresa'].
+              "&SkypeEmpresa=".$fila['SkypeEmpresa'].
+              "&TwitterEmpresa=".$fila['TwitterEmpresa'].
+              "'>
               <div class='card borderCardInicio waves-effect z-depth-2'>
                 <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>
                 <div class='card-content'> <p class='flow-text noLinkStyle'>" . $fila['Nombre'] . "</p></div>

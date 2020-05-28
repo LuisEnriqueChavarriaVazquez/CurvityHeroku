@@ -5,27 +5,42 @@ operacionesAspirante.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInferior.php' ?>
 
 <?php
-    if (isset($_GET["Nombre"]) && isset($_GET["RazonSocial"])) {
-        $Nombre = $_GET["Nombre"];
-        $RazonSocial = $_GET["RazonSocial"];
-
-        print $Nombre;
-        print $RazonSocial;
-    }else{
-        echo "pito";
-    }
-    ?>
+if (
+    isset($_GET["Nombre"])
+    && isset($_GET["RazonSocial"])
+    && isset($_GET["Direccion"])
+    && isset($_GET["Tipo"])
+    && isset($_GET["Telefono"])
+    && isset($_GET["DireccionWeb"])
+    && isset($_GET["FacebookEmpresa"])
+    && isset($_GET["TwitterEmpresa"])
+    && isset($_GET["SkypeEmpresa"])
+) {
+    $Nombre = $_GET["Nombre"];
+    $RazonSocial = $_GET["RazonSocial"];
+    $Direccion = $_GET["Direccion"];
+    $Tipo = $_GET["Tipo"];
+    $Telefono = $_GET["Telefono"];
+    $DireccionWeb = $_GET["DireccionWeb"];
+    $FacebookEmpresa = $_GET["FacebookEmpresa"];
+    $TwitterEmpresa = $_GET["TwitterEmpresa"];
+    $SkypeEmpresa = $_GET["SkypeEmpresa"];
+} else {
+    print "FATAL ERROR";
+}
+?>
 
 
 <!--Aqui tenemos el header con la imagen de la empresa (esa la tenemos que jalar de la base de datos)-->
-<div class="containerPicture">
+<section class="containerPicture" id="logo-container">
     <img src="pictures/backgroundEmpresa.jpg" class="imgFormater">
-</div>
-<section class="stickyTitleContainer">
-    <div class="nombreEmpresaPerfil z-depth-2">
-        <p><?php  print $Nombre; ?></p>
-    </div>
 </section>
+<div id="nav-container-top"></div>
+<div class="stickyTitleContainer" id="nav-container">
+    <div class="nombreEmpresaPerfil z-depth-2" id="containerPicture">
+        <p><?php echo $Nombre; ?></p>
+    </div>
+</div>
 
 <!--Cuerpo de las secciones-->
 <div class="boxSubjects blue-grey lighten-5">
@@ -50,41 +65,52 @@ operacionesAspirante.php
 
     <p class="titles">Datos de empresa.</p>
 
-    <div class="sizeCardForm backgroundCardOferta borderCardInicio z-depth-3">
-        <div>
-            <p class="titleOfertaFinal truncate">Descripción.</p>
-            <p class="descripcionOfertaFinal">Lorem ipsum dolor sit amet, consectetur adipisicing elconsectetur adipisicing el.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elconsectetur adipisicing el.
-                Lo</p>
+    <div class="sizeCardForm backgroundCardOferta borderCardInicio z-depth-3 row">
+        <div class="col s12">
+            <p class="titleOfertaFinal truncate">Razón Social.</p>
+            <p class="descripcionOfertaFinal"><?php echo $RazonSocial; ?></p>
         </div>
 
-        <div>
+        <div class="col s12">
+            <p class="titleOfertaFinal truncate">Direccion.</p>
+            <p class="descripcionOfertaFinal"><?php echo $Direccion; ?></p>
+        </div>
+
+        <div class="col s12">
+            <p class="titleOfertaFinal truncate">Tipo.</p>
+            <p class="descripcionOfertaFinal"><?php echo $Tipo; ?></p>
+        </div>
+
+
+    </div>
+
+    <div class="sizeCardForm backgroundCardOferta borderCardInicio z-depth-3 row">
+        <div class="col s6">
             <p class="titleOfertaFinal truncate">Facebook.</p>
-            <p class="descripcionOfertaFinal">Nombre_cuentas</p>
+            <p class="descripcionOfertaFinal"><?php echo $FacebookEmpresa; ?></p>
         </div>
 
-        <div>
+        <div class="col s6">
             <p class="titleOfertaFinal truncate">Twitter.</p>
-            <p class="descripcionOfertaFinal">Nombre_cuentas</p>
+            <p class="descripcionOfertaFinal"><?php echo $TwitterEmpresa; ?></p>
         </div>
 
-        <div>
+        <div class="col s6">
             <p class="titleOfertaFinal truncate">Skype.</p>
-            <p class="descripcionOfertaFinal">Nombre_cuentas</p>
+            <p class="descripcionOfertaFinal"><?php echo $SkypeEmpresa; ?></p>
         </div>
 
-        <div>
+        <div class="col s6">
             <p class="titleOfertaFinal truncate">Telefonos.</p>
-            <p class="descripcionOfertaFinal">55XXXXXX</p>
+            <p class="descripcionOfertaFinal"><?php echo $Telefono; ?></p>
         </div>
 
-        <div>
+        <div class="col s12">
             <p class="titleOfertaFinal truncate">Email.</p>
-            <p class="descripcionOfertaFinal">empresa@gmail.com</p>
+            <p class="descripcionOfertaFinal"><?php echo $DireccionWeb; ?></p>
         </div>
     </div>
 
-    
 
 </div>
 

@@ -14,9 +14,9 @@ include 'includes/Conexion.php';
         $sql="SELECT *from aspirante where CorreoElec='$dato'";
         $result=mysqli_query($conexion,$sql);
     
-        $ver=mysqli_fetch_row($result);
+        $ver=$result->fetch_all();
     
-        $datos=array(
+        /*$datos=array(
                         'IDAspirante'=>$ver[0],
                         'Nombre'=>$ver[1],
                         'Contra'=>$ver[2],
@@ -35,7 +35,7 @@ include 'includes/Conexion.php';
                         'SkypeAspirante'=>$ver[15],
                         'TwitterAspirante'=>$ver[16],
                         'FotoPerfil'=>$ver[17]
-                    );
+                    );*/
 
     include_once 'editarPerfilAspirante.php';
                 }
@@ -135,11 +135,12 @@ index_asp.php
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
         <form class="col s12">
                 <div class="input-field col s12">
+                <?php if($ver){?>
                     <input placeholder="Escriba su nombre." id="nombre_aspirante" name="nombre_aspirante" 
-                    value="<?php 
-                    echo $ver[1]['Nombre']
-                    ?>" 
+                    value=<?php echo $ver[0]['Nombre'];?>
                     type="text" class="validate white-text">
+                    <?php
+                    }?>
                     <label for="nombre_aspirante">Nombre.</label>
                     <?php
                         if(isset($Nombre_error)){

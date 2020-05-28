@@ -1,4 +1,4 @@
-<?php
+<?php/*
 require('claseDB.php');
 if (isset($_POST['username_Asp'])) {
      $correoEntrada=$_POST["username_Asp"];
@@ -23,5 +23,5 @@ if (isset($_POST['username_Asp'])) {
 
 
 }
- 
+ */
 ?>

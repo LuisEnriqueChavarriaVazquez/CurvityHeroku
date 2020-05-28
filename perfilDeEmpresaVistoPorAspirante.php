@@ -58,7 +58,7 @@ if ($conn->connect_error) {
 
 <div id="nav-container-top"></div>
 <div class="stickyTitleContainer" id="nav-container">
-    <div class="nombreEmpresaPerfil z-depth-2" id="containerPicture">
+    <div class="nombreEmpresaPerfil" id="containerPicture">
         <p><?php echo $Nombre; ?></p>
     </div>
 </div>

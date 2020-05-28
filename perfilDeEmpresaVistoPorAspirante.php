@@ -85,22 +85,22 @@ if (
     </div>
 
     <div class="sizeCardForm backgroundCardOferta borderCardInicio z-depth-3 row">
-        <div class="col s6">
+        <div class="col s12">
             <p class="titleOfertaFinal truncate">Facebook.</p>
             <p class="descripcionOfertaFinal"><?php echo $FacebookEmpresa; ?></p>
         </div>
 
-        <div class="col s6">
+        <div class="col s12">
             <p class="titleOfertaFinal truncate">Twitter.</p>
             <p class="descripcionOfertaFinal"><?php echo $TwitterEmpresa; ?></p>
         </div>
 
-        <div class="col s6">
+        <div class="col s12">
             <p class="titleOfertaFinal truncate">Skype.</p>
             <p class="descripcionOfertaFinal"><?php echo $SkypeEmpresa; ?></p>
         </div>
 
-        <div class="col s6">
+        <div class="col s12">
             <p class="titleOfertaFinal truncate">Telefonos.</p>
             <p class="descripcionOfertaFinal"><?php echo $Telefono; ?></p>
         </div>

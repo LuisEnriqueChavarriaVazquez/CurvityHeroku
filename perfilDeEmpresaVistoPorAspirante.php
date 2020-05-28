@@ -1,10 +1,20 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarSuperior.php' ?>
-index_asp.php
+operacionesAspirante.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInferior.php' ?>
 
-<script src="scripts/jq.js"></script>
+<?php
+    if (isset($_GET["Nombre"]) && isset($_GET["RazonSocial"])) {
+        $Nombre = $_GET["Nombre"];
+        $RazonSocial = $_GET["RazonSocial"];
+
+        print $Nombre;
+        print $RazonSocial;
+    }else{
+        echo "pito";
+    }
+    ?>
 
 
 <!--Aqui tenemos el header con la imagen de la empresa (esa la tenemos que jalar de la base de datos)-->
@@ -13,7 +23,7 @@ index_asp.php
 </div>
 <section class="stickyTitleContainer">
     <div class="nombreEmpresaPerfil z-depth-2">
-        <p>Nombre_empresa</p>
+        <p><?php  print $Nombre; ?></p>
     </div>
 </section>
 
@@ -72,31 +82,12 @@ index_asp.php
             <p class="titleOfertaFinal truncate">Email.</p>
             <p class="descripcionOfertaFinal">empresa@gmail.com</p>
         </div>
-
-        <div id="provandoJson">
-
-            provandoJson de texto
-        </div>
     </div>
+
+    
 
 </div>
 
-<?php include("logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php"); ?>
 
-
-<!--Estoy usando AJAX para que tengamos acceso a la base de datos-->
-<script>
-    $(document).ready(function() {
-        $.ajax({ //create an ajax request to display.php
-            type: "GET",
-            url: "display.php",
-            dataType: "html", //expect html to be returned                
-            success: function(response) {
-                $("#responsecontainer").html(response);
-                //alert(response);
-            }
-        });
-    });
-</script>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

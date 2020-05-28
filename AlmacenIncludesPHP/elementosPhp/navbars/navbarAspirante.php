@@ -9,7 +9,7 @@ include_once 'includes/user.php';
 
             </div>
             <a href="#user"><img class="circle hoverable" src="pictures/logo.png"></a>
-            <a href="#name"><span class="white-text name"><?php echo $user->getNombre();?></span></a>
+            <a href="#name"><span class="white-text name">Curvity</span></a>
             <a href="#email"><span class="white-text email">Version 1.0.0</span></a>
         </div>
     </li>

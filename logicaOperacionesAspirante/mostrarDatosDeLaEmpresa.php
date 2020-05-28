@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
@@ -11,4 +11,7 @@ while ($dat = mysqli_fetch_assoc($selct)){
     $arr[] = $dat;
 }
 
-echo json_encode($arr);
+echo json_encode($arr);*/
+if(isset($_POST['submit'])){
+    echo "Funciono";
+}

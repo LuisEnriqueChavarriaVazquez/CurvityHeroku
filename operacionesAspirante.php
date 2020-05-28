@@ -25,6 +25,7 @@ include_once 'includes/user_session.php';
 </div>
 
 <?php include("logicaOperacionesAspirante/buscador.php"); ?>
+<?php include("logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php"); ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/floatingButtons/botonHearing.php' ?>
 

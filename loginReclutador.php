@@ -2,7 +2,6 @@
 
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
-login.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">

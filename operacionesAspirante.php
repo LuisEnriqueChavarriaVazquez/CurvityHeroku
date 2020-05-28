@@ -3,11 +3,13 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 $userSession = new UserSession();
 $user = new User();
-
 if(isset($_SESSION['user'])){
-    $user->setUser($userSession->getCurrentUser());
-    $dato=$user->getNombre();
+  $user->setUser($userSession->getCurrentUser());
+  include_once 'operacionesAspirante.php';
+}else{
+  include_once 'index_asp.php'
 }
+
 ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarAspirante.php' ?>

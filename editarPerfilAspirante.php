@@ -3,12 +3,7 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 include 'includes/Conexion.php';
 
-$userSession = new UserSession();
-$user = new User();
-
     $dato=$user->getCorreo();
-    $c=new conectar();
-    $conexion=$c->conexion();
     
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);

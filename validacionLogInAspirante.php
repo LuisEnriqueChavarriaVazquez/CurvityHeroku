@@ -1,13 +1,13 @@
 <?php
 require('claseDB.php');
-if (isset($_POST['entradaReclutador'])) {
-     $correoEntrada=$_POST["entradaReclutador"];
-     $contraEntrada=$_POST["passwordReclutador"];
+if (isset($_POST['username_Asp'])) {
+     $correoEntrada=$_POST["username_Asp"];
+     $contraEntrada=$_POST["password_Asp"];
      $objetoConexion=new objetoConexionBaseDatos();
      if($objetoConexion-> comprobarConexion()==TRUE){
-         if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","CorreoElecReclutador",$correoEntrada)==TRUE){
-            if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","ContraReclutador",$contraEntrada)==TRUE){
-               header("Location:operacionesReclutador.php");
+         if($objetoConexion->comprobarExistenciaElementoAtibuto("Aspirante","CorreoElec",$correoEntrada)==TRUE){
+            if($objetoConexion->comprobarExistenciaElementoAtibuto("Aspirante","Contra",$contraEntrada)==TRUE){
+               header("Location:operacionesAspirante.php");
                exit;
               
             }else{

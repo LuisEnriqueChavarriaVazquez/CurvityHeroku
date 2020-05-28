@@ -10,12 +10,12 @@ login.php
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">email</i>
-                    <input id="email" name="username" type="email" class="validate white-text">
+                    <input id="email" name="username_Asp" id="username_Asp" type="email" class="validate white-text">
                     <label for="email" class="white-text">Email.</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>
-                    <input id="password" type="password" name="password" class="validate white-text">
+                    <input id="password" type="password_Asp" name="password_Asp" id="password_Asp" class="validate white-text">
                     <label for="password" class="white-text">Password.</label>
                 </div>
             </div>

@@ -43,6 +43,7 @@ if ($resultado = $conn->query($query)) {
               "&FacebookEmpresa=".$fila['FacebookEmpresa'].
               "&SkypeEmpresa=".$fila['SkypeEmpresa'].
               "&TwitterEmpresa=".$fila['TwitterEmpresa'].
+              "&IDEmpresa=".$fila['IDEmpresa'].
               "'>
               <div class='card borderCardInicio waves-effect z-depth-2'>
                 <div class='card-image'>" . "<img class='card-image' src='data:image/jpeg; base64," . base64_encode($fila['FotoLogo']) . "'>" . "</div>

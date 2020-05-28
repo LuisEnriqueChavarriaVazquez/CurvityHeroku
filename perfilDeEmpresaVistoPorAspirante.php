@@ -15,6 +15,7 @@ if (
     && isset($_GET["FacebookEmpresa"])
     && isset($_GET["TwitterEmpresa"])
     && isset($_GET["SkypeEmpresa"])
+    && isset($_GET["IDEmpresa"])
 ) {
     $Nombre = $_GET["Nombre"];
     $RazonSocial = $_GET["RazonSocial"];
@@ -25,6 +26,7 @@ if (
     $FacebookEmpresa = $_GET["FacebookEmpresa"];
     $TwitterEmpresa = $_GET["TwitterEmpresa"];
     $SkypeEmpresa = $_GET["SkypeEmpresa"];
+    $IDEmpresa = $_GET["IDEmpresa"];
 } else {
     print "FATAL ERROR";
 }
@@ -33,7 +35,7 @@ if (
 
 <!--Aqui tenemos el header con la imagen de la empresa (esa la tenemos que jalar de la base de datos)-->
 <section class="containerPicture" id="logo-container">
-    <img src="pictures/backgroundEmpresa.jpg" class="imgFormater">
+    <?php print"<img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($fotoLogo) . "'>"?> >
 </section>
 <div id="nav-container-top"></div>
 <div class="stickyTitleContainer" id="nav-container">
@@ -47,18 +49,8 @@ if (
     <!--CADA CARD NOS DEBE LLEVAR AL ARCHIVO DE vistaEnvioSolicitud-->
     <!--Aqui estamos reciclando las cards que teniamos en la vista previa al SWIPE-->
     <p class="titles">Ofertas publicadas.</p>
-    <!--Nueva card-->
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php'; ?>
-    Ingeniero en sistemas
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?>
-    <!--Nueva card-->
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php'; ?>
-    Ingeniero en sistemas
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?>
-    <!--Nueva card-->
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php'; ?>
-    Ingeniero en sistemas
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php'; ?>
+
+    <?php include("logicaOperacionesAspirante/mostrarDatosDeLaEmpresa.php"); ?>
 
 
     <!--Aqui empiezan los datos de la empresa-->

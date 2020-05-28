@@ -57,12 +57,6 @@ if (isset($_POST['submit'])) {
         $contadorEleConfimados++;
     }
 
-    if (!validacionMail($email_empresa_puesto)) {
-        array_push($errores_oferta, "Email de empresa inválido.");
-    } else {
-        $contadorEleConfimados++;
-    }
-
     if (!validacionMail($email_reclutador_puesto)) {
         array_push($errores_oferta, "Email de reclutador inválido.");
     } else {
@@ -94,7 +88,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    if ($contadorEleConfimados == 8) {
+    if ($contadorEleConfimados == 6) {
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
@@ -105,6 +99,7 @@ if (isset($_POST['submit'])) {
         $idDinamica;
         while ($row = $result->fetch_assoc()) {
             $idDinamica = $row['IDEmpresa'];
+            echo $row['IDEmpresa'];
         }
 
         $queryIdSede = "SELECT IDSede FROM Sede WHERE CorreoElecReclutador = '$email_reclutador_puesto'";
@@ -112,6 +107,7 @@ if (isset($_POST['submit'])) {
         $idDinamicaSede;
         while ($rowSede = $resultIdSede->fetch_assoc()) {
             $idDinamicaSede = $rowSede['IDSede'];
+            echo $rowSede['IDSede'];
         }
 
 

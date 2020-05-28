@@ -5,6 +5,7 @@ include 'includes/Conexion.php';
 
 $userSession = new UserSession();
 $user = new User();
+
 $user->setUser($userSession->getCurrentUser());
 $dato=$user->getCorreo();
 /*if(isset($_SESSION['user'])){
@@ -45,12 +46,6 @@ $dato=$user->getCorreo();
     include_once 'loginAspirante.php';
 }*/
 ?>
-<body onload="asignar()">
-<?php  include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
-
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
-index_asp.php
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 <?php
     
     if(!isset($_SESSION)){
@@ -129,6 +124,12 @@ index_asp.php
         $sueldoAsp="";
     }
 ?>
+<body onload="asignar()">
+<?php  include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
+
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
+index_asp.php
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 <body onload="asignar();">
 <div  class="boxSubjectsInicioExtended light-blue darken-4 centerElements">
     <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">

@@ -77,7 +77,7 @@ class objetoConexionBaseDatos {
 
    public function elementoRepetido($NombreTabla,$NombreAtributo,$NombreElemento){
       $sqlSentence="select * from ".$NombreTabla. " where ".$NombreAtributo."=".$NombreElemento;
-      $result = $conn->query($sql);
+      $result = $this->conector->query($sql);
       if ($result->num_rows > 0) {
          return true;
       }else{
@@ -87,7 +87,7 @@ class objetoConexionBaseDatos {
    
    public function comprobarExistenciaElementoAtibuto($NombreTabla,$NombreAtributo,$NombreElemento){
       $sqlSentence="select * from ".$NombreTabla. " where ".$NombreAtributo."=".$NombreElemento;
-      $result = $conn->query($sql);
+      $result = $this->conector->query($sql);
       if ($result->num_rows > 0) {
          return true;
       }else{

@@ -6,6 +6,7 @@ $user = new User();
 
 if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
+    $dato=$user->getNombre();
 }
 ?>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
@@ -23,7 +24,7 @@ if(isset($_SESSION['user'])){
 
 <!--Cuerpo de las secciones-->
 <br><br><br><br><br><br><br><br>
-<h2><?php echo "$user->getNombre()" ?></h2>
+<h2><?php echo "$dato" ?></h2>
 <div class="boxSubjectsBrowser full-height blue-grey lighten-5" id="fullEmpleosContainer">
 
   <div id="datos" class="row">

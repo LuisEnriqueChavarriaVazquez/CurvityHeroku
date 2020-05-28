@@ -31,6 +31,9 @@ class User extends DB{
         return $this->nombre;
         return $this->username;
     }
+    public function getCorreo(){
+        return $this->username;
+    }
 }
 
 ?>

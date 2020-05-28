@@ -1,13 +1,18 @@
 <?php
 include_once 'includes/user.php';
 include_once 'includes/user_session.php';
+require 'includes/db.php';
+
+$objData = new DB();
 $userSession = new UserSession();
 $user = new User();
 if(isset($_SESSION['user'])){
   $user->setUser($userSession->getCurrentUser());
+  $dato=$user->getCorreo();
   include_once 'operacionesAspirante.php';
-}else{
-  include_once 'index_asp.php'
+}
+else{
+  include_once 'index_asp.php';
 }
 
 ?>

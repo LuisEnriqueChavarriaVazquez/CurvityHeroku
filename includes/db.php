@@ -1,6 +1,6 @@
 <?php
 
-class DB{
+class DB extends PDO{
     private $host;
     private $db;
     private $user;

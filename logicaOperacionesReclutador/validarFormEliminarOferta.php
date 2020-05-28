@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
         print "<p>
         <label>
             <input type='checkbox' value=" . $rowGetOferta['IDPuesto'] . " name='ofertaEliminar[]' class='filled-in' />
-            <span>Sede: " . $rowGetOferta['Nombre'] . "</span>
+            <span>Oferta: " . $rowGetOferta['Nombre'] . "</span>
         </label>
     </p>";
     }

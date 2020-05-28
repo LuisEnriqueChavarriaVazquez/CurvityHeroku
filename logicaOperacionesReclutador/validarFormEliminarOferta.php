@@ -4,76 +4,91 @@ $servername = "localhost";
 $username = "u253306330_curvity";
 $password = "curvity";
 $dbname = "u253306330_curvity";
-$contrasena_eliminar_empresa;
-$email_empresa_eliminar;
-$sedeEliminar;
+$email_reclutador_eliminar_oferta;
+$contrasena_eliminar_reclutador_oferta;
+$ofertaEliminar;
 
+global $idDinamicaSede; //Guarda el IDSede
+global $idDinamicaEmpresaPrincipal; //Guarda el IDEMPRESA
 
 
 if (isset($_POST['submit'])) {
-    $contrasena_eliminar_empresa = $_POST["contrasena_eliminar_empresa"];
-    $email_empresa_eliminar = $_POST["email_empresa_eliminar"];
-    
+
+    //Hacemos la conexion con base
+    $contrasena_eliminar_reclutador_oferta = $_POST["contrasena_eliminar_reclutador_oferta"];
+    $email_reclutador_eliminar_oferta = $_POST["email_reclutador_eliminar_oferta"];
+
     $conn = new mysqli($servername, $username, $password, $dbname);
-    
+
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
-    
-    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE Contra = '$contrasena_eliminar_empresa' AND DireccionWeb = '$email_empresa_eliminar'";
+
+    //Obtengo el ID de la empresa cuando el EMAIL de la empresa es el correcto
+    $queryIdEmpresa = "SELECT IDEmpresa FROM Empresa WHERE  DireccionWeb = '$email_reclutador_eliminar_oferta'";
     $result = mysqli_query($conn, $queryIdEmpresa);
-    $idDinamicaEmpresaPrincipal;
     while ($row = $result->fetch_assoc()) {
         $idDinamicaEmpresaPrincipal = $row['IDEmpresa'];
     }
 
-    $queryGetSede = "SELECT Nombre,NombreReclutador,IDSede FROM Sede WHERE IDEmpresa = '$idDinamicaEmpresaPrincipal'";
-    $resultGetSede = mysqli_query($conn, $queryGetSede);
-    $sedesRelacionadasEmpresaNombre; //Valor a de la sede
-    $sedesRelacionadasEmpresaNombreReclutador; //Valor a de la sede
-    while ($rowGetSede = $resultGetSede->fetch_assoc()) {
-        $sedesRelacionadasEmpresaNombre = $rowGetSede['Nombre'];
-        $sedesRelacionadasEmpresaNombreReclutador = $rowGetSede['NombreReclutador'];
-        $sedesRelacionadasEmpresaIDSede = $rowGetSede['IDSede'];
+    //Obtengo el ID de la sede cuando la contraseña es correcta
+    $queryIDSede = "SELECT IDSede FROM Sede WHERE  ContraReclutador = '$contrasena_eliminar_reclutador_oferta'";
+    $resultSede = mysqli_query($conn, $queryIDSede);
+    while ($rowSede = $resultSede->fetch_assoc()) {
+        $idDinamicaSede = $rowSede['IDSede'];
+    }
+
+    //Obtenemos todas las ID del puesto y nombre si la IDSede y IDEmpresa coinciden (obtenidas de empresa y sede)
+    $queryGetOferta = "SELECT Nombre,IDEmpresa,IDSede,IDPuesto FROM Puesto WHERE IDEmpresa = '$idDinamicaEmpresaPrincipal' AND IDSede = '$idDinamicaSede'";
+    $resultGetOferta = mysqli_query($conn, $queryGetOferta);
+    $ofertaRelacionadasEmpresaNombre; //Valor a de la sede
+    $ofertaRelacionadasEmpresaIDEmpresa; //Valor a de la sede
+    $ofertaRelacionadasEmpresaIDSede; //Valor a de la sede
+    $ofertaRelacionadasEmpresaIDPuesto; //Valor a de la sede
+    while ($rowGetOferta = $resultGetOferta->fetch_assoc()) {
+        $ofertaRelacionadasEmpresaNombre = $rowGetOferta['Nombre'];
+        $ofertaRelacionadasEmpresaIDEmpresa = $rowGetOferta['IDEmpresa']; 
+        $ofertaRelacionadasEmpresaIDSede = $rowGetOferta['IDSede'];
+        $ofertaRelacionadasEmpresaIDPuesto = $rowGetOferta['IDPuesto'];
         print "<p>
         <label>
-            <input type='checkbox' value=" . $rowGetSede['IDSede'] . " name='sedeEliminar[]' class='filled-in' />
-            <span>Sede: " . $rowGetSede['Nombre'] . " // Reclutador: " . $rowGetSede['NombreReclutador'] . "</span>
+            <input type='checkbox' value=" . $rowGetOferta['IDPuesto'] . " name='ofertaEliminar[]' class='filled-in' />
+            <span>Sede: " . $rowGetOferta['Nombre'] . "</span>
         </label>
     </p>";
     }
-
 }
 
-$pilaDeIdSedes = array();
-if (isset($_GET['borrarSede'])) { //Validacion de envio de formulario
+$pilaDeIdOfertas = array();
+if (isset($_GET['borrarOferta'])) { //Validacion de envio de formulario de eliminar
     $ids = "";
-    if (!empty($_GET['sedeEliminar'])) {
+    if (!empty($_GET['ofertaEliminar'])) {
         // Ciclo para mostrar las casillas checked checkbox.
-        foreach ($_GET['sedeEliminar'] as $selected) {
-            array_push($pilaDeIdSedes, $selected);
+        foreach ($_GET['ofertaEliminar'] as $selected) {
+            array_push($pilaDeIdOfertas, $selected);
         }
-        $ids = join(",", $pilaDeIdSedes);
+        $ids = join(",", $pilaDeIdOfertas);
     }
 
+    //Conexion con la base
     $conectar = new mysqli($servername, $username, $password, $dbname);
-    
+
     if ($conectar->connect_error) {
         die("Conexión fallida: " . $conectar->connect_error);
     }
 
-    if($ids == ""){
-        echo  "<div class=´errors_box´><p class='errors'>" . "No selecciono sede" . "</p></div>";
-    }else{
-        $queryBorradoSede = "DELETE FROM Sede WHERE IDSede = ('$ids')";
+    //Validaciones previas a la eliminacion
+    if ($ids == "") { //Si esta vacia
+        echo  "<div class=´errors_box´><p class='errors'>" . "No selecciono Oferta" . "</p></div>";
+    } else {
+        $queryBorradoSede = "DELETE FROM Puesto WHERE IDPuesto = ('$ids')";
         if ($conectar->query($queryBorradoSede) === true) {
-            echo  "<div class=´errors_box´><p class='success'>" . "Sede borrada" . "</p></div>";
+            echo  "<div class=´errors_box´><p class='success'>" . "Oferta borrada" . "</p></div>";
         } else {
             echo "SQL Error: " . $conectar->error;
-            echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion, no hemos podido borrar tus sedes" . "</p></div>";
+            echo  "<div class=´errors_box´><p class='errors'>" . "Error de conexion, no hemos podido borrar tus ofertas" . "</p></div>";
         }
     }
-
 }
 
 

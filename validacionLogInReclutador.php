@@ -1,9 +1,9 @@
 <?php
 require('claseDB.php');
+echo  "<p class='errors'>" . "Correo no  coincide" . "</p>";
 if (isset($_POST['Submit'])) {
      $correoEntrada=$_POST["entradaReclutador"];
      $contraEntrada=$_POST["passwordReclutador"];
-     echo  "<p class='errors'>" . "Correo no  coincide" . "</p>";
     /* $objetoConexion=new objetoConexionBaseDatos();
 
      if($objetoConexion-> comprobarConexion()==TRUE){

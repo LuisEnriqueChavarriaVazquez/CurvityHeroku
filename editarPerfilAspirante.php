@@ -132,7 +132,7 @@ index_asp.php
                 <div class="input-field col s12">
                     <input placeholder="Escriba su nombre." id="nombre_aspirante" name="nombre_aspirante" 
                     value="<?php 
-                    echo  htmlspecialchars ($nombreAs)
+                    echo $ver[1]['Nombre']
                     ?>" 
                     type="text" class="validate white-text">
                     <label for="nombre_aspirante">Nombre.</label>

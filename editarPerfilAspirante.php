@@ -3,21 +3,17 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 include 'includes/Conexion.php';
 
-$userSession = new UserSession();
-$user = new User();
 
-$user->setUser($userSession->getCurrentUser());
-$dato=$user->getCorreo();
-/*if(isset($_SESSION['user'])){
+
     $user->setUser($userSession->getCurrentUser());
     $dato=$user->getCorreo();
-   /* $c=new conectar();
+    $c=new conectar();
     $conexion=$c->conexion();
     
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
 
-    /*$ver=mysqli_fetch_row($result);
+    $ver=mysqli_fetch_row($result);
 
     $datos=array(
                     'IDAspirante'=>$ver[0],
@@ -42,9 +38,6 @@ $dato=$user->getCorreo();
 
     return $datos;
     include_once 'editarPerfilAspirante.php';
-}else{
-    include_once 'loginAspirante.php';
-}*/
 ?>
 <?php
     

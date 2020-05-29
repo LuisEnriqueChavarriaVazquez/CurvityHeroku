@@ -284,9 +284,7 @@ index_emp.php
                 <!--Telefono y redes sociales.-->
                 <div class="input-field col s12">
                     <input placeholder="Escriba el telefono de la empresa." id="telefono_empresa" name="telefono_empresa" type="tel"
-                    value="<?php
-                            echo  htmlspecialchars ($telEmpresa)
-                        ?>"
+                    value="<?php echo $datos[6] ?>"
                      class="validate white-text">
                     <label for="telefono">Tel&eacute;fono.</label>
                     <?php 

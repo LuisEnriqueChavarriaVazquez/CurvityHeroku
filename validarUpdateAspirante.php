@@ -288,7 +288,7 @@
          }
    
       }else{
-         include("editarPerfilAspirante.php");
+         include("index_asp.php");
       }
     
 

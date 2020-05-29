@@ -1,6 +1,19 @@
 <?php
-    require('claseAspirante.php');
+    include_once 'includes/user.php';
+    include_once 'includes/user_session.php';
 
+    $userSession = new UserSession();
+    $user = new User();
+    if(isset($_SESSION['user'])){
+        $user->setUser($userSession->getCurrentUser());
+        $dato=$user->getCorreo();
+        include_once 'validarUpdateAspirante.php';
+}else{
+    include_once 'index_asp.php';
+}
+?>
+<?php
+    require('claseAspirante.php');
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
     $apelMatAs=$_POST["apellido_materno"];
@@ -221,10 +234,6 @@
            die("Connection failed: " . $conn->connect_error);
            include("errorPagina.php");
         }else{
-            include_once 'includes/user.php';
-            include_once 'includes/user_session.php';
-            $user->setUser($userSession->getCurrentUser());
-            $dato=$user->getCorreo();
 
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],

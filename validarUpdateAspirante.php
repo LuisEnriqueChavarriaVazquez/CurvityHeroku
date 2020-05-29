@@ -235,7 +235,7 @@
            include("errorPagina.php");
         }else{
 
-            $aspiranteObje=new Aspirante(["nombreAs"],["passwordAs"],
+            $aspiranteObje=new Aspirante($_SESSION["nombreAs"],"passwordAs",
             ["apPatAs"],["apMatAs"],["fechaNacAs"],
             $expAsp,$sueldoAsp,["direccionAs"],["nivelAcAs"],["escuelaAs"],
             $habiliAsp,["mailAs"],["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);

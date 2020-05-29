@@ -284,7 +284,7 @@ index_asp.php
                 </div>
 
                 <!--Foto de perfil-->
-                <div class="file-field input-field">
+                    <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
                         <input type="file" id="archivo_aspirante" name="archivo_aspirante">

@@ -200,7 +200,7 @@
         }
         
         $_SESSION["direccionAs"]=$direccionAs;
-        $_SESSION["telAs"]=$telAs;
+        //$_SESSION["telAs"]=$telAs;
         
         if(validacionNormal( $facebookAs)){
             $_SESSION["facebookAs"]=$facebookAs;
@@ -211,6 +211,11 @@
         if(validacionNormal($twitterAs)){
             $_SESSION["twitterAs"]=$twitterAs;
         }
+
+        $servername = "localhost";
+        $username = "u253306330_curvity";
+        $password = "curvity";
+        $dbname = "u253306330_curvity";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection

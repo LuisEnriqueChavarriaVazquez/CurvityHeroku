@@ -1,12 +1,22 @@
 <!--Menu del sidenav-->
+<?php
+include_once 'includes/user.php';
+include_once 'includes/user_session.php';
+if(isset($_SESSION['user'])){
+    $user->setUser($userSession->getCurrentUser());
+    $dato=$user->getNombre();
+}
 
+$userSession = new UserSession();
+$user = new User();
+?>
 <ul id="slide-out" class="sidenav colorContrast">
     <li>
         <div class="user-view">
             <div class="background sideNavFont">
 
             </div>
-            <a href="#user"><img class="circle hoverable" src="pictures/logo.png"></a>
+            <a href="#user"><img class="circle hoverable" src="pictures/logo.png"><?php echo $dato ?></a>
             <a href="#name"><span class="white-text name">Curvity</span></a>
             <a href="#email"><span class="white-text email">Version 1.0.0</span></a>
         </div>
@@ -23,14 +33,6 @@
         <a href="#" data-target="slide-out" class="sidenav-trigger" ><i class="material-icons">menu</i></a>
         <p class="textNavbar">Pagina principal.</p>
     </div>
-    <div class="nav-content">
-        <div class="nav-wrapper">
-            <form>
-                <div class="input-field">
-                    <input id="search" class="input-search" type="search" required autocomplete="off">
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>
-        </div>
-    </div>
+    
+
+

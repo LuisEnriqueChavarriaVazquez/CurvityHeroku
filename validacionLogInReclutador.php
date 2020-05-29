@@ -7,6 +7,8 @@ if (isset($_POST['entradaReclutador'])) {
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","CorreoElecReclutador",$correoEntrada)==TRUE){
             if($objetoConexion->comprobarExistenciaElementoAtibuto("Sede","ContraReclutador",$contraEntrada)==TRUE){
+               session_start();
+               $_SESSION["nombreUsuario"]=$objetoConexion->retornarElementoInteres("Sede","CorreoElecReclutador",$correoEntrada,"NombreReclutador");
                header("Location:operacionesReclutador.php");
                exit;
               

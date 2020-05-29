@@ -94,6 +94,18 @@ class objetoConexionBaseDatos {
          return false;
       }
    }
+
+   public function retornarElementoInteres($NombreTabla,$NombreAtributoBusqueda,$NombreElemento,$NombreAtributoRetorno){
+      $sqlSentence="select * from ".$NombreTabla." where ".$NombreAtributoBusqueda."='".$NombreElemento."'";
+      $result = $this->conector->query($sqlSentence);
+      if ($result->num_rows > 0) {
+         while($row = $result->fetch_assoc()) {
+            return $row[$NombreAtributoRetorno];
+          }
+      }else{
+         return false;
+      }
+   }
     
 }
 ?>

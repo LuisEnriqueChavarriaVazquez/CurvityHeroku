@@ -30,6 +30,9 @@ class Emp extends DB{
         return $this->nombre;
         return $this->username;
     }
+    public function getEmpCorreo(){
+        return $this->username;
+    }
 }
 
 ?>

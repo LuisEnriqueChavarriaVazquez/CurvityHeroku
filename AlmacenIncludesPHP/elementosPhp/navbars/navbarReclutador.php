@@ -17,7 +17,9 @@
 
             </div>
             <a href="#user"><img class="circle hoverable" src="pictures/logo.png">
-            <?php echo $_SESSION["nombreUsuario"]; ?></a>
+            <?php
+             session_start();
+             echo $_SESSION["nombreUsuario"]; ?></a>
             <a href="#name"><span class="white-text name">Curvity</span></a>
             <a href="#email"><span class="white-text email">Version 1.0.0</span></a>
         </div>

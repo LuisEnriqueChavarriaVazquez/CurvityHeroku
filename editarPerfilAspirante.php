@@ -3,6 +3,9 @@ include_once 'includes/user.php';
 include_once 'includes/user_session.php';
 include 'includes/Conexion.php';
 
+$userSession = new UserSession();
+$user = new User();
+
 if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
     $dato=$user->getCorreo();
@@ -280,8 +283,8 @@ index_asp.php
                     <label for="twitter_aspirante">(Opcional) Twitter.</label>
                 </div>
 
-                <!--Foto de perfil-->
-                    <div class="file-field input-field">
+                         <!--Foto de perfil-->
+                <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
                         <input type="file" id="archivo_aspirante" name="archivo_aspirante">

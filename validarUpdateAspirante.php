@@ -1,7 +1,5 @@
 <?php
     require('claseAspirante.php');
-    include_once 'includes/user.php';
-    include_once 'includes/user_session.php';
 
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
@@ -223,6 +221,8 @@
            die("Connection failed: " . $conn->connect_error);
            include("errorPagina.php");
         }else{
+            include_once 'includes/user.php';
+            include_once 'includes/user_session.php';
             $user->setUser($userSession->getCurrentUser());
             $dato=$user->getCorreo();
 

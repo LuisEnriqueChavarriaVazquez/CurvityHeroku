@@ -7,6 +7,8 @@ if (isset($_POST['username_emp'])) {
      if($objetoConexion-> comprobarConexion()==TRUE){
          if($objetoConexion->comprobarExistenciaElementoAtibuto("Empresa","DireccionWeb",$correoEntrada)==TRUE){
             if($objetoConexion->comprobarExistenciaElementoAtibuto("Empresa","Contra",$contraEntrada)==TRUE){
+               session_start();
+               $_SESSION["nombreUsuario"]=$objetoConexion->retornarElementoInteres("Empresa","DireccionWeb",$correoEntrada,"Nombre");
                header("Location:operacionesEmpresa.php");
                exit;
               

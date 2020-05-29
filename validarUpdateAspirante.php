@@ -228,52 +228,47 @@
            include("errorPagina.php");
         }else{
 
-            $aspiranteObje=new Aspirante($_SESSION["nombreAs"],"passwordAs",
-            ["apPatAs"],["apMatAs"],["fechaNacAs"],
-            $expAsp,$sueldoAsp,["direccionAs"],["nivelAcAs"],["escuelaAs"],
-            $habiliAsp,["mailAs"],["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);
+            $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
+            $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
+            $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
+            $habiliAsp,$_SESSION["mailAs"],$_SESSION["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);
+            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
             $nombre=$aspiranteObje->get_nombre();
+            $app=$aspiranteObje->get_apellidomaterno();
+            $apm=$aspiranteObje->get_apellidomaterno();
+            $pw=$aspiranteObje->get_password();
+            $fec=$aspiranteObje->get_fechaNacimiento();
+            $exp=$aspiranteObje->get_resumenExperienciasLaborales();
+            $salario=$aspiranteObje->get_sueldoDeseado();
+            $dir=$aspiranteObje->get_direccion();
+            $nivel=$aspiranteObje->get_nivelAcademico();
+            $esc=$aspiranteObje->get_escuela();
+            $hab=$aspiranteObje->get_resumenHabilidades();
+            $email=$aspiranteObje->get_correoElectronico();
+            $tel=$aspiranteObje->get_telefono();
+            $num_id=$aspiranteObje->get_numeroIdiomas();
+            $detalles=$aspiranteObje->get_detallesIdiomas();
             $sql = "UPDATE Aspirante SET 
-            Nombre ='$nombre', 
-            ApellidoPat = 'Uriostegui' 
+            Nombre ='$nombre',
+            Contra='$pw',
+            ApellidoPat = '$app',
+            ApellidoMat='$apm',
+            SueldoDeseado='$salario',
+            Direccion='$dir',
+            Escuela='$esc',
+            NivelAcademico='$nivel',
+            CorreoElec='$email',
+            ResumenExpPrevLab='$exp',
+            ResumenHab='$hab',
+            numeroIdiomas='$num_id',
+            detallesIdiomas='$detalles',
+            FacebookAspirante='$facebookAs'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);
-           /* $sqlCeldas= "insert into Aspirante (IDAspirante,Nombre,Contra,ApellidoPat,ApellidoMat,
-            SueldoDeseado,Direccion,Escuela,NivelAcademico,CorreoElec,ResumenExpPrevLab,ResumenHab,
-            numeroIdiomas,detallesIdiomas,FotoPerfil";
-            
-   
-            $sqlValores=" values('".$aspiranteObje->generarIdentificador()."','".$aspiranteObje->get_nombre()."'
-            ,'".$aspiranteObje->get_password()."','".$aspiranteObje->get_apellidoPaterno()."',
-            '".$aspiranteObje->get_apellidoMaterno()."','".$aspiranteObje->get_sueldoDeseado()."',
-            '".$aspiranteObje->get_direccion()."','".$aspiranteObje->get_escuela()."',
-            '".$aspiranteObje->get_nivelAcademico()."','".$aspiranteObje->get_correoElectronico()."',
-            '".$aspiranteObje->get_resumenExperienciasLaborales()."','".$aspiranteObje->get_resumenHabilidades()."',
-            ".$aspiranteObje->get_numeroIdiomas().",'".$aspiranteObje->get_detallesIdiomas()."','$fileFoto'";
-            if(isset(["facebookAs"])){
-               $sqlCeldas=$sqlCeldas.",FacebookAspirante";
-               $sqlValores=$sqlValores.",'".$_SESSION["facebookAs"]."'";
-               $aspiranteObje->set_NombreFacebook($_SESSION["facebookAs"]);
-            }
-   
-            if(isset($_SESSION["skypeAs"])){
-               $sqlCeldas=$sqlCeldas.",SkypeAspirante";
-               $sqlValores=$sqlValores.",'".$_SESSION["skypeAs"]."'";
-               $aspiranteObje->set_NombreSkype($_SESSION["skypeAs"]);
-            }
-   
-            if(isset($_SESSION["twitterAs"])){
-               $sqlCeldas=$sqlCeldas.",TwitterAspirante";
-               $sqlValores=$sqlValores.",'".$_SESSION["twitterAs"]."'";
-               $aspiranteObje->set_NombreTwitter($_SESSION["twitterAs"]);
-            }
-            $sqlCeldas=$sqlCeldas.")";
-            $sqlValores=$sqlValores.")";
-            $sql=$sqlCeldas.$sqlValores;*/
-      
+    
             if ($conn->query($sql) === TRUE) {
                include("index_asp.php");
             } else {

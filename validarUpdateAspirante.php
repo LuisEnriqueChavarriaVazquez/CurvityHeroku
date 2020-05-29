@@ -2,7 +2,6 @@
     require('claseAspirante.php');
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
-    include 'includes/Conexion.php';
 
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
@@ -108,11 +107,11 @@
     $contadorEleConfimados++;
     }
 
-    if(!validacionTel($telAs)){
+    /*if(!validacionTel($telAs)){
     $tel_error="Tel&eacute;fono invalido";
     }else{
     $contadorEleConfimados++;
-    }
+    }*/
     function validacionImagen($ImagenEntrada){
         $allowed_extensions = array("jpg","jpeg","png");
         $listaValores=explode('.',$ImagenEntrada);
@@ -211,13 +210,11 @@
         if(validacionNormal($twitterAs)){
             $_SESSION["twitterAs"]=$twitterAs;
         }
-        $c=new conectar();
-        $conexion=$c->conexion();
 
-  
+        $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
-        if ($conexion->connect_error) {
-           die("Connection failed: " . $conexion->connect_error);
+        if ($conn->connect_error) {
+           die("Connection failed: " . $conn->connect_error);
            include("errorPagina.php");
         }else{
             $user->setUser($userSession->getCurrentUser());
@@ -235,7 +232,7 @@
             ApellidoPat = 'Uriostegui' 
             WHERE CorreoElec = '$dato'";
 
-            $result=mysqli_query($conexion,$sql);
+            $result=mysqli_query($conn,$sql);
            /* $sqlCeldas= "insert into Aspirante (IDAspirante,Nombre,Contra,ApellidoPat,ApellidoMat,
             SueldoDeseado,Direccion,Escuela,NivelAcademico,CorreoElec,ResumenExpPrevLab,ResumenHab,
             numeroIdiomas,detallesIdiomas,FotoPerfil";

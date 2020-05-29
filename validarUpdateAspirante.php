@@ -1,18 +1,12 @@
 <?php
+
+    require('claseAspirante.php');
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
     $userSession = new UserSession();
     $usuario = new User();
-    if(isset($_SESSION['user'])){
-        $usuario->setUser($userSession->getCurrentUser());
-        $dato=$usuario->getCorreo();
-        include_once 'validarUpdateAspirante.php';
-}else{
-    include_once 'index_asp.php';
-}
-?>
-<?php
-    require('claseAspirante.php');
+    $usuario->setUser($userSession->getCurrentUser());
+    $dato=$usuario->getCorreo();
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
     $apelMatAs=$_POST["apellido_materno"];

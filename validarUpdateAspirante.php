@@ -2,11 +2,8 @@
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
 
-    $userSession = new UserSession();
-    $user = new User();
     if(isset($_SESSION['user'])){
-        $user->setUser($userSession->getCurrentUser());
-        $dato=$user->getCorreo();
+        $dato=$user->getNombre();
         include_once 'validarUpdateAspirante.php';
 }else{
     include_once 'index_asp.php';

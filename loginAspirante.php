@@ -6,23 +6,20 @@ login.php
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
 <div class="boxSubjectsInicio light-blue darken-4 centerElements">
     <div class="sizeCardInicio backgroundCardInicio centerElements borderCardInicio z-depth-3">
-        <form class="col s12" method="POST" action="loginAspirante.php">
+        <form class="col s12" method="POST">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">email</i>
-                    <input id="email" name='username_Asp' id='username_Asp' type="email" class="validate white-text">
+                    <input id="email" name="username" type="email" class="validate white-text">
                     <label for="email" class="white-text">Email.</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix white-text">lock</i>
-                    <input id="password_Asp" type="password" name="password_Asp"class="validate white-text">
+                    <input id="password" type="password" name="password" class="validate white-text">
                     <label for="password" class="white-text">Password.</label>
                 </div>
             </div>
             <input type="submit"  class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4" value="Iniciar Sesión"></p>
-            <?php
-             include("validacionLogInAspirante.php");
-            ?>
         </form>
     </div>
 </div>

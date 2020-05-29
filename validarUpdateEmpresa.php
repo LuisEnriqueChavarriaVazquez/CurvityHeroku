@@ -104,12 +104,12 @@
             $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
           }
          if($objetoEmpresa->actualizarEmpresa()){
-            include("index_emp.php");
+           header("index_emp.php");
           }else{
-            include("errorPagina.php");
+           include("errorPagina.php");
           }
   }else{
-      include("index_emp.php");
+     header("index_emp.php");
   }
 } 
  

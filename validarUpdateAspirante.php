@@ -3,7 +3,7 @@
     include_once 'includes/user_session.php';
 
     if(isset($_SESSION['user'])){
-        $dato=$user->getNombre();
+        $dato=$user->getCorreo();
         include_once 'validarUpdateAspirante.php';
 }else{
     include_once 'index_asp.php';

@@ -55,56 +55,56 @@
     if(!validacionNormal($nombreAs)){
         $Nombre_error="Nombre invalido";
     }else{
-        $contadorEleConfimados++;
+        $contadorEleConfimados++;//1
     }
 
     if(!validacionNormal($apelPatAs)){
         $apPaterno_error="Apellido Paterno invalido";  
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//2
     }
 
     if(!validacionNormal($apelMatAs)){
         $apMaterno_error="Apellido Materno invalido";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//3
     }
 
     if(!validacionNormal($mailAs)){
     $mail_error="Correo invalido";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//4
     }
 
     if(!validacionNormal($passwordAs)){
     $password_error="Password invalida";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//5
     }
 
     if(!validacionNormal($fechaNacAs)){
     $fecha_error="Fecha nacimiento invalida";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//6
     }
 
 
     if(!validacionNormal($escuelaAs)){
     $escuela_error="Escuela invalida";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//7
     }
 
     if(!validacionNormal($nivelAcAs)){
     $nivelAcad_error="Nivel Acad&eacute;mico invalido";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//8
     }
 
     if(!validacionNormal($direccionAs)){
     $direccion_error="Diecci&oacute;n invalida ";
     }else{
-    $contadorEleConfimados++;
+    $contadorEleConfimados++;//9
     }
 
     /*if(!validacionTel($telAs)){
@@ -140,6 +140,7 @@
               return False;
            }else{
               return True;
+                
            }
         }
      
@@ -153,34 +154,34 @@
        if(!validacionNormal($habiliAsp)){
         $habilidades_error="Llene el apartado de habilidades";
         }else{
-        $contadorEleConfimados++;
+        $contadorEleConfimados++;//10
         }
      
         if(!validacionNormal($expAsp)){
            $experiencia_error="Llene el apartado de experiencia";
            }else{
-           $contadorEleConfimados++;
+           $contadorEleConfimados++;//11
            }
      
           if(!validacionNumeroEntero($cantidadIdiomasAsp)){
            $cantidadIdiomas_error="Escriba un numero valido";
           }else{
-           $contadorEleConfimados++;
+           $contadorEleConfimados++;//12
           }
      
           if(!validacionNormal($idiomasEspAsp)){
            $idiomasEsp_error="Llene el apartado";
            }else{
-           $contadorEleConfimados++;
+           $contadorEleConfimados++;//13
            }
      
             if(!validacionSueldo($sueldoAsp)){
                $sueldo_error="De un sueldo real";
             }else{
-              $contadorEleConfimados++;
+              $contadorEleConfimados++;//14
             }   
 
-    if($contadorEleConfimados==15){
+    if($contadorEleConfimados==14){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;

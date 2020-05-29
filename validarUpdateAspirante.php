@@ -235,11 +235,11 @@
            include("errorPagina.php");
         }else{
 
-            $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
-            $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
-            $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
-            $habiliAsp,$_SESSION["mailAs"],$_SESSION["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);
-            $fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $aspiranteObje=new Aspirante(["nombreAs"],["passwordAs"],
+            ["apPatAs"],["apMatAs"],["fechaNacAs"],
+            $expAsp,$sueldoAsp,["direccionAs"],["nivelAcAs"],["escuelaAs"],
+            $habiliAsp,["mailAs"],["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);
+            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
             $nombre=$aspiranteObje->get_nombre();
             $sql = "UPDATE Aspirante SET 
@@ -260,7 +260,7 @@
             '".$aspiranteObje->get_nivelAcademico()."','".$aspiranteObje->get_correoElectronico()."',
             '".$aspiranteObje->get_resumenExperienciasLaborales()."','".$aspiranteObje->get_resumenHabilidades()."',
             ".$aspiranteObje->get_numeroIdiomas().",'".$aspiranteObje->get_detallesIdiomas()."','$fileFoto'";
-            if(isset($_SESSION["facebookAs"])){
+            if(isset(["facebookAs"])){
                $sqlCeldas=$sqlCeldas.",FacebookAspirante";
                $sqlValores=$sqlValores.",'".$_SESSION["facebookAs"]."'";
                $aspiranteObje->set_NombreFacebook($_SESSION["facebookAs"]);

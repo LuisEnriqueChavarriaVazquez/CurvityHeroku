@@ -13,7 +13,6 @@
     $escuelaAs=$_POST["alama_mater"];
     $nivelAcAs=$_POST["nivel_acad"];
     $direccionAs=$_POST["direccion_aspirante"];
-    $telAs=$_POST["tel_aspirante"];
     $facebookAs=$_POST["facebook"];
     $skypeAs=$_POST["skype"];
     $twitterAs=$_POST["twitter"];
@@ -22,7 +21,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    $nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
+    //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     $contadorEleConfimados=0;
     
     function validacionNormal ($StringEntrada){
@@ -145,11 +144,11 @@
            }
         }
      
-        if(!validacionImagen($nombreImagenPerfilAsp)){
+        /*if(!validacionImagen(//$nombreImagenPerfilAsp)){
            $dirArchivo_error="Seleccione una imagen";
         }else{
           $contadorEleConfimados++;
-       }
+       }*/
      
      
        if(!validacionNormal($habiliAsp)){
@@ -182,7 +181,7 @@
               $contadorEleConfimados++;
             }   
 
-    if($contadorEleConfimados==16){
+    if($contadorEleConfimados==15){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;
@@ -212,21 +211,17 @@
         if(validacionNormal($twitterAs)){
             $_SESSION["twitterAs"]=$twitterAs;
         }
-        $servername = "localhost";
-        $username = "u253306330_curvity";
-        $password = "curvity";
-        $dbname = "u253306330_curvity";
+        $c=new conectar();
+        $conexion=$c->conexion();
+
   
-        $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
-        if ($conn->connect_error) {
-           die("Connection failed: " . $conn->connect_error);
+        if ($conexion->connect_error) {
+           die("Connection failed: " . $conexion->connect_error);
            include("errorPagina.php");
         }else{
             $user->setUser($userSession->getCurrentUser());
             $dato=$user->getCorreo();
-            $c=new conectar();
-            $conexion=$c->conexion();
 
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],

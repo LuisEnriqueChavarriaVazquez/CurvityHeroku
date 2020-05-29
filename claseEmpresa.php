@@ -137,29 +137,39 @@
          
        }     
        public function actualizarEmpresa(){
+        include_once 'includes/empresa.php';
+        include_once 'includes/emp_session.php';
+        
+        $empSession = new EmpSession();
+        $emp = new Emp();
+        $emp->setEmp($empSession->getCurrentEmp());
+        $dato=$emp->getEmpCorreo();
         //$fileFoto=addslashes(file_get_contents($FotoLogo));
-         $sqlScriptParam="insert into Empresa(Nombre,Contra,RazonSocial,Direccion,Tipo,Telefono,DireccionWeb";
-         $sqScriptVal=" values('".$this->nombre."','".$this->password."','".$this->razonSocial."',
-         '".$this->direccion."','".$this->tipo."','".$this->telefono."','".$this->direccionWeb."'";
-         if(isset($this->facebookEmpresa)){
-            $sqlScriptParam= $sqlScriptParam.",FacebookEmpresa";
-            $sqScriptVal= $sqScriptVal.",'".$this->facebookEmpresa."'";
-         }
-         if(isset($this->skypeEmpresa)){
-            $sqlScriptParam= $sqlScriptParam.",SkypeEmpresa";
-            $sqScriptVal= $sqScriptVal.",'".$this->skypeEmpresa."'";
-         }
-         if(isset($this->twitterEmpresa)){
-            $sqlScriptParam= $sqlScriptParam.",TwitterEmpresa";
-            $sqScriptVal= $sqScriptVal.",'".$this->twitterEmpresa."'";
-         }
-         $sqlScriptParam= $sqlScriptParam.") ";
-         $sqScriptVal= $sqScriptVal.") ";
-         $sqlScript=$sqlScriptParam.$sqScriptVal;
-
+        $nombre=$this->nombre;
+        $razon=$this->razonSocial;
+        $contra=$this->password;
+        $dir=$this->direccion;
+        $tipo=$this->tipo;
+        $tel=$this->telefono;
+        $web=$this->direccionWeb;
+        $fbemp=$this->facebookEmpresa;
+        $skemp=$this->skypeEmpresa;
+        $twemp=$this->twitterEmpresa;
+        $sql = "UPDATE Empresa SET 
+        Nombre ='$nombre',
+        RazonSocial='$razon',
+        Contra = '$contra',
+        Direccion='$dir',
+        Tipo='$tipo',
+        Telefono='$tel',
+        DireccionWeb='$web',
+        FacebookEmpresa='$fbemp',
+        SkypeEmpresa='$skemp',
+        TwitterEmpresa='$twemp'
+        WHERE DireccionWeb = '$dato'";
 
        if($this->objetoDB->comprobarConexion()==TRUE ){
-            if($this->objetoDB->conector->query($sqlScript) === TRUE){
+            if($this->objetoDB->conector->query($sql) === TRUE){
                 return true;
             }else{
                return false;

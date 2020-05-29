@@ -14,7 +14,7 @@
   "Sociedad de responsabilidad limitada laboral","Sociedad anónima laboral","Sociedad cooperativa",
   "Sociedad cooperativa de trabajo asociado","Sociedades profesionales","Sociedad agraria de transformación",
   "Sociedad de garantía recíproca","Entidades de capital riesgo","Agrupación de interés económico"
-);
+    );
     $fotoLogoEmpresa=$_FILES["fotoLogoEmp"]["name"];
     $descripEmpresa=$_POST["descripcion_empresa"];
     $telEmpresa=$_POST["telefono_empresa"];
@@ -82,27 +82,6 @@
       }else{
          $telEmpresa_error="De un numero valido";
        }
-       if($contadorEleConfimados==3){
-          $objetoEmpresa= new Empresa($_SESSION["nombreEm"], $_SESSION["passwordEm"],$_SESSION["razonSocialEm"],$_SESSION["direccionEm"], $_SESSION["tipoEm"],$telEmpresa,$_SESSION["emailEm"]);
-          if($objetoDB->validarTextoNormal($_POST["facebook_empresa"])){
-          $objetoEmpresa->setFacebookEmpresa($_POST["facebook_empresa"]);
-          }
-          if($objetoDB->validarTextoNormal($_POST["skype_empresa"])){
-            $objetoEmpresa->setSkypeEmpresa($_POST["skype_empresa"]);
-          }
-          if($objetoDB->validarTextoNormal($_POST["twitter_empresa"])){
-            $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
-          }
-         if($objetoEmpresa->ingresarNuevaEmpresa($_FILES["fotoLogoEmp"]["tmp_name"])){
-            include("finalizarProcesoSignUp.php");
-          }else{
-            include("errorPagina.php");
-          }
-    
-          
-        }else{
-         include("signUpEmpresa2.php");
-       }
      }else{
        /*Error conexion */
      }
@@ -130,10 +109,8 @@
             include("errorPagina.php");
           }
   }else{
-    /*Si hay error en la conexion */
+      include("index_asp.php");
   }
-   
-   
+} 
  
-
 ?>

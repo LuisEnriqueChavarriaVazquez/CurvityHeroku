@@ -236,7 +236,7 @@
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
             $nombre=$aspiranteObje->get_nombre();
-            $app=$aspiranteObje->get_apellidomaterno();
+            $app=$aspiranteObje->get_apellidoPaterno();
             $apm=$aspiranteObje->get_apellidomaterno();
             $pw=$aspiranteObje->get_password();
             $fec=$aspiranteObje->get_fechaNacimiento();

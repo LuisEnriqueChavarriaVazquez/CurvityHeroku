@@ -99,7 +99,7 @@ index_emp.php
         <p class="white-text textCardInicioSamll centerElements">Datos editables de la empresa.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12">
+        <form class="col s12" method="post" action="validarUpdateEmpresa.php">
         <?php while($datos=mysqli_fetch_row($result)): ?>
             <div class="row">
                 <div class="input-field col s12">

@@ -67,11 +67,11 @@
       $tipoEmpresa_error="Seleccione una opcion";
     }
     if($objetoDB->comprobarConexion()){
-        if($objetoDB->validarTextoNormal($descripEmpresa)){
+       /* if($objetoDB->validarTextoNormal($descripEmpresa)){
         $contadorEleConfimados++;
         }else{
           $descripcionEmpresa_error="Llene el apartado";
-        }
+        }*/
        /*if($objetoDB->validarImagen($fotoLogoEmpresa)){
           $contadorEleConfimados++;
           }else{
@@ -86,7 +86,7 @@
        /*Error conexion */
      }
     
-      if($contadorEleConfimados==10){
+      if($contadorEleConfimados==9){
         $_SESSION["nombreEm"]=$nombreEmpresa;
         $_SESSION["razonSocialEm"]=$razonSocialEmpresa;
         $_SESSION["emailEm"]=$emailEmpresa;

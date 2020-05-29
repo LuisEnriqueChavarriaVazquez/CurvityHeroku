@@ -136,6 +136,40 @@
         
          
        }     
+       public function actualizarEmpresa(){
+        //$fileFoto=addslashes(file_get_contents($FotoLogo));
+         $sqlScriptParam="insert into Empresa(Nombre,Contra,RazonSocial,Direccion,Tipo,Telefono,DireccionWeb";
+         $sqScriptVal=" values('".$this->nombre."','".$this->password."','".$this->razonSocial."',
+         '".$this->direccion."','".$this->tipo."','".$this->telefono."','".$this->direccionWeb."'";
+         if(isset($this->facebookEmpresa)){
+            $sqlScriptParam= $sqlScriptParam.",FacebookEmpresa";
+            $sqScriptVal= $sqScriptVal.",'".$this->facebookEmpresa."'";
+         }
+         if(isset($this->skypeEmpresa)){
+            $sqlScriptParam= $sqlScriptParam.",SkypeEmpresa";
+            $sqScriptVal= $sqScriptVal.",'".$this->skypeEmpresa."'";
+         }
+         if(isset($this->twitterEmpresa)){
+            $sqlScriptParam= $sqlScriptParam.",TwitterEmpresa";
+            $sqScriptVal= $sqScriptVal.",'".$this->twitterEmpresa."'";
+         }
+         $sqlScriptParam= $sqlScriptParam.") ";
+         $sqScriptVal= $sqScriptVal.") ";
+         $sqlScript=$sqlScriptParam.$sqScriptVal;
+
+
+       if($this->objetoDB->comprobarConexion()==TRUE ){
+            if($this->objetoDB->conector->query($sqlScript) === TRUE){
+                return true;
+            }else{
+               return false;
+            }
+         }else{
+          return false;
+         }
+        
+         
+       } 
        
    }
 

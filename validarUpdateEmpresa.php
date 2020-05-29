@@ -15,8 +15,8 @@
   "Sociedad cooperativa de trabajo asociado","Sociedades profesionales","Sociedad agraria de transformación",
   "Sociedad de garantía recíproca","Entidades de capital riesgo","Agrupación de interés económico"
     );
-    $fotoLogoEmpresa=$_FILES["fotoLogoEmp"]["name"];
-    $descripEmpresa=$_POST["descripcion_empresa"];
+   // $fotoLogoEmpresa=$_FILES["fotoLogoEmp"]["name"];
+    //$descripEmpresa=$_POST["descripcion_empresa"];
     $telEmpresa=$_POST["telefono_empresa"];
     $objetoDB= new objetoConexionBaseDatos();
     $contadorEleConfimados=0;
@@ -72,11 +72,11 @@
         }else{
           $descripcionEmpresa_error="Llene el apartado";
         }
-       if($objetoDB->validarImagen($fotoLogoEmpresa)){
+       /*if($objetoDB->validarImagen($fotoLogoEmpresa)){
           $contadorEleConfimados++;
           }else{
             $dirArchivoEmpresa_error="Seleccione una imagen";
-          }
+          }*/
       if($objetoDB->validarNumeroEntero($telEmpresa)){
         $contadorEleConfimados++;
       }else{
@@ -86,7 +86,7 @@
        /*Error conexion */
      }
     
-      if($contadorEleConfimados==11){
+      if($contadorEleConfimados==10){
         $_SESSION["nombreEm"]=$nombreEmpresa;
         $_SESSION["razonSocialEm"]=$razonSocialEmpresa;
         $_SESSION["emailEm"]=$emailEmpresa;
@@ -103,7 +103,7 @@
           if($objetoDB->validarTextoNormal($_POST["twitter_empresa"])){
             $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
           }
-         if($objetoEmpresa->ingresarNuevaEmpresa($_FILES["fotoLogoEmp"]["tmp_name"])){
+         if($objetoEmpresa->actualizarEmpresa()){
             include("finalizarProcesoSignUp.php");
           }else{
             include("errorPagina.php");

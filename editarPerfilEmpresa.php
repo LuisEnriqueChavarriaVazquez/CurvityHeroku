@@ -12,7 +12,7 @@ if(isset($_SESSION['user'])){
     $c=new conectar();
     $conexion=$c->conexion();
 
-    $sql="SELECT *from Empresa where Email='$dato'";
+    $sql="SELECT *from Empresa where DireccionWeb='$dato'";
     $result=mysqli_query($conexion,$sql);
     
 /*
@@ -20,16 +20,15 @@ if(isset($_SESSION['user'])){
                     'IDEmpresa'=>$ver[0],
                     'Nombre'=>$ver[1],
                     'RazonSocial'=>$ver[2],
-                    'Email'=> $ver[3],
-                    'Contra'=>$ver[4],
-                    'Direccion'=>$ver[5],
-                    'Tipo'=>$ver[6],
-                    'Telefono'=>$ver[7],
-                    'DireccionWeb'=>$ver[8],
-                    'FacebookEmpresa'=>$ver[9],
-                    'SkypeEmpresa'=>$ver[10],
-                    'TwitterEmpresa'=>$ver[11],
-                    'FotoLogo'=>$ver[12],
+                    'Contra'=>$ver[3],
+                    'Direccion'=>$ver[4],
+                    'Tipo'=>$ver[5],
+                    'Telefono'=>$ver[6],
+                    'DireccionWeb'=>$ver[7],
+                    'FacebookEmpresa'=>$ver[8],
+                    'SkypeEmpresa'=>$ver[9],
+                    'TwitterEmpresa'=>$ver[10],
+                    'FotoLogo'=>$ver[11],
                 );
 
     return $datos;*/
@@ -123,7 +122,7 @@ index_emp.php
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Email del admin de empresa." id="email_empresa" name="email_empresa" type="email" 
-                    value="<?php echo $datos[3] ?>" 
+                    value="<?php echo $datos[7]?>" 
                     class="validate white-text">
                     <label for="first_name">Email.</label>
                     <?php
@@ -133,7 +132,7 @@ index_emp.php
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Escriba su password." id="password_empresa" name="password_empresa" type="password"
-                    value="<?php echo $datos[4] ?>" class="validate white-text">
+                    value="<?php echo $datos[3] ?>" class="validate white-text">
                     <label for="password">Password.</label>
                     <?php
                        if(isset($passwordEmpresa_error)){
@@ -141,7 +140,7 @@ index_emp.php
                       } ?>
                 </div>
                 <div class="input-field col s12">
-                    <textarea placeholder="Escriba la dirección" id="direccion_empresa" name="direccion_empresa" class="materialize-textarea white-text" data-length="200"><?php echo $datos[5] ?></textarea>
+                    <textarea placeholder="Escriba la dirección" id="direccion_empresa" name="direccion_empresa" class="materialize-textarea white-text" data-length="200"><?php echo $datos[4] ?></textarea>
                     <label for="direccion_sede">Direccion principal de la empresa.</label>
                     <?php
                        if(isset($direccionEmpresa_error)){
@@ -264,20 +263,8 @@ index_emp.php
                       } ?>
                 </div>
 <br><br>
-                <!--Direccion-->
-                <div class="input-field col s12">
-                    <textarea placeholder="Escriba descripci&oacute;n de la empresa" name="descripcion_empresa" id="descripcion_empresa" class="materialize-textarea white-text" data-length="200"><?php
-                            echo  htmlspecialchars ($descripEmpresa)
-                        ?></textarea>
-                    <label for="descripcion_empresa">Descripci&oacute;n.</label>
-                    <?php
-                       if(isset($descripcionEmpresa_error)){
-                       echo  "<p class='white-text'>".$descripcionEmpresa_error."</p>";
-                        } ?>
-                </div>
                 <br>
             </div>
-            <!--Foto de perfil-->
             <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
@@ -297,28 +284,31 @@ index_emp.php
                 <!--Telefono y redes sociales.-->
                 <div class="input-field col s12">
                     <input placeholder="Escriba el telefono de la empresa." id="telefono_empresa" name="telefono_empresa" type="tel"
-                    value="<?php echo $datos[7] ?>"
+                    value="<?php
+                            echo  htmlspecialchars ($telEmpresa)
+                        ?>"
                      class="validate white-text">
                     <label for="telefono">Tel&eacute;fono.</label>
                     <?php 
                     if(isset($telEmpresa_error)){
                        echo  "<p class='white-text'>".$telEmpresa_error."</p>";
                         } ?>
-                </div> 
+                </div>
+               
                 <div class="input-field col s12">
                     <input placeholder="Escriba la red social" id="facebook_empresa" name="facebook_empresa" type="text" 
-                    value="<?php echo $datos[9] ?>"class="validate white-text">
+                    value="<?php echo $datos[8]?>"class="validate white-text">
                     <label for="facebook">(Opcional) Facebook.</label>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Escriba la red social" id="skype_empresa" name="skype_empresa" type="text" 
-                    value="<?php echo $datos[10] ?>"
+                    value="<?php echo $datos[9]?>"
                     class="validate white-text">
                     <label for="skype">(Opcional) Skype.</label>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Escriba la red social" id="twitter_empresa" name="twitter_empresa" type="text"
-                    value="<?php echo $datos[11] ?>" class="validate white-text">
+                    value="<?php echo $datos[10] ?>" class="validate white-text">
                     <label for="twitter">(Opcional) Twitter.</label>
                 </div>
     </div>

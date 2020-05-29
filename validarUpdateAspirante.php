@@ -231,7 +231,7 @@
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
-            $habiliAsp,$_SESSION["mailAs"],$_SESSION["telAs"],$cantidadIdiomasAsp,$idiomasEspAsp);
+            $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
@@ -264,7 +264,9 @@
             ResumenHab='$hab',
             numeroIdiomas='$num_id',
             detallesIdiomas='$detalles',
-            FacebookAspirante='$facebookAs'
+            FacebookAspirante='$facebookAs',
+            SkypeAspirante='$skypeAs',
+            TwitterAspirante='$twitterAs'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);

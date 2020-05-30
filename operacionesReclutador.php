@@ -6,17 +6,25 @@
 <div class="boxSubjects blue-grey lighten-5">
     <p class="titles">Operaciones reclutador.</p>
 
-    <a href="ofertasPublicadasPrevioSwipe.php">
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
-    Gestionar solicitudes con SWIPE.
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
-    </a>
+    <?php 
+    $nombre = $_SESSION["nombreUsuario"];
+    ?>
+
+    <form action="ofertasPublicadasPrevioSwipe.php" method="GET">
+        <?php
+        echo "<a name='submit' href='./ofertasPublicadasPrevioSwipe.php?Nombre=$nombre'>";
+        ?>
+            <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
+            Gestionar solicitudes con SWIPE.
+            <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
+        </a>
+    </form>
 
 
     <a href="gestionOfertas.php">
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
-    Gestionar ofertas de sede.
-    <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesSuperior.php'; ?>
+        Gestionar ofertas de sede.
+        <?php include 'AlmacenIncludesPHP/elementosPhp/cardOperaciones/cardOperacionesInferior.php'; ?>
     </a>
 </div>
 

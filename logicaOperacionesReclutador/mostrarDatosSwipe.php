@@ -35,6 +35,7 @@ function imprimir($IDAspiranteSelecto,$conn){
     $queryDatosAspirante = "SELECT * FROM Aspirante WHERE IDAspirante = '$IDAspiranteSelecto'";
     $resultAsp = mysqli_query($conn, $queryDatosAspirante);
     while ($rowAsp = $resultAsp->fetch_assoc()) {
+        print "perro";
     print "
             <div class='margin-down-bigger elementoSwipePadre'>
             <div class='wrapper'>

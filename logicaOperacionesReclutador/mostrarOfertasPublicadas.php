@@ -35,8 +35,10 @@ while($rowPuesto = $resultPuesto->fetch_assoc()) {
     $nombrePuesto = $rowPuesto['Nombre'];
     $IDPuesto = $rowPuesto['IDPuesto']; 
     
-    
+     print "<form action='paginaSwipe.php' method='GET'><a name='submit' 
+     href='./paginaSwipe.php?IDSede=$IDSede&IDEmpresa=$IDEmpresa&IDPuesto=$IDPuesto'>";
      include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php';
      echo $nombrePuesto;
      include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php';
+     print "</a>";
 }

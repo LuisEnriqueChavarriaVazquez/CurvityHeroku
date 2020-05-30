@@ -17,7 +17,7 @@ include_once 'includes/user_session.php';
 
 <!--Cuerpo de las secciones-->
 <br><br><br><br><br><br><br><br>
-<h2><?php echo $user->getNombre();  ?></h2>
+
 <div class="boxSubjectsBrowser full-height blue-grey lighten-5" id="fullEmpleosContainer">
 
   <div id="datos" class="row">

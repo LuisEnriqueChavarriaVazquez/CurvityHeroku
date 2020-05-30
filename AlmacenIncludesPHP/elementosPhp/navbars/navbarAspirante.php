@@ -21,7 +21,7 @@
 <nav class="nav-extended  light-blue darken-4 stickyNavbar">
     <div class="nav-wrapper">
         <a href="#" data-target="slide-out" class="sidenav-trigger" ><i class="material-icons">menu</i></a>
-        <p class="textNavbar">Pagina principal.</p>
+        <p class="textNavbar">Bienvenido <?php echo $user->getNombre();  ?>.</p>
     </div>
     
 

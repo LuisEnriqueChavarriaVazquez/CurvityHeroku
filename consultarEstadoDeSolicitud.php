@@ -8,7 +8,7 @@ index_asp.php
 <div class="boxSubjectsInicioExtended centerElements">
 
     <div class="cardTitleOfertaFinal">
-        <p class="titleOfertaFinal truncate black-text">Estado de las ofertas.</p>
+        <p class="titleOfertaFinal truncate black-text">Estado de ofertas enviadas.</p>
     </div>
 
     <!--PRIMERA CARD-->

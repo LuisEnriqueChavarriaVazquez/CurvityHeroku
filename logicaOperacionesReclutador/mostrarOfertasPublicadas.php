@@ -40,5 +40,5 @@ while($rowPuesto = $resultPuesto->fetch_assoc()) {
      include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php';
      echo $nombrePuesto;
      include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php';
-     print "</a>";
+     print "</a></form>";
 }

@@ -25,10 +25,9 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["tmp_name"];
     $check = getimagesize($_FILES["archivo_aspirante"]["tmp_name"]);
-    //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     $contadorEleConfimados=0;
+    
     if($check !== false){
         $image = $_FILES['archivo_aspirante']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
@@ -43,20 +42,7 @@
         return True;
     }
     }
-   /* function validacionImagen($ImagenEntrada){
-        $allowed_extensions = array("jpg","jpeg","png");
-        $listaValores=explode('.',$ImagenEntrada);
-        if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
-           return True;
-        }else{
-           return False;
-        }
-       }
-       if(!validacionImagen($nombreImagenPerfilAsp)){
-        $dirArchivo_error="Seleccione una imagen";
-     }else{
-       $contadorEleConfimados++;
-    }*/
+
     function validacionMail ($StringEntrada){
     if(empty($StringEntrada) || trim($StringEntrada)== ""){
         return False;
@@ -132,13 +118,6 @@
     }else{
     $contadorEleConfimados++;//9
     }
-
-    /*if(!validacionTel($telAs)){
-    $tel_error="Tel&eacute;fono invalido";
-    }else{
-    $contadorEleConfimados++;
-    }*/
-
         function validacionNumeroEntero ($StringEntrada){
            if(trim($StringEntrada)== ""){
               return False;
@@ -160,13 +139,6 @@
                 
            }
         }
-     
-       /* if(!validacionImagen($nombreImagenPerfilAsp)){
-           $dirArchivo_error="Seleccione una imagen";
-        }else{
-          $contadorEleConfimados++;
-       }*/
-     
      
        if(!validacionNormal($habiliAsp)){
         $habilidades_error="Llene el apartado de habilidades";
@@ -217,7 +189,6 @@
         }
         
         $_SESSION["direccionAs"]=$direccionAs;
-        //$_SESSION["telAs"]=$telAs;
         
         if(validacionNormal( $facebookAs)){
             $_SESSION["facebookAs"]=$facebookAs;
@@ -244,10 +215,8 @@
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
-            $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
-            $fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $habiliAsp,$_SESSION["mailAs"], $cantidadIdiomasAsp,$idiomasEspAsp);
 
-            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
             $nombre=$aspiranteObje->get_nombre();
             $app=$aspiranteObje->get_apellidoPaterno();
@@ -283,7 +252,7 @@
             TwitterAspirante='$twitterAs',
             FotoPerfil='$imgContent'
             WHERE CorreoElec = '$dato'";
-
+            //FotoPerfil='$imgContent'
             $result=mysqli_query($conn,$sql);
     
             if ($conn->query($sql) === TRUE) {

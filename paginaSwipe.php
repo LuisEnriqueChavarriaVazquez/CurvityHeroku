@@ -20,10 +20,10 @@ function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
     $valorSituacion = "Aceptado";
     $queryAceptado = "UPDATE Matching SET Situacion='$valorSituacion' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
     if ($conn->query($queryAceptado) === TRUE) { 
-        print $IDAspiranteSelecto; 
-        print $IDEmpresa; 
-        print $IDSede;
-        print $IDPuesto; 
+        print $IDAspiranteSelecto . "//"; 
+        print $IDEmpresa . "//"; 
+        print $IDSede . "//";
+        print $IDPuesto .  "//"; 
        }else {
         echo "ERROR";
        }      

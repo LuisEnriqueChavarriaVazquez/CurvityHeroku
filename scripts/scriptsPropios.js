@@ -27,6 +27,8 @@ $(document).ready(function () {
         cssEase: 'ease',
         infinite: false,
         mobileFirst: true,
+        arrows: true,
+        centerMode: true,
         slidesToShow: 1
     });
 
@@ -117,8 +119,7 @@ $(document).ready(function () {
     $(function () {
         //Agrega el evento click a todos los elementos que tengan la clase "item"
         $(".acepto").on("click", function (a) {
-            alert("Hola: "
-            )
+            alert("Hola: ")
         })
     })
 

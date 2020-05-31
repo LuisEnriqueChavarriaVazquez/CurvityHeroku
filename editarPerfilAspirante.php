@@ -287,7 +287,7 @@ index_asp.php
                 <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
-                        <input type="file" id="archivo_aspirante" name="archivo_aspirante">
+                        <input type="file" id="archivo_aspirante" name="archivo_aspirante"/>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 

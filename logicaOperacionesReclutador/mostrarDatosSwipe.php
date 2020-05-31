@@ -58,7 +58,7 @@ function imprimir($IDAspiranteSelecto, $conn,$IDEmpresa,$IDSede,$IDPuesto)
             <section class='contentDescription'>
             <div class='clash-card__unit-description black-text left-align'>
             <div class='clash-card__unit-name truncate'>Nombre.</div>
-            <p class='flow-text'>" . $rowAsp['Nombre'] . "</p>
+            <p class='flow-text'>" . $rowAsp['Nombre']." ".$rowAsp['ApellidoPat']." ".$rowAsp['ApellidoMat']. "</p>
             </div>
             <div class='clash-card__unit-description black-text left-align'>
             <div class='clash-card__unit-name truncate'>Experiencia laboral.</div>

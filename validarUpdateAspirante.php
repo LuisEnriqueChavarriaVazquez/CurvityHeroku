@@ -3,7 +3,6 @@
     require('claseAspirante.php');
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
-    if(isset($_POST["actualizaA"])){
 
     $userSession = new UserSession();
     $usuario = new User();
@@ -44,7 +43,7 @@
         return True;
     }
     }
-    function validacionImagen($ImagenEntrada){
+   /* function validacionImagen($ImagenEntrada){
         $allowed_extensions = array("jpg","jpeg","png");
         $listaValores=explode('.',$ImagenEntrada);
         if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
@@ -57,7 +56,7 @@
         $dirArchivo_error="Seleccione una imagen";
      }else{
        $contadorEleConfimados++;
-    }
+    }*/
     function validacionMail ($StringEntrada){
     if(empty($StringEntrada) || trim($StringEntrada)== ""){
         return False;
@@ -162,11 +161,11 @@
            }
         }
      
-        if(!validacionImagen($nombreImagenPerfilAsp)){
+       /* if(!validacionImagen($nombreImagenPerfilAsp)){
            $dirArchivo_error="Seleccione una imagen";
         }else{
           $contadorEleConfimados++;
-       }
+       }*/
      
      
        if(!validacionNormal($habiliAsp)){
@@ -299,5 +298,5 @@
       }
     
 
-    }
+    
 ?>

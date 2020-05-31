@@ -153,11 +153,11 @@
            }
         }
      
-        /*if(!validacionImagen(//$nombreImagenPerfilAsp)){
+        if(!validacionImagen($nombreImagenPerfilAsp)){
            $dirArchivo_error="Seleccione una imagen";
         }else{
           $contadorEleConfimados++;
-       }*/
+       }
      
      
        if(!validacionNormal($habiliAsp)){

@@ -26,6 +26,10 @@ function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
        }else {
         echo "ERROR";
        }      
+
+       if (!$$conn -> query($queryAceptado)) {
+        echo("Error description: " . $$conn -> error);
+      }
 }
 
 function borrado($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
@@ -35,7 +39,11 @@ function borrado($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
         echo "borrado";  
        }else {
         echo "ERROR";
-       }      
+       }
+       
+       if (!$$conn -> query($queryRechazo)) {
+        echo("Error description: " . $$conn -> error);
+      }
 }
 ?>
 

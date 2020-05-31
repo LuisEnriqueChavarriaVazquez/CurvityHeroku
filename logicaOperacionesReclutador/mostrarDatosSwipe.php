@@ -101,11 +101,11 @@ function imprimir($IDAspiranteSelecto, $conn,$IDEmpresa,$IDSede,$IDPuesto)
             ";
             
             if(isset($_POST[$rowAsp['IDAspirante']])){
-                aceptar($conn, $rowAsp['IDAspirante'],$IDEmpresa,$IDSede,$IDPuesto);
+                aceptar($conn, $rowAsp['IDAspirante'],$IDSede,$IDPuesto,$IDEmpresa);
             }
 
             if(isset($_POST[$rowAsp['IDAspirante'].$rowAsp['IDAspirante']])){
-                borrado($conn, $rowAsp['IDAspirante'],$IDEmpresa,$IDSede,$IDPuesto);
+                borrado($conn, $rowAsp['IDAspirante'],$IDSede,$IDPuesto,$IDEmpresa);
             }
     }
 

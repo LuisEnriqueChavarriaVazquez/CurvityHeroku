@@ -17,13 +17,12 @@ ofertasPublicadasPrevioSwipe.php
 <?php
 function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
 {
-    $queryAceptado = "UPDATE Matching SET Situacion='Aceptado' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
+    $queryAceptado = "UPDATE matching SET Situacion='Aceptado' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
     if ($conn->query($queryAceptado) === TRUE) { 
         print $IDAspiranteSelecto; 
         print $IDEmpresa; 
         print $IDSede;
-        print $IDPuesto;  
-        print "perro2";
+        print $IDPuesto; 
        }else {
         echo "ERROR";
        }      
@@ -31,8 +30,9 @@ function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
 
 function borrado($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
 {
-    $queryAceptado = "UPDATE Matching SET Situacion='Rechazado' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
-    if ($conn->query($queryAceptado) === TRUE) {   
+    $queryRechazo = "UPDATE matching SET Situacion='Rechazado' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
+    if ($conn->query($queryRechazo) === TRUE) { 
+        echo "borrado";  
        }else {
         echo "ERROR";
        }      

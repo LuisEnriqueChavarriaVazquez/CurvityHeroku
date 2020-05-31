@@ -27,8 +27,8 @@ function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
         echo "ERROR";
        }      
 
-       if (!$$conn -> query($queryAceptado)) {
-        echo("Error description: " . $$conn -> error);
+       if (!$conn -> query($queryAceptado)) {
+        echo("Error description: " . $conn -> error);
       }
 }
 
@@ -41,7 +41,7 @@ function borrado($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
         echo "ERROR";
        }
        
-       if (!$$conn -> query($queryRechazo)) {
+       if (!$conn -> query($queryRechazo)) {
         echo("Error description: " . $$conn -> error);
       }
 }

@@ -24,7 +24,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    $nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
+    $nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["tmp_name"];
     //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     $contadorEleConfimados=0;
     

@@ -272,7 +272,8 @@
             $result=mysqli_query($conn,$sql);
     
             if ($conn->query($sql) === TRUE) {
-               include("index_asp.php");
+                header("Location:" . $_SERVER['HTTP_REFERER']); //la pagina anterior o poner la pagina que tu quieras
+                die();
             } else {
               include("errorPagina.php");
             }

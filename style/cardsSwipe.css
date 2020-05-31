@@ -9,7 +9,7 @@
 }
 .clash-card {
     background: white;
-    width: 280px;
+    width: 320px;
     display: inline-block;
     margin: auto;
     border-radius: 20px;
@@ -19,14 +19,13 @@
 }
 .clash-card__image ,.card_image_empleado{
     position: relative;
-    height: 280px;
+    height: 300px;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
 }
 
 .clash-card__unit-name {
     font-size: 23px;
-    color: black;
     font-weight: 900;
     margin-bottom: -15px;
 }
@@ -74,7 +73,7 @@
 }
 
 .SWIPECAROUSEL{
-    height: 800px !important;
+    height: 830px !important;
 }
 
 /*Botones de aceptación o rechazo de la solicitud*/
@@ -85,9 +84,8 @@
     position: relative;
     width: 200px;
     border-radius: 50px;
-    top: -25px;
-    right: -40px;
-    background-color: black;
+    top: -40px;
+    right: -62.5px;
 }
 
 .buttonEvaluate{
@@ -139,14 +137,14 @@
 /*ID del aspirantes SWIPE*/
 
 .idDisplay{
-    width: 280px;
-    height: 40px;
+    width: 320px;
+    height: 60px;
     font-weight: 700;
     font-size: 20px;
     background-color: rgb(241, 241, 241);
-    color:#01476B;
+    color:rgb(0, 58, 87);
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
     position: relative;
     margin-bottom: 20px;
 

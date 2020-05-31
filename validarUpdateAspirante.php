@@ -26,13 +26,13 @@
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
     $check = getimagesize($_FILES["archivo_aspirante"]["tmp_name"]);
+    $imageContent;
     $contadorEleConfimados=0;
     
     if($check !== false){
         $image = $_FILES['archivo_aspirante']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
         $contadorEleConfimados++;
-        return $imgContent;
     }
     
     function validacionNormal ($StringEntrada){

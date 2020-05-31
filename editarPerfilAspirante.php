@@ -132,7 +132,7 @@ index_asp.php
         <p class="white-text textCardInicioSamll centerElements">Datos editables.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
-        <form class="col s12" method="post" action="validarUpdateAspirante.php">
+        <form class="col s12" method="post" action="validarUpdateAspirante.php" enctype="multipart/form-data">
         <?php while($datos=mysqli_fetch_row($result)): ?>
                 <div class="input-field col s12"> 
                     <input placeholder="Escriba su nombre." id="nombre_aspirante" name="nombre_aspirante" 
@@ -355,7 +355,7 @@ index_asp.php
                 </div>
             </div>
             <?php endwhile; ?>
-            <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
+            <button type="submit" name="actualizaA" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
     </div>
     

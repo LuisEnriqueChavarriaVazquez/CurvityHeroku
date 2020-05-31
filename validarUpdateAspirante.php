@@ -3,6 +3,8 @@
     require('claseAspirante.php');
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
+    if(isset($_POST["actualizaA"])){
+
     $userSession = new UserSession();
     $usuario = new User();
     $usuario->setUser($userSession->getCurrentUser());
@@ -24,9 +26,16 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    $nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["tmp_name"];
+    //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["tmp_name"];
+    $check = getimagesize($_FILES["archivo_aspirante"]["tmp_name"]);
     //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     $contadorEleConfimados=0;
+    if($check !== false){
+        $image = $_FILES['archivo_aspirante']['tmp_name'];
+        $imgContent = addslashes(file_get_contents($image));
+        $contadorEleConfimados++;
+        return $imgContent;
+    }
     
     function validacionNormal ($StringEntrada){
     if(empty($StringEntrada) || trim($StringEntrada)== ""){
@@ -272,7 +281,8 @@
             detallesIdiomas='$detalles',
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
-            TwitterAspirante='$twitterAs'
+            TwitterAspirante='$twitterAs',
+            FotoPerfil='$imgContent'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);
@@ -289,5 +299,5 @@
       }
     
 
-
+    }
 ?>

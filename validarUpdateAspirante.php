@@ -24,6 +24,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
+    $nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
     $contadorEleConfimados=0;
     
@@ -34,7 +35,20 @@
         return True;
     }
     }
-
+    function validacionImagen($ImagenEntrada){
+        $allowed_extensions = array("jpg","jpeg","png");
+        $listaValores=explode('.',$ImagenEntrada);
+        if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
+           return True;
+        }else{
+           return False;
+        }
+       }
+       if(!validacionImagen($nombreImagenPerfilAsp)){
+        $dirArchivo_error="Seleccione una imagen";
+     }else{
+       $contadorEleConfimados++;
+    }
     function validacionMail ($StringEntrada){
     if(empty($StringEntrada) || trim($StringEntrada)== ""){
         return False;
@@ -116,16 +130,7 @@
     }else{
     $contadorEleConfimados++;
     }*/
-    function validacionImagen($ImagenEntrada){
-        $allowed_extensions = array("jpg","jpeg","png");
-        $listaValores=explode('.',$ImagenEntrada);
-        if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
-           return True;
-        }else{
-           return False;
-        }
-       }
-     
+
         function validacionNumeroEntero ($StringEntrada){
            if(trim($StringEntrada)== ""){
               return False;
@@ -232,7 +237,8 @@
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
             $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
-            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             
             $nombre=$aspiranteObje->get_nombre();

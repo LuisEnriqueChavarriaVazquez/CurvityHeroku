@@ -18,7 +18,8 @@ ofertasPublicadasPrevioSwipe.php
 function aceptar($conn, $IDAspiranteSelecto,$IDSede,$IDPuesto,$IDEmpresa)
 {
     $queryAceptado = "UPDATE Matching SET Situacion='Aceptado' WHERE IDAspirante = '$IDAspiranteSelecto' AND IDSede = '$IDSede' AND IDEmpresa = '$IDEmpresa' AND IDPuesto = '$IDPuesto'";
-    if ($conn->query($queryAceptado) === TRUE) {   
+    if ($conn->query($queryAceptado) === TRUE) { 
+        print $IDAspiranteSelecto. $IDEmpresa. $IDSede. $IDPuesto;  
         print "perro2";
        }else {
         echo "ERROR";

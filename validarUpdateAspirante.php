@@ -199,7 +199,7 @@
               $contadorEleConfimados++;//14
             }   
 
-    if($contadorEleConfimados==14){
+    if($contadorEleConfimados==15){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;

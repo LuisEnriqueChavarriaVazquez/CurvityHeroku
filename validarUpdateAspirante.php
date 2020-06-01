@@ -272,7 +272,7 @@
             $result=mysqli_query($conn,$sql);
     
             if ($conn->query($sql) === TRUE) {
-                header("location:index_asp.php"); //la pagina anterior o poner la pagina que tu quieras
+                header("location:index_asp.php"); 
                 die();
             } else {
               include("errorPagina.php");

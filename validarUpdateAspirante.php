@@ -280,7 +280,7 @@
          }
    
       }else{
-         include("index_asp.php");
+         header("location:index_asp.php");
       }
     
 

@@ -254,6 +254,6 @@
             }
          }
         }else{
-            include("editarPerfilAspirante.php")
+            include("editarPerfilAspirante.php");
         }
 ?>

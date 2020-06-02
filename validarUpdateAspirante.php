@@ -206,8 +206,8 @@
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
             $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
-            $fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
             //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $fileFoto = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
             
             $nombre=$aspiranteObje->get_nombre();
             $app=$aspiranteObje->get_apellidoPaterno();
@@ -241,7 +241,7 @@
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
             TwitterAspirante='$twitterAs',
-            FotoPerfil='$fileFoto'
+            FotoPerfil='.$fileFoto.'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);

@@ -15,29 +15,6 @@ if(isset($_SESSION['user'])){
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
     
-/*
-    $datos=array(
-                    'IDAspirante'=>$ver[0],
-                    'Nombre'=>$ver[1],
-                    'Contra'=>$ver[2],
-                    'ApellidoPat'=> $ver[3],
-                    'ApellidoMat'=>$ver[4],
-                    'SueldoDeseado'=>$ver[5],
-                    'Direccion'=>$ver[6],
-                    'Escuela'=>$ver[7],
-                    'NivelAcademico'=>$ver[8],
-                    'CorreoElec'=>$ver[9],
-                    'ResumenExpPrevLab'=>$ver[10],
-                    'ResumenHab'=>$ver[11],
-                    'numeroIdiomas'=>$ver[12],
-                    'detallesIdiomas'=>$ver[13],
-                    'FacebookAspirante'=>$ver[14],
-                    'SkypeAspirante'=>$ver[15],
-                    'TwitterAspirante'=>$ver[16],
-                    'FotoPerfil'=>$ver[17]
-                );
-
-    return $datos;*/
     include_once 'editarPerfilAspirante.php';
 }else{
     include_once 'loginAspirante.php';
@@ -287,7 +264,7 @@ index_asp.php
                 <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
-                        <input type="file" id="archivo_aspirante" name="archivo_aspirante"/>
+                        <input type="file" id="archivo_aspirante" value="<?php echo $datos[17] ?>" name="archivo_aspirante"/>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 

@@ -343,7 +343,7 @@ index_asp.php
             <?php endwhile; ?>
             <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
+        <img src="data:image/jpeg;base64,<?php base64_encode($rowfoto['FotoPerfil'])?>" />
     </div>
-    <img src="data:image/jpeg;base64,<?php base64_encode($rowfoto['FotoPerfil'])?>" />
 </div>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

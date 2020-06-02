@@ -25,6 +25,7 @@
             $this->objetoDB=new  objetoConexionBaseDatos();
             
        }
+
        public function setNombre($StringEntrada){
              $this->nombre=$StringEntrada;
        }
@@ -135,7 +136,7 @@
         
          
        }     
-       public function actualizarEmpresa(/*$foto*/){
+       public function actualizarEmpresa(){
         include_once 'includes/empresa.php';
         include_once 'includes/emp_session.php';
         
@@ -164,7 +165,7 @@
         DireccionWeb='$web',
         FacebookEmpresa='$fbemp',
         SkypeEmpresa='$skemp',
-        TwitterEmpresa='$twemp
+        TwitterEmpresa='$twemp'
         WHERE DireccionWeb = '$dato'";
 
        if($this->objetoDB->comprobarConexion()==TRUE ){

@@ -77,19 +77,19 @@
     if(!validacionNormal($escuelaAs)){
     $escuela_error="Escuela invalida";
     }else{
-    $contadorEleConfimados++;//7
+    $contadorEleConfimados++;//6
     }
 
     if(!validacionNormal($nivelAcAs)){
     $nivelAcad_error="Nivel Acad&eacute;mico invalido";
     }else{
-    $contadorEleConfimados++;//8
+    $contadorEleConfimados++;//7
     }
 
     if(!validacionNormal($direccionAs)){
     $direccion_error="Diecci&oacute;n invalida ";
     }else{
-    $contadorEleConfimados++;//9
+    $contadorEleConfimados++;//8
     }
    /* function validacionImagen($img){
         $allowed_extensions = array("jpg","jpeg","png");
@@ -133,34 +133,34 @@
        if(!validacionNormal($habiliAsp)){
         $habilidades_error="Llene el apartado de habilidades";
         }else{
-        $contadorEleConfimados++;//10
+        $contadorEleConfimados++;//9
         }
      
         if(!validacionNormal($expAsp)){
            $experiencia_error="Llene el apartado de experiencia";
            }else{
-           $contadorEleConfimados++;//11
+           $contadorEleConfimados++;//10
            }
      
           if(!validacionNumeroEntero($cantidadIdiomasAsp)){
            $cantidadIdiomas_error="Escriba un numero valido";
           }else{
-           $contadorEleConfimados++;//12
+           $contadorEleConfimados++;//11
           }
      
           if(!validacionNormal($idiomasEspAsp)){
            $idiomasEsp_error="Llene el apartado";
            }else{
-           $contadorEleConfimados++;//13
+           $contadorEleConfimados++;//12
            }
      
             if(!validacionSueldo($sueldoAsp)){
                $sueldo_error="De un sueldo real";
             }else{
-              $contadorEleConfimados++;//14
+              $contadorEleConfimados++;//13
             }   
 
-    if($contadorEleConfimados==14){
+    if($contadorEleConfimados==13){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;

@@ -270,7 +270,7 @@ index_asp.php
                 <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
-                        <input type="file" id="archivo_aspirante" name="archivo_aspirante"/>
+                        <input type="file" id="archivo_aspirante" name="archivo_aspirante" value="<?php base64_encode($datos[17]) ?>"/>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 
@@ -340,27 +340,6 @@ index_asp.php
             <?php endwhile; ?>
             <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
-        <?php 
-        $servernamephoto = "localhost";
-        $usernamephoto = "u253306330_curvity";
-        $passwordphoto = "curvity";
-        $dbnamephoto = "u253306330_curvity";
-        
-        
-        $conne = new mysqli($servernamephoto, $usernamephoto, $passwordphoto, $dbnamephoto);
-        if ($conne->connect_error) {
-            die("Conexión fallida: " . $conne->connect_error);
-        }
-                
-        $queryFotoEmpresa = "SELECT FotoPerfil FROM Aspirante WHERE CorreoElec = 'uje1999@gmail.com'";
-        $resultFoto = mysqli_query($conne,$queryFotoEmpresa);
-        while ($rowfoto = $resultFoto->fetch_assoc()) {
-            "<section class='containerPicture' id='logo-container'>
-            <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoPerfil']) . "'>
-            </section>";
-            
-        }
-        ?>
     </div>
 </div>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

@@ -8,6 +8,7 @@
     if(isset($_SESSION['user'])){
         $user->setUser($userSession->getCurrentUser());
         $dato=$user->getCorreo();
+        include_once 'validarUpdateAspirante.php';
     }
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];

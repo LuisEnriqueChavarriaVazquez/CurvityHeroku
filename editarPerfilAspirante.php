@@ -168,20 +168,6 @@ index_asp.php
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" placeholder="Seleccione su fecha de nacimiento." id="fecha_nac" name="fecha_nac" 
-                    value="<?php 
-                        echo  htmlspecialchars ($fechaNacAs)
-                    ?>" 
-                    class="validate datepicker white-text">
-                    <label for="fecha_nac">Fecha de nacimiento.</label>
-                    <?php
-                        if(isset($fecha_error)){
-                            echo "<p class='white-text'>".$fecha_error."</p>";
-                        }
-                    ?>
-                </div>
-
-                <div class="input-field col s12">
                     <input placeholder="Escriba su escuela de procedencia." id="alama_mater" name="alama_mater"
                     value="<?php echo $datos[7] ?>" type="text" class="validate white-text">
                     <label for="alma_mater">Alma mater.</label>

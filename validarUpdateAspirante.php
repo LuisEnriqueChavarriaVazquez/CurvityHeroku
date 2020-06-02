@@ -1,13 +1,14 @@
 <?php
 
     require('claseAspirante.php');
-if (
-    isset($_GET["CorreoElec"])
-) {
-    $dato = $_GET["CorreoElec"];
-} else {
-    print "FATAL ERROR";
-}
+    include_once 'includes/user.php';
+    include_once 'includes/user_session.php';
+    $userSession = new UserSession();
+    $user = new User();
+    if(isset($_SESSION['user'])){
+        $user->setUser($userSession->getCurrentUser());
+        $dato=$user->getCorreo();
+    }
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
     $apelMatAs=$_POST["apellido_materno"];

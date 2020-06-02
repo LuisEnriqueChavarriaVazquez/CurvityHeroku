@@ -15,23 +15,6 @@ if(isset($_SESSION['user'])){
     $sql="SELECT *from Empresa where DireccionWeb='$dato'";
     $result=mysqli_query($conexion,$sql);
     
-/*
-    $datos=array(
-                    'IDEmpresa'=>$ver[0],
-                    'Nombre'=>$ver[1],
-                    'RazonSocial'=>$ver[2],
-                    'Contra'=>$ver[3],
-                    'Direccion'=>$ver[4],
-                    'Tipo'=>$ver[5],
-                    'Telefono'=>$ver[6],
-                    'DireccionWeb'=>$ver[7],
-                    'FacebookEmpresa'=>$ver[8],
-                    'SkypeEmpresa'=>$ver[9],
-                    'TwitterEmpresa'=>$ver[10],
-                    'FotoLogo'=>$ver[11],
-                );
-
-    return $datos;*/
     include_once 'editarPerfilEmpresa.php';
 }else{
     include_once 'loginEmpresa.php';

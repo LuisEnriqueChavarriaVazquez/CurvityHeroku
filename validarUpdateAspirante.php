@@ -160,7 +160,7 @@
               $contadorEleConfimados++;//14
             }   
 
-    if($contadorEleConfimados==15){
+    if($contadorEleConfimados==14){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;
@@ -168,6 +168,7 @@
         $_SESSION["passwordAs"]=$passwordAs;
         $_SESSION["fechaNacAs"]=$fechaNacAs;
         $_SESSION["escuelaAs"]=$escuelaAs;
+        $imagen = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
         if($nivelAcAs=="1"){
             $_SESSION["nivelAcAs"]="UNIVERSIDAD";
         }elseif($nivelAcAs=="2"){
@@ -179,7 +180,6 @@
         }
         
         $_SESSION["direccionAs"]=$direccionAs;
-        //$_SESSION["telAs"]=$telAs;
         
         if(validacionNormal( $facebookAs)){
             $_SESSION["facebookAs"]=$facebookAs;
@@ -242,7 +242,7 @@
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
             TwitterAspirante='$twitterAs',
-            FotoPerfil='$img'
+            FotoPerfil='$imagen'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);

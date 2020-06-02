@@ -275,7 +275,6 @@ index_asp.php
                         <span>Foto de perfil</span>
                         <input type="file" id="archivo_aspirante" name="archivo_aspirante"/>
                     </div>
-                    <img src="data:image/jpeg;base64,<?php base64_encode($datos[17])?>" />
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 
                         value="<?php
@@ -345,6 +344,6 @@ index_asp.php
             <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
     </div>
-    
+    <img src="data:image/jpeg;base64,<?php base64_encode($rowfoto['FotoPerfil'])?>" />
 </div>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

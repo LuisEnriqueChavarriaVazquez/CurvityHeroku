@@ -280,7 +280,7 @@
          }
    
       }else{
-         header("location:index_asp.php");
+         header("location:editarPerfilASpirante.php");
       }
     
 

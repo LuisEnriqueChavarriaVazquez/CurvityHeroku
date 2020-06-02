@@ -14,6 +14,15 @@ if(isset($_SESSION['user'])){
 
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
+    $queryFoto = "SELECT FotoLogo FROM Aspirante WHERE CorreoElec = '$dato'";
+    $resultFoto = mysqli_query($conexion,$queryFoto);
+    $rowfoto = $resultFoto->fetch_assoc();
+    /*while ($rowfoto = $resultFoto->fetch_assoc()) {
+        "<section class='containerPicture' id='logo-container'>
+        <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoLogo']) . "'>
+        </section>";
+        
+    }*/
     
     include_once 'editarPerfilAspirante.php';
 }else{
@@ -264,7 +273,7 @@ index_asp.php
                 <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
-                        <input type="file" id="archivo_aspirante" value="<?php echo base64_encode( $datos[17] );?>" name="archivo_aspirante"/>
+                        <input type="file" id="archivo_aspirante" value="<?php echo $rowfoto;?>" name="archivo_aspirante"/>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 

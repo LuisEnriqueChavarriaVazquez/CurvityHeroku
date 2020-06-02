@@ -14,8 +14,6 @@ if(isset($_SESSION['user'])){
 
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
-    $queryFoto = "SELECT FotoPerfil FROM Aspirante WHERE CorreoElec = '$dato'";
-    $resultFoto = mysqli_query($conexion,$queryFoto);
     /*while ($rowfoto = $resultFoto->fetch_assoc()) {
         "<section class='containerPicture' id='logo-container'>
         <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoLogo']) . "'>
@@ -343,6 +341,19 @@ index_asp.php
             <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
         <?php 
+        $servernamephoto = "localhost";
+        $usernamephoto = "u253306330_curvity";
+        $passwordphoto = "curvity";
+        $dbnamephoto = "u253306330_curvity";
+        
+        
+        $conne = new mysqli($servernamephoto, $usernamephoto, $passwordphoto, $dbnamephoto);
+        if ($conne->connect_error) {
+            die("Conexión fallida: " . $conne->connect_error);
+        }
+                
+        $queryFotoEmpresa = "SELECT FotoPerfil FROM Aspirante WHERE CorreoElec = 'uje1999@gmail.com'";
+        $resultFoto = mysqli_query($conne,$queryFotoEmpresa);
         while ($rowfoto = $resultFoto->fetch_assoc()) {
             "<section class='containerPicture' id='logo-container'>
             <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoPerfil']) . "'>

@@ -20,13 +20,13 @@ include_once 'includes/user_session.php';
 
 <div class="boxSubjectsBrowser full-height blue-grey lighten-5" id="fullEmpleosContainer">
 
-  <div id="datos" class="row">
-
+  <div id="datos" class="row">  
+    
+    </div>
   </div>
-</div>
-
-<?php include("logicaOperacionesAspirante/buscador.php"); ?>
-
-<?php include 'AlmacenIncludesPHP/elementosPhp/floatingButtons/botonHearing.php' ?>
+  
+  <?php include("logicaOperacionesAspirante/buscador.php"); ?>
+  
+  <?php include 'AlmacenIncludesPHP/elementosPhp/floatingButtons/botonHearing.php' ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

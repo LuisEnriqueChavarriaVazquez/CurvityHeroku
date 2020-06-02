@@ -11,24 +11,11 @@ index_asp.php
         <p class="titleOfertaFinal truncate black-text">Estado de ofertas enviadas.</p>
     </div>
 
-    <!--PRIMERA CARD-->
-    <div class="stateCard row z-depth-4">
-        <div class="col s12 stateTextContainer stateText truncate">Ingeniero en Sistema.</div>
-        <div class="col s12 stateResult">Aceptado</div>
-    </div>
+    <?php include("logicaOperacionesAspirante/mostrarEstadoSolicitudes.php"); ?>
 
-    <!--SEGUNDA CARD-->
-    <div class="stateCard row z-depth-4">
-        <div class="col s12 stateTextContainer stateText truncate">Actor.</div>
-        <div class="col s12 stateResult">Rechazado</div>
-    </div>
-
-    <!--TERCERA CARD-->
-    <div class="stateCard row z-depth-4">
-        <div class="col s12 stateTextContainer stateText truncate">Chef.</div>
-        <div class="col s12 stateResult">Pendiente</div>
-    </div>
+    
 </div>
+
 
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

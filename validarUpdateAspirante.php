@@ -279,8 +279,5 @@
               include("errorPagina.php");
             }
          }
-
-    
-
-
+        }
 ?>

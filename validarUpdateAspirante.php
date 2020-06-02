@@ -91,7 +91,7 @@
     }else{
     $contadorEleConfimados++;//9
     }
-    function validacionImagen($img){
+   /* function validacionImagen($img){
         $allowed_extensions = array("jpg","jpeg","png");
         $listaValores=explode('.',$img);
         if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
@@ -99,7 +99,7 @@
         }else{
            return False;
         }
-       }
+       }*/
      
         function validacionNumeroEntero ($StringEntrada){
            if(trim($StringEntrada)== ""){
@@ -123,11 +123,11 @@
            }
         }
      
-       if(!validacionImagen($img)){
+       /*if(!validacionImagen($img)){
            $dirArchivo_error="Seleccione una imagen";
         }else{
           $contadorEleConfimados++;
-       }
+       }*/
      
      
        if(!validacionNormal($habiliAsp)){

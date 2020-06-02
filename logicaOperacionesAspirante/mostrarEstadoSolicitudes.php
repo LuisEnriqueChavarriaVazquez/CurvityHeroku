@@ -44,10 +44,19 @@
             array_push($NombrePuesto,$rowPuesto['Nombre']);
         }
 
-        if($NombrePuesto[0] != ''){
+        if($Situacion[$i] == "Aceptado" ){
             print "
             <div class='stateCard row z-depth-4'>
             <div class='col s12 stateTextContainer stateText truncate'>".$NombrePuesto[0]."</div>
+            <div class='col s12 stateResult' style='font-size: 10px !important; border-radius: 0px'>"."Revisa datos de contacto en donde se publicó la oferta."."</div>
+            <div class='col s12 stateResult'>".$Situacion[$i]."</div>
+            </div>
+            ";
+        }else if($NombrePuesto[0] != ''){
+            print "
+            <div class='stateCard row z-depth-4'>
+            <div class='col s12 stateTextContainer stateText truncate'>".$NombrePuesto[0]."</div>
+            
             <div class='col s12 stateResult'>".$Situacion[$i]."</div>
             </div>
             ";
@@ -57,7 +66,7 @@
     if(empty($Situacion)){
         print "
         <div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
-        <div><h3 style='font-weight:900;'>Sin resultados</h3></div> <br><br> 
+        <div><h3 style='font-weight:900;'>Sin ofertas</h3></div> <br><br> 
         <div style='padding: 40px;'><img src='pictures/explorer.png' width='100%'></div></div>
         ";
     }

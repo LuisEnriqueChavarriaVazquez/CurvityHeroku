@@ -1,8 +1,6 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoSuperior.php' ?>
-index_asp.php
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInicialRetornoInferior.php' ?>
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarInicial.php' ?>
 
 <?php
 $Nombre = "knkan";

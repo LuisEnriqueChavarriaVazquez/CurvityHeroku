@@ -1,20 +1,24 @@
 <!--Menu del sidenav-->
-
+<?php
+$nombre = $_SESSION["user"];
+?>
+<form action="consultarEstadoDeSolicitud.php" method="GET">
 <ul id="slide-out" class="sidenav colorContrast">
     <li>
         <div class="user-view">
             <div class="background sideNavFont">
 
             </div>
-            <a href="#user"><img class="circle hoverable" src="pictures/logo.png"><</a>
+            <a href="#user"><img class="circle hoverable" src="pictures/logo.png"></a>
             <a href="#name"><span class="white-text name">Curvity</span></a>
             <a href="#email"><span class="white-text email">Version 1.0.0</span></a>
         </div>
     </li>
     <li><a href="editarPerfilAspirante.php" class="textColor"><i class="material-icons">account_circle</i>Editar perfil.</a></li>
-    <li><a href="consultarEstadoDeSolicitud.php" class="textColor"><i class="material-icons">hearing</i>Lista de ofertas enviadas.</a></li>
+    <li><?php echo "<a href='./consultarEstadoDeSolicitud.php?nombreSolicitud=$nombre' class='textColor'><i class='material-icons'>hearing</i>Lista de ofertas enviadas.</a>"?></li>
     <li><a href="includes/logout.php" class="textColor"><i class="material-icons">directions_run</i>Cerrar sesi&oacute;n.</a></li>
 </ul>
+</form>
 
 
 <!--Aqui tenemos nuestro navbar-->

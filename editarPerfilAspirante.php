@@ -14,7 +14,7 @@ if(isset($_SESSION['user'])){
 
     $sql="SELECT *from Aspirante where CorreoElec='$dato'";
     $result=mysqli_query($conexion,$sql);
-    $queryFoto = "SELECT FotoLogo FROM Aspirante WHERE CorreoElec = '$dato'";
+    $queryFoto = "SELECT FotoPerfil FROM Aspirante WHERE CorreoElec = '$dato'";
     $resultFoto = mysqli_query($conexion,$queryFoto);
     $rowfoto = $resultFoto->fetch_assoc();
     /*while ($rowfoto = $resultFoto->fetch_assoc()) {

@@ -253,5 +253,7 @@
               include("errorPagina.php");
             }
          }
+        }else{
+            include("editarPerfilAspirante.php")
         }
 ?>

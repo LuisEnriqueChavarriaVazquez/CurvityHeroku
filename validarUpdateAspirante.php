@@ -243,7 +243,7 @@
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
             TwitterAspirante='$twitterAs',
-            FotoPerfil='$fileFoto'
+            FotoPerfil='.$fileFoto.'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);

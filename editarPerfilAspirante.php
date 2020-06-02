@@ -16,7 +16,6 @@ if(isset($_SESSION['user'])){
     $result=mysqli_query($conexion,$sql);
     $queryFoto = "SELECT FotoPerfil FROM Aspirante WHERE CorreoElec = '$dato'";
     $resultFoto = mysqli_query($conexion,$queryFoto);
-    $rowfoto = $resultFoto->fetch_assoc();
     /*while ($rowfoto = $resultFoto->fetch_assoc()) {
         "<section class='containerPicture' id='logo-container'>
         <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoLogo']) . "'>
@@ -343,7 +342,14 @@ index_asp.php
             <?php endwhile; ?>
             <button type="submit" class="waves-effect btn-large borderButton sizeButton textButton grey lighten-5 blue-text text-darken-4">Guardar cambios.</button>
         </form>
-        <img src="data:image/jpeg;base64,<?php base64_encode($rowfoto['FotoPerfil'])?>" />
+        <?php 
+        while ($rowfoto = $resultFoto->fetch_assoc()) {
+            "<section class='containerPicture' id='logo-container'>
+            <img class='imgFormater' src='data:image/jpeg; base64," . base64_encode($rowfoto['FotoPerfil']) . "'>
+            </section>";
+            
+        }
+        ?>
     </div>
 </div>
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteInferior.php' ?>

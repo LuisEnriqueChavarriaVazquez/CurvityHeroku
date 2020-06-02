@@ -273,6 +273,7 @@ index_asp.php
                 <div class="file-field input-field">
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
+                        <img src="data:image/jpeg;base64,<?php echo $datos[17]?>" />
                         <input type="file" id="archivo_aspirante" value="<?php echo $rowfoto;?>" name="archivo_aspirante"/>
                     </div>
                     <div class="file-path-wrapper">

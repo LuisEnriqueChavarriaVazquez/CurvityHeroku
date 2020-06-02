@@ -102,7 +102,7 @@
           if($objetoDB->validarTextoNormal($_POST["twitter_empresa"])){
             $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
           }
-         if($objetoEmpresa->actualizarEmpresa($fileFoto = base64_encode(file_get_contents($_FILES['fotoLogoEmp']['tmp_name'])))){
+         if($objetoEmpresa->actualizarEmpresa(/*$fileFoto = base64_encode(file_get_contents($_FILES['fotoLogoEmp']['tmp_name']))*/)){
            include("index_emp.php");
           }else{
            include("errorPagina.php");

@@ -31,16 +31,22 @@ if (isset($_POST['submit'])) {
     $resultGetSede = mysqli_query($conn, $queryGetSede);
     $sedesRelacionadasEmpresaNombre; //Valor a de la sede
     $sedesRelacionadasEmpresaNombreReclutador; //Valor a de la sede
+    $contador = 0;
     while ($rowGetSede = $resultGetSede->fetch_assoc()) {
         $sedesRelacionadasEmpresaNombre = $rowGetSede['Nombre'];
         $sedesRelacionadasEmpresaNombreReclutador = $rowGetSede['NombreReclutador'];
         $sedesRelacionadasEmpresaIDSede = $rowGetSede['IDSede'];
         print "<p>
         <label>
-            <input type='checkbox' value=" . $rowGetSede['IDSede'] . " name='sedeEliminar[]' class='filled-in' />
-            <span>Sede: " . $rowGetSede['Nombre'] . " // Reclutador: " . $rowGetSede['NombreReclutador'] . "</span>
+        <input type='checkbox' value=" . $rowGetSede['IDSede'] . " name='sedeEliminar[]' class='filled-in' />
+        <span>Sede: " . $rowGetSede['Nombre'] . " // Reclutador: " . $rowGetSede['NombreReclutador'] . "</span>
         </label>
-    </p>";
+        </p>";
+        
+    }
+    $contador++;
+    if($contador == 1){
+        print "<a><button type='submit' name='borrarSede' class='waves-effect btn borderButton sizeButton textButton red darken-3 white-text text-darken-4'>Eliminar.</button></a>";
     }
 
 }

@@ -10,13 +10,14 @@
 }
 
 .cardSize{
-    height: 130px;
+    height: 170px;
 }
 
 .cardFont{
     background-image: url('../pictures/cardFont.jpg');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .cardPosition{

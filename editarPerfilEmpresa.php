@@ -96,7 +96,7 @@ index_emp.php
 ?>
 <div class="boxSubjectsInicioExtended light-blue darken-4 centerElements">
     <div class="sizeCardInicioSmall backgroundCardInicio borderCardInicio z-depth-3">
-        <p class="white-text textCardInicioSamll centerElements">Datos editables de la empresa.</p>
+        <p class="white-text textCardInicioSamll centerElements">Datos editables.</p>
     </div>
     <div class="sizeCardForm backgroundCardForm borderCardInicio z-depth-3">
         <form class="col s12" method="post" action="validarUpdateEmpresa.php">

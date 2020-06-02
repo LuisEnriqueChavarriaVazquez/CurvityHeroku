@@ -33,7 +33,7 @@ gestionOfertas.php
             <?php
             include("logicaOperacionesReclutador/validarFormEliminarOferta.php");
             ?>
-            <a><button type="submit" name="borrarOferta" class="waves-effect btn borderButton sizeButton textButton red darken-3 white-text text-darken-4">Eliminar.</button></a>
+            
         </form>
 
     </div>

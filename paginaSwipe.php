@@ -1,9 +1,8 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
 
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarSuperior.php' ?>
-ofertasPublicadasPrevioSwipe.php
-<?php include 'AlmacenIncludesPHP/elementosPhp/navbarRetorno/navbarInferior.php' ?>
+<?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarInicial.php' ?>
+<br><br><br>
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////En esta seccion comienza el slider para marcas de codigos de FALLA OBDII-->
 

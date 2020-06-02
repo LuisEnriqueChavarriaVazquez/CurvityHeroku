@@ -32,7 +32,7 @@ gestionSedes.php
             <?php
             include("logicaOperacionesEmpresa/validarFormEliminarSede.php");
             ?>
-            <a><button type="submit" name="borrarSede" class="waves-effect btn borderButton sizeButton textButton red darken-3 white-text text-darken-4">Eliminar.</button></a>
+           
         </form>
 
     </div>

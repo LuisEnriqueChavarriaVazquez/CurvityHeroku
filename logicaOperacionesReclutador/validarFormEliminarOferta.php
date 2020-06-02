@@ -45,6 +45,7 @@ if (isset($_POST['submit'])) {
     $ofertaRelacionadasEmpresaIDEmpresa; //Valor a de la sede
     $ofertaRelacionadasEmpresaIDSede; //Valor a de la sede
     $ofertaRelacionadasEmpresaIDPuesto; //Valor a de la sede
+    $contador = 0;
     while ($rowGetOferta = $resultGetOferta->fetch_assoc()) {
         $ofertaRelacionadasEmpresaNombre = $rowGetOferta['Nombre'];
         $ofertaRelacionadasEmpresaIDEmpresa = $rowGetOferta['IDEmpresa']; 
@@ -56,6 +57,10 @@ if (isset($_POST['submit'])) {
             <span>Oferta: " . $rowGetOferta['Nombre'] . "</span>
         </label>
     </p>";
+    }
+    $contador++;
+    if($contador == 1){
+        print "<a><button type='submit' name='borrarOferta' class='waves-effect btn borderButton sizeButton textButton red darken-3 white-text text-darken-4'>Eliminar.</button></a>";
     }
 }
 

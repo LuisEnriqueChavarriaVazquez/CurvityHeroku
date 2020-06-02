@@ -23,7 +23,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    $img = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
+   //$img = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
     $contadorEleConfimados=0;
     
     function validacionNormal ($StringEntrada){

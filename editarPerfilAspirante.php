@@ -274,7 +274,7 @@ index_asp.php
                     <div class="btn white blue-text text-darken-4">
                         <span>Foto de perfil</span>
                         <img src="data:image/jpeg;base64,<?php echo $datos[17]?>" />
-                        <input type="file" id="archivo_aspirante" value="<?php echo $rowfoto;?>" name="archivo_aspirante"/>
+                        <input type="file" id="archivo_aspirante" value="data:image/jpeg;base64,<?php echo $rowfoto?>" name="archivo_aspirante"/>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" id="archivoDir_aspirante" name="archivoDir_aspirante" 

@@ -280,7 +280,7 @@
          }
    
       }else{
-         header("location:editarPerfilASpirante.php");
+         header("location:editarPerfilAspirante.php");
       }
     
 

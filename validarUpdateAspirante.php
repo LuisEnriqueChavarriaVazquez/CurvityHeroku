@@ -168,7 +168,6 @@
         $_SESSION["passwordAs"]=$passwordAs;
         $_SESSION["fechaNacAs"]=$fechaNacAs;
         $_SESSION["escuelaAs"]=$escuelaAs;
-        $imagen = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
         if($nivelAcAs=="1"){
             $_SESSION["nivelAcAs"]="UNIVERSIDAD";
         }elseif($nivelAcAs=="2"){
@@ -242,7 +241,6 @@
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
             TwitterAspirante='$twitterAs',
-            FotoPerfil='$imagen'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);

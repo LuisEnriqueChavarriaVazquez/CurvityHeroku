@@ -3,10 +3,13 @@
     require('claseAspirante.php');
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
-    $userSession = new UserSession();
-    $usuario = new User();
-    $usuario->setUser($userSession->getCurrentUser());
-    $dato=$usuario->getCorreo();
+    if(!isset($_SESSION)){
+        session_start();
+        $userSession = new UserSession();
+        $usuario = new User();
+        $usuario->setUser($userSession->getCurrentUser());
+        $dato=$usuario->getCorreo();
+    }
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
     $apelMatAs=$_POST["apellido_materno"];
@@ -23,7 +26,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    //$img=$_FILES["archivo_aspirante"]["name"];
+
     $contadorEleConfimados=0;
     
     function validacionNormal ($StringEntrada){
@@ -205,8 +208,7 @@
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
-            $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
-            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $habiliAsp,$_SESSION["mailAs"], $cantidadIdiomasAsp,$idiomasEspAsp);
             $fileFoto = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
             
             $nombre=$aspiranteObje->get_nombre();
@@ -241,7 +243,7 @@
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
             TwitterAspirante='$twitterAs',
-            FotoPerfil='.$fileFoto.'
+            FotoPerfil='$fileFoto'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);
@@ -255,5 +257,5 @@
          }
         }else{
             include("editarPerfilAspirante.php");
-        }
+         }
 ?>

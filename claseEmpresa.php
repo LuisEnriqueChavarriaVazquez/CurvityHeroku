@@ -99,9 +99,11 @@
        }
        
        public function setTwitterEmpresa($StringEntrada){
-           $this->twitterEmpresa;
+           $this->twitterEmpresa=$StringEntrada;
        }
-       
+       public function getTwitterEmpresa(){
+        return $this->twitterEmpresa;
+    }
        public function ingresarNuevaEmpresa($FotoLogo){
         $fileFoto=addslashes(file_get_contents($FotoLogo));
          $sqlScriptParam="insert into Empresa(Nombre,Contra,RazonSocial,Direccion,Tipo,Telefono,DireccionWeb,FotoLogo";
@@ -136,7 +138,7 @@
         
          
        }     
-       public function actualizarEmpresa(){
+       public function actualizarEmpresa($foto){
         include_once 'includes/empresa.php';
         include_once 'includes/emp_session.php';
         
@@ -165,7 +167,8 @@
         DireccionWeb='$web',
         FacebookEmpresa='$fbemp',
         SkypeEmpresa='$skemp',
-        TwitterEmpresa='$twemp'
+        TwitterEmpresa='$twemp',
+        FotoLogo='$foto'
         WHERE DireccionWeb = '$dato'";
 
        if($this->objetoDB->comprobarConexion()==TRUE ){

@@ -102,7 +102,7 @@
           if($objetoDB->validarTextoNormal($_POST["twitter_empresa"])){
             $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
           }
-         if($objetoEmpresa->actualizarEmpresa()){
+         if($objetoEmpresa->actualizarEmpresa($fotoLogoEmpresa)){
            header("location:index_emp.php");
           }else{
            include("errorPagina.php");

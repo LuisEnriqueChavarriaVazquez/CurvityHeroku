@@ -147,7 +147,7 @@
         $emp->setEmp($empSession->getCurrentEmp());
         $dato=$emp->getEmpCorreo();
         //$fileFoto=addslashes(file_get_contents($FotoLogo));
-        $foto=addslashes(file_get_contents($FotoLogo));
+        $foto2=addslashes(file_get_contents($foto));
         $nombre=$this->nombre;
         $razon=$this->razonSocial;
         $contra=$this->password;
@@ -169,7 +169,7 @@
         FacebookEmpresa='$fbemp',
         SkypeEmpresa='$skemp',
         TwitterEmpresa='$twemp',
-        FotoLogo='$foto'
+        FotoLogo='$foto2'
         WHERE DireccionWeb = '$dato'";
 
        if($this->objetoDB->comprobarConexion()==TRUE ){

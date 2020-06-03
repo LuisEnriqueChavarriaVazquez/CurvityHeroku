@@ -168,7 +168,7 @@
         FacebookEmpresa='$fbemp',
         SkypeEmpresa='$skemp',
         TwitterEmpresa='$twemp',
-        FotoLogo='$foto'
+        FotoLogo='.$foto.'
         WHERE DireccionWeb = '$dato'";
 
        if($this->objetoDB->comprobarConexion()==TRUE ){

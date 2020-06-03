@@ -27,5 +27,5 @@ if ($result->num_rows > 0) {
     }
 } else {
     echo "<div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
-    <div><h5 style='font-weight:900;' class='blue-grey-text'>Sin ofertas :(</h5></div></div>";
+    <div><h5 style='font-weight:900;' class='blue-grey-text'>Sin ofertas publicadas.</h5></div><img src='pictures/noOfert.png' width='40%'></div><br>";
 }

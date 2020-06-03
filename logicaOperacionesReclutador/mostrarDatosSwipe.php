@@ -30,6 +30,15 @@ if ($resultMatching = $conn->query($queryDatosMatching)) {
         array_push($Ids,$rowAspirantesSelectos['IDAspirante']);
         imprimir($IDAspiranteSelecto, $conn,$IDEmpresa,$IDSede,$IDPuesto);
     }
+    if(empty($IDAspiranteSelecto) == true || $IDAspiranteSelecto == ''){
+        print "
+        
+        <div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
+        <div style='margin-top:50px'><h5 style='font-weight:900;' class='blue-grey-text text-lighten-4'>Nadie ha enviado solicitud.</h5></div> <br><br> 
+        <div style='padding: 10px; display:flex; justify-content: center;'><img src='pictures/clock.png' width='80%'></div></div>
+        
+        ";
+    }
 }
 
 
@@ -107,6 +116,8 @@ function imprimir($IDAspiranteSelecto, $conn,$IDEmpresa,$IDSede,$IDPuesto)
             if(isset($_POST[$rowAsp['IDAspirante'].$rowAsp['IDAspirante']])){
                 borrado($conn, $rowAsp['IDAspirante'],$IDSede,$IDPuesto,$IDEmpresa);
             }
+
     }
+
 
 }

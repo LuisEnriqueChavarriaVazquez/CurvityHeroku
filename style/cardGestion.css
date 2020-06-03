@@ -1,9 +1,11 @@
 .cardSizeGestion{
-    height: 100px;
+    height: 110px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .cardFontGestion{
     background-image: url('../pictures/cardGestionFont.jpg');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }

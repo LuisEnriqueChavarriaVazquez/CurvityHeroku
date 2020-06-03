@@ -66,8 +66,8 @@
     if(empty($Situacion)){
         print "
         <div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
-        <div><h3 style='font-weight:900;'>Sin ofertas</h3></div> <br><br> 
-        <div style='padding: 40px;'><img src='pictures/explorer.png' width='100%'></div></div>
+        <div><h4 style='font-weight:900;'>Sin ofertas enviadas.</h4></div> <br><br> 
+        <div style='padding: 40px;'><img src='pictures/sinOfertasEnviadas.png' width='100%'></div></div>
         ";
     }
     

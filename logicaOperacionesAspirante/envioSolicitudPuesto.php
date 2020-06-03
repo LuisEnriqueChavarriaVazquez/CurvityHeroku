@@ -26,7 +26,9 @@ $query = "INSERT INTO Matching(IDAspirante,IDPuesto,IDSede,IDEmpresa, Situacion)
 if ($conn->query($query) === true) {
     echo  "<div class=´errors_box´><p class='success'>Solicitud enviada.</p></div>";
 } else {
-    echo  "<div class=´errors_box´><p class='errors'>" . "Error, ingresa bien tus datos o la solicitud ya ha sido enviada." . "</p></div>";
+    echo  "<div class=´errors_box´>
+    <p class='errors'>" . "Error, ingresa bien tus datos o la solicitud ya ha sido enviada." . "</p>
+    </div>";
 }
 
 }

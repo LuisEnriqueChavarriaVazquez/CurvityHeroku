@@ -35,10 +35,22 @@ while($rowPuesto = $resultPuesto->fetch_assoc()) {
     $nombrePuesto = $rowPuesto['Nombre'];
     $IDPuesto = $rowPuesto['IDPuesto']; 
     
-     print "<form action='paginaSwipe.php' method='GET'><a name='submit' 
-     href='./paginaSwipe.php?IDSede=$IDSede&IDEmpresa=$IDEmpresa&IDPuesto=$IDPuesto'>";
-     include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php';
-     echo $nombrePuesto;
-     include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php';
-     print "</a></form>";
+   
+        print "<form action='paginaSwipe.php' method='GET'><a name='submit' 
+        href='./paginaSwipe.php?IDSede=$IDSede&IDEmpresa=$IDEmpresa&IDPuesto=$IDPuesto'>";
+        include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardSuperior.php';
+        echo $nombrePuesto;
+        include 'AlmacenIncludesPHP/elementosPhp/cardGestion/cardInferior.php';
+        print "</a></form>";
+
+}
+
+if(empty($IDPuesto) != false){
+    print "
+    
+    <div style='width:100%; display:flex; justify-content:center; align-items:center; flex-direction: column;'>
+        <div style='margin-top:0px'><h5 style='font-weight:900;' class='blue-grey-text'>No hay ofertas creadas.</h5></div> <br><br> 
+        <div style='padding: 10px; display:flex; justify-content: center;'><img src='pictures/nomsg.png' width='80%'></div></div>
+    
+    ";
 }

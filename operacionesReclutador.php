@@ -1,14 +1,14 @@
 <?php include 'AlmacenIncludesPHP/elementosPhp/HTMLSTRUCTURE/parteSuperior.php' ?>
 
 <?php include 'AlmacenIncludesPHP/elementosPhp/navbars/navbarReclutador.php' ?>
+    <?php 
+    $nombre = $_SESSION["nombreUsuario"];
+    ?>
 
 <!--Cuerpo de las secciones-->
 <div class="boxSubjects blue-grey lighten-5">
     <p class="titles">Operaciones reclutador.</p>
 
-    <?php 
-    $nombre = $_SESSION["nombreUsuario"];
-    ?>
 
     <form action="ofertasPublicadasPrevioSwipe.php" method="GET">
         <?php

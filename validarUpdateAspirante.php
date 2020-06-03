@@ -4,15 +4,17 @@
     include_once 'includes/user.php';
     include_once 'includes/user_session.php';
     $userSession = new UserSession();
-    $usuario = new User();
-    $usuario->setUser($userSession->getCurrentUser());
-    $dato=$usuario->getCorreo();
+    $user = new User();
+    if(isset($_SESSION['user'])){
+        $user->setUser($userSession->getCurrentUser());
+        $dato=$user->getCorreo();
+        include_once 'validarUpdateAspirante.php';
+    }
     $nombreAs=$_POST["nombre_aspirante"];
     $apelPatAs=$_POST["apellido_paterno"];
     $apelMatAs=$_POST["apellido_materno"];
     $mailAs=$_POST["mail"];
     $passwordAs=$_POST["password"];
-    $fechaNacAs=$_POST["fecha_nac"];
     $escuelaAs=$_POST["alama_mater"];
     $nivelAcAs=$_POST["nivel_acad"];
     $direccionAs=$_POST["direccion_aspirante"];
@@ -24,7 +26,7 @@
     $cantidadIdiomasAsp=$_POST["cantidad_de_idiomas"];
     $idiomasEspAsp=$_POST["idiomas_domina"];
     $sueldoAsp=$_POST["sueldo_ideal"];
-    //$nombreImagenPerfilAsp=$_FILES["archivo_aspirante"]["name"];
+
     $contadorEleConfimados=0;
     
     function validacionNormal ($StringEntrada){
@@ -44,17 +46,6 @@
         return True;
     }
     }
-
-    function validacionTel ($StringEntrada){
-    if(empty($StringEntrada) || trim($StringEntrada)== ""){
-        return False;
-    }elseif(!preg_match("/^[0-9]+$/",$StringEntrada)){
-        return False;
-    }else{
-        return True;
-    }
-    }
-
 
     if(!validacionNormal($nombreAs)){
         $Nombre_error="Nombre invalido";
@@ -86,45 +77,32 @@
     $contadorEleConfimados++;//5
     }
 
-    if(!validacionNormal($fechaNacAs)){
-    $fecha_error="Fecha nacimiento invalida";
-    }else{
-    $contadorEleConfimados++;//6
-    }
-
-
     if(!validacionNormal($escuelaAs)){
     $escuela_error="Escuela invalida";
     }else{
-    $contadorEleConfimados++;//7
+    $contadorEleConfimados++;//6
     }
 
     if(!validacionNormal($nivelAcAs)){
     $nivelAcad_error="Nivel Acad&eacute;mico invalido";
     }else{
-    $contadorEleConfimados++;//8
+    $contadorEleConfimados++;//7
     }
 
     if(!validacionNormal($direccionAs)){
     $direccion_error="Diecci&oacute;n invalida ";
     }else{
-    $contadorEleConfimados++;//9
+    $contadorEleConfimados++;//8
     }
-
-    /*if(!validacionTel($telAs)){
-    $tel_error="Tel&eacute;fono invalido";
-    }else{
-    $contadorEleConfimados++;
-    }*/
-    function validacionImagen($ImagenEntrada){
+   /* function validacionImagen($img){
         $allowed_extensions = array("jpg","jpeg","png");
-        $listaValores=explode('.',$ImagenEntrada);
+        $listaValores=explode('.',$img);
         if( in_array($listaValores[count($listaValores)-1],$allowed_extensions)){
            return True;
         }else{
            return False;
         }
-       }
+       }*/
      
         function validacionNumeroEntero ($StringEntrada){
            if(trim($StringEntrada)== ""){
@@ -148,7 +126,7 @@
            }
         }
      
-        /*if(!validacionImagen(//$nombreImagenPerfilAsp)){
+       /*if(!validacionImagen($img)){
            $dirArchivo_error="Seleccione una imagen";
         }else{
           $contadorEleConfimados++;
@@ -158,34 +136,34 @@
        if(!validacionNormal($habiliAsp)){
         $habilidades_error="Llene el apartado de habilidades";
         }else{
-        $contadorEleConfimados++;//10
+        $contadorEleConfimados++;//9
         }
      
         if(!validacionNormal($expAsp)){
            $experiencia_error="Llene el apartado de experiencia";
            }else{
-           $contadorEleConfimados++;//11
+           $contadorEleConfimados++;//10
            }
      
           if(!validacionNumeroEntero($cantidadIdiomasAsp)){
            $cantidadIdiomas_error="Escriba un numero valido";
           }else{
-           $contadorEleConfimados++;//12
+           $contadorEleConfimados++;//11
           }
      
           if(!validacionNormal($idiomasEspAsp)){
            $idiomasEsp_error="Llene el apartado";
            }else{
-           $contadorEleConfimados++;//13
+           $contadorEleConfimados++;//12
            }
      
             if(!validacionSueldo($sueldoAsp)){
                $sueldo_error="De un sueldo real";
             }else{
-              $contadorEleConfimados++;//14
+              $contadorEleConfimados++;//13
             }   
 
-    if($contadorEleConfimados==14){
+    if($contadorEleConfimados==13){
         $_SESSION["nombreAs"]=$nombreAs;
         $_SESSION["apPatAs"]=$apelPatAs;
         $_SESSION["apMatAs"]=$apelMatAs;
@@ -204,7 +182,6 @@
         }
         
         $_SESSION["direccionAs"]=$direccionAs;
-        //$_SESSION["telAs"]=$telAs;
         
         if(validacionNormal( $facebookAs)){
             $_SESSION["facebookAs"]=$facebookAs;
@@ -231,9 +208,8 @@
             $aspiranteObje=new Aspirante($_SESSION["nombreAs"],$_SESSION["passwordAs"],
             $_SESSION["apPatAs"],$_SESSION["apMatAs"],$_SESSION["fechaNacAs"],
             $expAsp,$sueldoAsp,$_SESSION["direccionAs"],$_SESSION["nivelAcAs"],$_SESSION["escuelaAs"],
-            $habiliAsp,$_SESSION["mailAs"],/*$_SESSION["telAs"]*/ $cantidadIdiomasAsp,$idiomasEspAsp);
-            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
-            //$fileFoto=addslashes(file_get_contents($_FILES["archivo_aspirante"]["tmp_name"]));
+            $habiliAsp,$_SESSION["mailAs"], $cantidadIdiomasAsp,$idiomasEspAsp);
+            $fileFoto = base64_encode(file_get_contents($_FILES['archivo_aspirante']['tmp_name']));
             
             $nombre=$aspiranteObje->get_nombre();
             $app=$aspiranteObje->get_apellidoPaterno();
@@ -266,7 +242,8 @@
             detallesIdiomas='$detalles',
             FacebookAspirante='$facebookAs',
             SkypeAspirante='$skypeAs',
-            TwitterAspirante='$twitterAs'
+            TwitterAspirante='$twitterAs',
+            FotoPerfil='.$fileFoto.'
             WHERE CorreoElec = '$dato'";
 
             $result=mysqli_query($conn,$sql);
@@ -278,11 +255,7 @@
               include("errorPagina.php");
             }
          }
-   
-      }else{
-         header("location:index_asp.php");
-      }
-    
-
-
+        }else{
+            include("editarPerfilAspirante.php");
+         }
 ?>

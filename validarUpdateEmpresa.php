@@ -15,7 +15,11 @@
   "Sociedad cooperativa de trabajo asociado","Sociedades profesionales","Sociedad agraria de transformación",
   "Sociedad de garantía recíproca","Entidades de capital riesgo","Agrupación de interés económico"
     );
-    $fotoLogoEmpresa= base64_encode(file_get_contents($_FILES['fotoLogoEmp']['tmp_name']));
+    $check = getimagesize($_FILES["fotoLogoEmp"]["tmp_name"]);
+    if($check !== false){
+        $image = $_FILES['fotoLogoEmp']['tmp_name'];
+        $fotoLogoEmpresa = addslashes(file_get_contents($image));
+      }
     $telEmpresa=$_POST["telefono_empresa"];
     $objetoDB= new objetoConexionBaseDatos();
     $contadorEleConfimados=0;

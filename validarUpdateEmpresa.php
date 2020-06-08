@@ -15,7 +15,6 @@
   "Sociedad cooperativa de trabajo asociado","Sociedades profesionales","Sociedad agraria de transformación",
   "Sociedad de garantía recíproca","Entidades de capital riesgo","Agrupación de interés económico"
     );
-    $fileFoto = base64_encode(file_get_contents($_FILES['fotoLogoEmp']['tmp_name']));
     $telEmpresa=$_POST["telefono_empresa"];
     $objetoDB= new objetoConexionBaseDatos();
     $contadorEleConfimados=0;
@@ -102,7 +101,7 @@
           if($objetoDB->validarTextoNormal($_POST["twitter_empresa"])){
             $objetoEmpresa->setTwitterEmpresa($_POST["twitter_empresa"]);
           }
-         if($objetoEmpresa->actualizarEmpresa($fileFoto)){
+         if($objetoEmpresa->actualizarEmpresa($fileFoto=addslashes(file_get_contents($_FILES["fotoLogoEmp"]["tmp_name"])))){
            header("location:index_emp.php");
           }else{
            include("errorPagina.php");
